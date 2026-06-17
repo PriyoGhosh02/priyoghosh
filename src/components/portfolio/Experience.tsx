@@ -80,7 +80,7 @@ export function Experience() {
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+            <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
               A quick history.
             </h2>
           </Reveal>
@@ -106,18 +106,14 @@ export function Experience() {
                       {it.year}
                     </div>
                     <button
+                      type="button"
                       onClick={() => setOpen(it)}
-                      onMouseEnter={() => {
-                        // Delay slightly so a quick mouseover doesn't open it
-                      }}
                       data-cursor="hover"
-                      className="group mt-2 cursor-pointer text-left md:text-inherit"
+                      className="group mt-2 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:-translate-y-0.5 active:scale-[0.98]"
                     >
-                      <span
-                        className="font-display text-2xl font-semibold text-white transition-all duration-300 group-hover:text-white"
-                        onMouseEnter={() => setOpen(it)}
-                      >
+                      <span className="inline-flex items-center gap-3 font-display text-2xl font-semibold text-white transition-all duration-300 group-hover:text-white">
                         {it.role}
+                        <span className="text-2xl text-white/70 transition-transform duration-300 group-hover:translate-x-1">↗</span>
                       </span>
                       <span className="block h-px w-0 bg-white transition-all duration-500 group-hover:w-full" />
                     </button>

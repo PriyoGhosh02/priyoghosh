@@ -12,25 +12,26 @@ const skills = [
     title: "UI Frameworks",
     desc: "Tailwind CSS and Material-UI for fast, consistent design systems.",
   },
-  {
-    icon: Boxes,
-    title: "Backend & Node",
-    desc: "Node.js services, REST APIs and CMS integrations.",
+    {
+    icon: Globe,
+    title: "Shopify & CMS",
+    desc: "Theme customization, storefront tweaks and CMS-driven page building.",
+  }, 
+   {
+    icon: Zap,
+    title: "Programming",
+    desc: "C, Java, Python and JavaScript — strong fundamentals from competitive programming.",
   },
   {
     icon: Database,
     title: "Databases",
     desc: "MongoDB and MySQL — schema design, queries, triggers and constraints.",
   },
-  {
-    icon: Zap,
-    title: "Programming",
-    desc: "C, Java, Python and JavaScript — strong fundamentals from competitive programming.",
-  },
-  {
-    icon: Globe,
-    title: "Shopify & CMS",
-    desc: "Theme customization, storefront tweaks and CMS-driven page building.",
+
+{
+    icon: Boxes,
+    title: "Backend & Node",
+    desc: "Node.js services, REST APIs and CMS integrations.",
   },
 ];
 
@@ -52,8 +53,7 @@ export function Skills() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="max-w-md text-white/60">
-            A focused toolkit honed across seven years and dozens of products —
-            from indie studios to enterprise platforms.
+Combining modern frontend technologies, backend systems, and CMS expertise to deliver efficient, scalable, and user-centered web applications.
           </Reveal>
         </div>
 

@@ -169,6 +169,87 @@
   }
   .animate-float { animation: float-slow 6s ease-in-out infinite; }
 
+  .animate-hello-fade {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: hello-fade 0.8s ease forwards;
+  }
+
+  .animate-wave {
+    display: inline-block;
+    transform-origin: 70% 70%;
+    animation: wave-hand 1.2s ease-in-out 0.6s both;
+  }
+
+  @keyframes hello-fade {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes wave-hand {
+    0% { transform: rotate(0deg); }
+    20% { transform: rotate(18deg); }
+    40% { transform: rotate(-15deg); }
+    60% { transform: rotate(12deg); }
+    80% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+  .loading-screen {
+    background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+  }
+
+  .grid-overlay {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  .wave-pattern::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    animation: wave-float 8s ease-in-out infinite;
+  }
+
+  @keyframes wave-float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  /* .loading-container {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  } */
+
+  .progress-bar {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  .progress-fill {
+    background: linear-gradient(90deg, #ffffff 0%, #cccccc 100%);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    animation: progress-fill 2.4s ease-out forwards;
+  }
+
+  @keyframes progress-fill {
+    0% { width: 0%; }
+    100% { width: 100%; }
+  }
+
   @keyframes shimmer {
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
@@ -198,6 +279,13 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
 }
 
 
@@ -207,4 +295,9 @@
 
 .ff .inline-block {
     width: 100%;
+}
+#about_content:hover{
+    background: #0000008c;
+    /* background: color-mix(in oklab, var(--color-white) 3%, transparent); */
+    border-radius: var(--radius);
 }

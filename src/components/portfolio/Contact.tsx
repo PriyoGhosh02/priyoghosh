@@ -23,15 +23,13 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
 
         <Reveal delay={0.1}>
           <h2
-            className={`font-display font-semibold leading-[0.95] tracking-tight text-white ${
+            className={`shimmer-text font-display font-semibold leading-[0.95] tracking-tight text-white ${
               embedded
-                ? "text-3xl md:text-5xl"
+                ? "text-3xl md:text-4xl"
                 : "mt-8 text-5xl md:text-8xl"
             }`}
           >
-            Have a project
-            <br />
-            <span className="shimmer-text">in mind?</span>
+        Get In Touch
           </h2>
         </Reveal>
 

@@ -35,17 +35,17 @@ const cards: CardData[] = [
   {
     type: "industrial",
     badge: "02 — Industrial",
-    title: "Shipping responsive products for real teams.",
+    title: "Responsive designs for real Projects.",
     subtitle: "Softvance · Sardar IT",
     body: [
-      "Currently building responsive web pages and CMS interfaces at Softvance Delta (Bitopia Group) in Dhaka.",
-      "Previously at Sardar IT, converting Figma designs into clean Tailwind interfaces and shipping marketing pages with HTML, CSS and JavaScript.",
+      "Currently working as a Frontend Web Developer at Softvance Delta (Bitopia Group), Dhaka, building responsive, high-performance web interfaces and working with modern CMS platforms to deliver scalable solutions.",
+      "Previously at Sardar IT, where I transformed Figma designs into clean, production-ready interfaces using Tailwind CSS, HTML, CSS, Liquid, and JavaScript, and developed engaging E-commerce pages with CMS integration.",
     ],
     highlights: [
       { v: "2", l: "Companies" },
-      { v: "10+", l: "Projects" },
+      { v: "50+", l: "Projects" },
       { v: "Web", l: "Focus" },
-      { v: "CMS", l: "Built" },
+      { v: "FE", l: "Responsive Frontend" },
     ],
     image: profileImg,
   },
@@ -70,7 +70,7 @@ export function About() {
         <Reveal delay={0.1}>
           <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl">
             <SplitReveal
-              text="I design and build interfaces that feel as good as they look."
+              text="Get to know me."
               stagger={0.03}
             />
           </h2>
@@ -104,7 +104,7 @@ export function About() {
           </div>
 
           {/* Right: content */}
-          <div className="md:col-span-8 md:pl-12">
+          <div id="about_content" className="md:col-span-8 md:p-6 md:pl-12">
             <div className="flex items-center justify-between gap-4">
               <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">
                 {card.badge}
