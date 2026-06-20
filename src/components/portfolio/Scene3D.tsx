@@ -274,11 +274,11 @@ export function Scene3D() {
 
     // ─── ANIMATION LOOP ──────────────────────────────────────────────────────
     const positionAttr = geometry.attributes.position as THREE.BufferAttribute;
-    const clock = new THREE.Clock();
+    const timer = new THREE.Timer();
 
     let raf = 0;
     const animate = () => {
-      const delta = Math.min(0.033, clock.getDelta());
+      const delta = Math.min(0.033, timer.getDelta());
       const elapsed = performance.now() * 0.001;
 
       scrollNormalized += (targetScrollNorm - scrollNormalized) * 0.09;

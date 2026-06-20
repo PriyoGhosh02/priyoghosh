@@ -1,6 +1,7 @@
 @import "tailwindcss" source(none);
-@source "../src";
 @import "tw-animate-css";
+
+@source "../src";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -79,6 +80,10 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  html {
+  scroll-behavior: smooth;
+}
 
   body {
     overflow-x: hidden;
@@ -301,3 +306,4 @@
     /* background: color-mix(in oklab, var(--color-white) 3%, transparent); */
     border-radius: var(--radius);
 }
+
