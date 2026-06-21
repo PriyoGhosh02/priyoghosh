@@ -23,85 +23,53 @@ export function ChatWidget() {
     });
   }, [messages, busy]);
 
-  const send = async () => {
-    const text = input.trim();
-    if (!text || busy) return;
-    setInput("");
-    const next: Msg[] = [...messages, { role: "user", content: text }];
-    setMessages(next);
-    setBusy(true);
-    try {
-      const resp = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: next }),
-      });
-      if (!resp.ok || !resp.body) {
-        const err = await resp.json().catch(() => ({}));
-        setMessages((m) => [
-          ...m,
-          {
-            role: "assistant",
-            content: err?.error || "Sorry, something went wrong. Please try again.",
-          },
-        ]);
-        setBusy(false);
-        return;
-      }
-      const reader = resp.body.getReader();
-      const decoder = new TextDecoder();
-      let buf = "";
-      let acc = "";
-      let started = false;
+const send = async () => {
+  const text = input.trim();
+  if (!text || busy) return;
 
-      const apply = (chunk: string) => {
-        acc += chunk;
-        setMessages((prev) => {
-          if (!started) {
-            started = true;
-            return [...prev, { role: "assistant", content: acc }];
-          }
-          const copy = prev.slice();
-          copy[copy.length - 1] = { role: "assistant", content: acc };
-          return copy;
-        });
-      };
+  setInput("");
 
-      let done = false;
-      while (!done) {
-        const { value, done: d } = await reader.read();
-        if (d) break;
-        buf += decoder.decode(value, { stream: true });
-        let nl: number;
-        while ((nl = buf.indexOf("\n")) !== -1) {
-          let line = buf.slice(0, nl);
-          buf = buf.slice(nl + 1);
-          if (line.endsWith("\r")) line = line.slice(0, -1);
-          if (!line.startsWith("data: ")) continue;
-          const json = line.slice(6).trim();
-          if (json === "[DONE]") {
-            done = true;
-            break;
-          }
-          try {
-            const p = JSON.parse(json);
-            const c = p.choices?.[0]?.delta?.content as string | undefined;
-            if (c) apply(c);
-          } catch {
-            buf = line + "\n" + buf;
-            break;
-          }
-        }
-      }
-    } catch {
-      setMessages((m) => [
-        ...m,
-        { role: "assistant", content: "Network error. Please try again." },
-      ]);
-    } finally {
-      setBusy(false);
+  const next: Msg[] = [...messages, { role: "user", content: text }];
+  setMessages(next);
+  setBusy(true);
+
+  try {
+    const resp = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ messages: next }),
+    });
+
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      throw new Error(data.error || "Something went wrong");
     }
-  };
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        content: data.message,
+      },
+    ]);
+  } catch (error) {
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        content:
+          error instanceof Error
+            ? error.message
+            : "Network error. Please try again.",
+      },
+    ]);
+  } finally {
+    setBusy(false);
+  }
+};
 
   return (
     <>
