@@ -143,7 +143,7 @@ export function Hero() {
         <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4">
           {[
             { v: "2+", l: "Years coding" },
-            { v: "10+", l: "Projects" },
+            { v: "50+", l: "Projects" },
             { v: "2", l: "Companies" },
             { v: "B.Sc.", l: "CSE · 2026" },
           ].map((s, i) => (

@@ -11,7 +11,7 @@ import { Experience } from "./components/portfolio/Experience";
 import { Contact } from "./components/portfolio/Contact";
 import { Footer } from "./components/portfolio/Footer";
 import { SocialDock } from "./components/portfolio/SocialDock";
-import { ChatWidget } from "./components/portfolio/ChatWidget";
+// import { ChatWidget } from "./components/portfolio/ChatWidget";
 import { ContactDialog } from "./components/portfolio/ContactDialog";
 import { LoadingPage } from "./components/portfolio/loadingpage";
 
@@ -59,7 +59,7 @@ function App() {
           </div>
 
           <SocialDock onContact={() => setContactOpen(true)} />
-          <ChatWidget />
+          {/* <ChatWidget /> */}
           <ContactDialog
             open={contactOpen}
             onClose={() => setContactOpen(false)}

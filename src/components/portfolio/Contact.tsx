@@ -163,10 +163,10 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   Email
                 </p>
                 <a
-                  href="mailto:yourmail@gmail.com"
+                  href="mailto:priyoghosh02@gmail.com"
                   className="text-xl md:text-2xl font-medium underline"
                 >
-                  yourmail@gmail.com
+                priyoghosh02@gmail.com                
                 </a>
               </div>
 
@@ -175,10 +175,10 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   Phone
                 </p>
                 <a
-                  href="tel:+880000000000"
+                  href="tel:+8801743457164"
                   className="text-xl md:text-2xl font-medium underline"
                 >
-                  +880 000 000 000
+                  +880 1743 457164
                 </a>
               </div>
 
@@ -200,15 +200,19 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   {[
                     {
                       label: "GitHub",
-                      href: "https://github.com/",
+                      href: "https://github.com/PriyoGhosh02",
                     },
                     {
                       label: "LinkedIn",
-                      href: "https://linkedin.com/",
+                      href: "https://www.linkedin.com/in/priyo02/",
+                    },
+                    {
+                      label: "Whatsapp",
+                      href: "https://wa.me/8801743457164",
                     },
                     {
                       label: "Facebook",
-                      href: "https://facebook.com/",
+                      href: "https://www.facebook.com/priyo.ghosh.792",
                     },
                   ].map((s) => (
                     <a
