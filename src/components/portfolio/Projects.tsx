@@ -434,8 +434,8 @@ export function Projects() {
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                Recent projects.
+              <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+                Recent Projects.
               </h2>
             </Reveal>
           </div>

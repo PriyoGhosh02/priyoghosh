@@ -47,8 +47,8 @@ export function Skills() {
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                What I do.
+              <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+                What I Do.
               </h2>
             </Reveal>
           </div>

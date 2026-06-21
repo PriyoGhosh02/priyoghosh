@@ -81,9 +81,9 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  html {
+  /* html {
   scroll-behavior: smooth;
-}
+} */
 
   body {
     overflow-x: hidden;
@@ -307,3 +307,281 @@
     border-radius: var(--radius);
 }
 
+
+/* loading page  */
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-container {
+  position: absolute;
+  inset: 0;
+  animation: orbit 3s linear infinite;
+}
+
+.orbit-ball {
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: white;
+  box-shadow:
+    0 0 12px white,
+    0 0 24px white,
+    0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+/* Flicker + Blink */
+@keyframes flickerBlink {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 8px white,
+      0 0 16px white,
+      0 0 35px rgba(255,255,255,0.8);
+  }
+
+  5% {
+    opacity: 0.2;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0.5;
+  }
+
+  38% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.15;
+  }
+
+  72% {
+    opacity: 1;
+  }
+}
+
+.flicker-text {
+  position: relative;
+  animation: flickerBlink 2.3s infinite;
+}
+
+.flicker-text::before,
+.flicker-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.flicker-text::before {
+  left: -2px;
+  opacity: 0.2;
+}
+
+.flicker-text::after {
+  left: 2px;
+  opacity: 0.2;
+}
+
+/* 3D Grid */
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(800px) rotateX(75deg);
+  transform-origin: center;
+  animation: gridMove 8s linear infinite;
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 60px;
+  }
+}
+
+/* Floating Code */
+.code-bg {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.code-bg span {
+  position: absolute;
+  color: white;
+  font-family: monospace;
+  animation: floatCode 16s linear infinite;
+}
+
+.code-bg span:nth-child(1) {
+  top: 15%;
+  left: 8%;
+}
+
+.code-bg span:nth-child(2) {
+  top: 28%;
+  right: 10%;
+}
+
+.code-bg span:nth-child(3) {
+  bottom: 20%;
+  left: 15%;
+}
+
+.code-bg span:nth-child(4) {
+  bottom: 12%;
+  right: 18%;
+}
+
+@keyframes floatCode {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+
+/* loading page */
+
+/* hero section text */
+.glitch-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-text {
+  position: relative;
+opacity: 0.7;
+  display: inline-block;
+  color: white;
+  animation:
+    glitch-skew 3s infinite,
+    text-flicker 2.5s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.glitch-text::before {
+  left: -3px;
+  opacity: 0.65;
+  clip-path: inset(0 0 55% 0);
+  animation: glitch-top 0.45s infinite alternate-reverse;
+}
+
+.glitch-text::after {
+  left: 3px;
+  opacity: 0.45;
+  clip-path: inset(55% 0 0 0);
+  animation: glitch-bottom 0.35s infinite alternate-reverse;
+}
+
+@keyframes glitch-top {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-4px, 1px);
+  }
+  50% {
+    transform: translate(4px, -1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-bottom {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(4px, 0);
+  }
+  50% {
+    transform: translate(-4px, 1px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes glitch-skew {
+  0%, 100% {
+    transform: skew(0deg);
+  }
+  20% {
+    transform: skew(2deg);
+  }
+  40% {
+    transform: skew(-2deg);
+  }
+}
+
+@keyframes text-flicker {
+  0%, 90%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 10px #fff,
+      0 0 20px rgba(255,255,255,.8);
+  }
+
+  92% {
+    opacity: 0.2;
+  }
+
+  94% {
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0.3;
+  }
+}
+/* hero section text */

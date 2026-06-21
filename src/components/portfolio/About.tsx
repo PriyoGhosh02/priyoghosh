@@ -68,12 +68,15 @@ export function About() {
           </span>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl">
+          {/* <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl">
             <SplitReveal
               text="Get to know me."
               stagger={0.03}
             />
-          </h2>
+          </h2> */}
+                        <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+                Get To Know Me.
+              </h2>
         </Reveal>
 
         <div className="mt-16 grid gap-12 md:grid-cols-12 md:items-center">

@@ -81,7 +81,7 @@ export function Experience() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-              A quick history.
+              A Quick History.
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
