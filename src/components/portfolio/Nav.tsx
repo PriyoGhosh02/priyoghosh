@@ -52,7 +52,7 @@ export function Nav() {
         >
           <span>⌬</span>
           <span className="ml-1.5 hidden sm:inline">PRIYO·GHOSH</span>
-          <span className="ml-1.5 inline sm:hidden">PRIYO</span>
+          <span className="ml-1.5 inline sm:hidden">PRIYO·GHOSH</span>
         </a>
         <nav className="hidden items-center md:flex md:gap-8">
           {links.map((l) => (
