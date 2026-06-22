@@ -14,6 +14,7 @@ import { SocialDock } from "./components/portfolio/SocialDock";
 // import { ChatWidget } from "./components/portfolio/ChatWidget";
 import { ContactDialog } from "./components/portfolio/ContactDialog";
 import { LoadingPage } from "./components/portfolio/loadingpage";
+import SEO from "./components/SEO";
 
 function App() {
   const [contactOpen, setContactOpen] = useState(false);
@@ -43,6 +44,7 @@ function App() {
         />
       ) : (
         <>
+          <SEO />
           <SmoothScroll />
           <CustomCursor />
           <Scene3D />

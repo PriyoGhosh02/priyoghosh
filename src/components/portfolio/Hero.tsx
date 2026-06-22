@@ -47,7 +47,10 @@ export function Hero() {
       <div className="mx-auto w-full max-w-7xl">
         <div className="mb-8 flex items-center justify-center gap-3 text-center text-xs uppercase tracking-[0.4em] text-white/50 md:justify-start">
           <span className="hidden h-px w-12 bg-white/30 md:block" />
-          Portfolio · Priyo Ghosh · 2026
+          {/* Portfolio · Priyo Ghosh · 2026 */}
+          <h1>
+  Priyo Ghosh · Shopify Developer & Full Stack Web Developer · 2026
+</h1>
         </div>
 
         <div className="grid gap-12 md:grid-cols-12 md:items-end">
@@ -77,7 +80,7 @@ export function Hero() {
 
           {/* Title */}
 <div className="order-2 text-center md:order-1 md:col-span-9 md:text-left">
-  <h1 className="font-display text-[clamp(2.4rem,14vw,9rem)] font-bold leading-[0.92] tracking-[-0.04em] text-white">
+  <h2 className="font-display text-[clamp(2.4rem,14vw,9rem)] font-bold leading-[0.92] tracking-[-0.04em] text-white">
     <SplitReveal text="Hello" />
     <br />
 
@@ -96,14 +99,15 @@ export function Hero() {
         Priyo.
       </span>
     </span>
-  </h1>
+  </h2>
 </div>
         </div>
 
         {/* Description */}
         <div className="mt-12 flex flex-col items-center justify-between gap-8 md:flex-row md:items-end">
           <p className="mx-auto max-w-md text-center text-base leading-relaxed text-white/60 md:mx-0 md:text-left md:text-lg">
-            Aspiring full-stack developer building responsive websites at
+            Aspiring full-stack developer and  a Shopify developer  specializing in Shopify custom themes, React applications,
+  TypeScript, frontend development, and eCommerce optimization. Building responsive websites at
             the intersection of <span className="text-white">code</span>,
             <span className="text-white"> design</span>, and
             <span className="text-white"> data</span>.
