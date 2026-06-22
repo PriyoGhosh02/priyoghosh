@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { SplitReveal, Reveal } from "./Reveal";
-import profileImg from "@/assets/profile_sut.png";
+import profileImg from "@/assets/profile_sut.webp";
 import { ArrowUpRight, Code2 } from "lucide-react";
 
 

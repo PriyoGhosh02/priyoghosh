@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Reveal, SplitReveal } from "./Reveal";
 import { ChevronLeft, ChevronRight, GraduationCap, Briefcase } from "lucide-react";
 import profileImg from "@/assets/profile_3_Rbg.png";
-// import profileImg from "@/assets/profile_sut.png";
+// import profileImg from "@/assets/profile_sut.webp";
 
 type CardData = {
   type: "academic" | "industrial";
