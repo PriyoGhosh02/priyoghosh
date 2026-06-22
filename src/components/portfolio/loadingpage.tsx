@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import loadingImg from "@/assets/profile_3_Rbg_2.png";
+import loadingImg from "@/assets/profile_3_Rbg_2.webp";
 
 
 interface LoadingPageProps {

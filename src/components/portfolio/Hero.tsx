@@ -49,7 +49,7 @@ export function Hero() {
           <span className="hidden h-px w-12 bg-white/30 md:block" />
           {/* Portfolio · Priyo Ghosh · 2026 */}
           <h1>
-  Priyo Ghosh · Shopify Developer & Full Stack Web Developer · 2026
+  Priyo Ghosh · Shopify Developer & Full Stack Web Developer · in Bangladesh
 </h1>
         </div>
 
