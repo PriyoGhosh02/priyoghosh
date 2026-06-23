@@ -302,7 +302,7 @@
     width: 100%;
 }
 #about_content:hover{
-    background: #0000008c;
+    background: #000000d9;
     /* background: color-mix(in oklab, var(--color-white) 3%, transparent); */
     border-radius: var(--radius);
 }

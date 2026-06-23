@@ -42,7 +42,7 @@ export function Skills() {
         <div className="mb-20 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="text-xs uppercase tracking-[0.4em] text-white/50">
+              <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
                 ( 02 ) — Capabilities
               </span>
             </Reveal>
@@ -52,7 +52,7 @@ export function Skills() {
               </h2>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="max-w-md text-white/60">
+          <Reveal delay={0.2} className="max-w-md text-white/80 text-[16px] md:text-[18px]">
 Combining modern frontend technologies, backend systems, and CMS expertise to deliver efficient, scalable, and user-centered web applications.
           </Reveal>
         </div>
@@ -80,7 +80,7 @@ Combining modern frontend technologies, backend systems, and CMS expertise to de
                   <h3 className="font-display text-xl font-medium text-white">
                     {s.title}
                   </h3>
-                  <p className="mt-3 text-sm leading-relaxed text-white/55">
+                  <p className="mt-3 text-[16px] leading-relaxed text-white/80">
                     {s.desc}
                   </p>
                 </div>

@@ -32,7 +32,7 @@ export default function SEO() {
 
       <meta
         property="og:image"
-        content="https://priyoghosh.vercel.app/preview.png"
+        content="https://priyoghosh.vercel.app/preview.webp"
       />
     </Helmet>
   );

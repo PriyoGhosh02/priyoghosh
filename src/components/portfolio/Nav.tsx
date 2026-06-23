@@ -51,15 +51,15 @@ export function Nav() {
           data-cursor="hover"
         >
           <span>⌬</span>
-          <span className="ml-1.5 hidden sm:inline">PRIYO·GHOSH</span>
-          <span className="ml-1.5 inline sm:hidden">PRIYO·GHOSH</span>
+          <span className="ml-1.5 hidden sm:inline">PRIYO GHOSH</span>
+          <span className="ml-1.5 inline sm:hidden">PRIYO GHOSH</span>
         </a>
         <nav className="hidden items-center md:flex md:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="underline-grow whitespace-nowrap text-[10px] uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white md:text-[11px] md:tracking-[0.2em]"
+              className="underline-grow whitespace-nowrap text-[14px] uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-white md:tracking-[0.2em]"
               data-cursor="hover"
             >
               {l.label}
@@ -68,7 +68,7 @@ export function Nav() {
         </nav>
         <a
           href="#contact"
-          className={`hidden rounded-full border border-white/30 text-[10px] uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-black md:inline-block ${
+          className={`hidden rounded-full border border-white/30 text-[14px] uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-black md:inline-block ${
             scrolled ? "px-4 py-1.5" : "px-5 py-2"
           }`}
           data-cursor="hover"

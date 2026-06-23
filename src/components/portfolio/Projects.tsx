@@ -347,20 +347,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             data-cursor="hover"
             aria-label={`Open ${project.title} live site`}
             title="Open live site"
-            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-2 text-[10px] font-medium uppercase tracking-[0.2em] text-black opacity-0 shadow-[0_8px_30px_-8px_rgba(255,255,255,0.4)] backdrop-blur transition-all duration-500 hover:bg-white group-hover:opacity-100"
+            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-2 text-[12px] font-medium uppercase tracking-[0.2em] text-black opacity-0 shadow-[0_8px_30px_-8px_rgba(255,255,255,0.4)] backdrop-blur transition-all duration-500 hover:bg-white group-hover:opacity-100"
           >
             Live
             <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
           </a>
 
-          <div className="absolute left-4 top-4 z-10 rounded-full bg-black/70 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.3em] text-white/80 backdrop-blur">
+          <div className="absolute left-4 top-4 z-10 rounded-full bg-black/70 px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.3em] text-white/80 backdrop-blur">
             № {String(index + 1).padStart(2, "0")}
           </div>
         </div>
 
         <div className="mt-6 flex items-start justify-between gap-6">
           <div>
-            <div className="text-[10px] uppercase tracking-[0.3em] text-white/50">
+            <div className="text-[14px] uppercase tracking-[0.3em] text-white/80">
               {project.category} · {project.year}
             </div>
             <a
@@ -373,7 +373,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.title}
               <ArrowUpRight className="h-5 w-5 opacity-60" />
             </a>
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-white/55">
+            <p className="mt-2 max-w-md text-[16px] leading-relaxed text-white/80">
               {project.desc}
             </p>
           </div>
@@ -381,7 +381,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             {project.tags.map((t) => (
               <span
                 key={t}
-                className="rounded-full border border-white/15 px-3 py-1 text-[10px] uppercase tracking-widest text-white/60"
+                className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/80"
               >
                 {t}
               </span>
@@ -429,7 +429,7 @@ export function Projects() {
         <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="text-xs uppercase tracking-[0.4em] text-white/50">
+              <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
                 ( 03 ) — Selected Work
               </span>
             </Reveal>
@@ -439,7 +439,7 @@ export function Projects() {
               </h2>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="max-w-md text-sm text-white/55">
+          <Reveal delay={0.2} className="max-w-md text-[16px] text-white/80 md:text-[18px]">
             Hover any project to scroll through a live preview of its homepage.
           </Reveal>
         </div>
@@ -461,7 +461,7 @@ export function Projects() {
                   onClick={() => setQuery("")}
                   data-cursor="hover"
                   aria-label="Clear"
-                  className="absolute right-3 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-white/60 hover:bg-white/10"
+                  className="absolute right-3 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-white/80 hover:bg-white/10"
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
@@ -473,10 +473,10 @@ export function Projects() {
                   key={t}
                   onClick={() => setType(t)}
                   data-cursor="hover"
-                  className={`rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] transition-all ${
+                  className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
                     type === t
                       ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/60 hover:border-white/40 hover:text-white"
+                      : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                   }`}
                 >
                   {t}
@@ -488,10 +488,10 @@ export function Projects() {
                   key={c}
                   onClick={() => setCategory(c)}
                   data-cursor="hover"
-                  className={`rounded-full border px-3 py-1.5 text-[10px] uppercase tracking-[0.2em] transition-all ${
+                  className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
                     category === c
                       ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/60 hover:border-white/40 hover:text-white"
+                      : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                   }`}
                 >
                   {c}
@@ -504,7 +504,7 @@ export function Projects() {
         {shown.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-3 py-24 text-center">
             <div className="text-2xl text-white/30">∅</div>
-            <p className="text-sm text-white/60">No projects match that search.</p>
+            <p className="text-sm text-white/80">No projects match that search.</p>
             <button
               onClick={() => {
                 setQuery("");
@@ -512,7 +512,7 @@ export function Projects() {
                 setType("All");
               }}
               data-cursor="hover"
-              className="mt-2 rounded-full border border-white/20 px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"
+              className="mt-2 rounded-full border border-white/20 px-4 py-2 text-[12px] uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"
             >
               Reset filters
             </button>
@@ -535,11 +535,11 @@ export function Projects() {
               className="group inline-flex items-center gap-3 rounded-full border border-white/30 px-7 py-3 text-xs uppercase tracking-[0.3em] text-white transition-colors hover:border-white hover:bg-white hover:text-black"
             >
               See more
-              <span className="font-mono text-[10px] opacity-60 group-hover:opacity-100">
+              <span className="font-mono text-[12px] opacity-60 group-hover:opacity-100">
                 +{Math.min(PAGE_SIZE, filtered.length - visible)}
               </span>
             </button>
-            <span className="text-[10px] uppercase tracking-[0.3em] text-white/40">
+            <span className="text-[12px] uppercase tracking-[0.3em] text-white/40">
               Showing {shown.length} of {filtered.length}
             </span>
           </div>

@@ -89,8 +89,8 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     htmlFor={f.id}
                     className={`absolute transition-all duration-300 ${
                       focused === f.id
-                        ? "-top-4 text-xs text-white"
-                        : "top-3 text-sm text-white/40"
+                        ? "-top-4 text-[14px] text-white"
+                        : "top-3 text-[16px] text-white/80"
                     }`}
                   >
                     {f.label}
@@ -106,7 +106,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     onBlur={(e) =>
                       e.target.value === "" && setFocused(null)
                     }
-                    className="w-full border-b border-white/20 bg-transparent py-3 text-white outline-none"
+                    className="w-full border-b border-white/40 bg-transparent py-3 text-white outline-none"
                   />
                 </div>
               ))}
@@ -116,8 +116,8 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   htmlFor="message"
                   className={`absolute transition-all duration-300 ${
                     focused === "message"
-                      ? "-top-4 text-xs text-white"
-                      : "top-3 text-sm text-white/40"
+                      ? "-top-4 text-[14px] text-white"
+                      : "top-3 text-[16px] text-white/80"
                   }`}
                 >
                   Message
@@ -140,7 +140,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               <button
                 type="submit"
                 disabled={sending}
-                className="group relative inline-flex items-center gap-3 rounded-full border border-white px-8 py-4 text-xs uppercase tracking-widest text-white"
+                className="group relative inline-flex items-center gap-3 rounded-full border border-white px-8 py-4 text-[14px] uppercase tracking-widest text-white"
               >
                 <span>
                   {sending
@@ -159,7 +159,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
             <div className="space-y-10 text-white">
 
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
                   Email
                 </p>
                 <a
@@ -171,7 +171,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
                   Phone
                 </p>
                 <a
@@ -183,7 +183,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/40">
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
                   Location
                 </p>
                 <p className="text-xl md:text-2xl font-medium">
@@ -192,7 +192,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               </div>
 
               <div>
-                <p className="text-xs uppercase tracking-[0.3em] text-white/40 mb-3">
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80 mb-3">
                   Social
                 </p>
 

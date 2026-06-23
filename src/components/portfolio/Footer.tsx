@@ -1,7 +1,7 @@
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/10 px-6 py-10">
-      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-[10px] uppercase tracking-[0.3em] text-white/40 md:flex-row">
+    <footer className="relative border-t border-white/30 px-6 py-10">
+      <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-[12px] uppercase tracking-[0.3em] text-white/80 md:flex-row">
         <div>© {new Date().getFullYear()} Priyo Ghosh — All rights reserved</div>
         <div className="overflow-hidden">
           <div className="flex gap-8 whitespace-nowrap">

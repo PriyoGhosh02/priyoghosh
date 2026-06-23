@@ -63,17 +63,12 @@ export function About() {
     <section id="about" className="relative px-6 py-32 md:py-48">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <span className="text-xs uppercase tracking-[0.4em] text-white/50">
+          <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
             ( 01 ) — About
           </span>
         </Reveal>
         <Reveal delay={0.1}>
-          {/* <h2 className="mt-6 font-display text-4xl font-semibold leading-[1.05] tracking-tight text-white md:text-6xl">
-            <SplitReveal
-              text="Get to know me."
-              stagger={0.03}
-            />
-          </h2> */}
+      
                         <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
                 Get To Know Me.
               </h2>
@@ -109,7 +104,7 @@ export function About() {
           {/* Right: content */}
           <div id="about_content" className="md:col-span-8 md:p-6 md:pl-12">
             <div className="flex items-center justify-between gap-4">
-              <span className="text-[10px] uppercase tracking-[0.3em] text-white/50">
+              <span className="text-[14px] uppercase tracking-[0.3em] text-white/80">
                 {card.badge}
               </span>
               <div className="flex items-center gap-2">
@@ -136,10 +131,10 @@ export function About() {
               <h3 className="mt-6 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
                 {card.title}
               </h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.2em] text-white/50">
+              <p className="mt-3 text-sm uppercase tracking-[0.2em] text-white/80">
                 {card.subtitle}
               </p>
-              <div className="mt-8 max-w-xl space-y-4 text-white/65">
+              <div className="mt-8 max-w-xl space-y-4 text-white/80 text-[16px] md:text-[18px]">
                 {card.body.map((p, i) => (
                   <p key={i} className="leading-relaxed">
                     {p}
@@ -152,7 +147,7 @@ export function About() {
                     <div className="font-display text-2xl font-semibold text-white md:text-3xl">
                       {h.v}
                     </div>
-                    <div className="mt-1 text-[10px] uppercase tracking-[0.3em] text-white/50">
+                    <div className="mt-1 text-[12px] uppercase tracking-[0.3em] text-white/80">
                       {h.l}
                     </div>
                   </div>

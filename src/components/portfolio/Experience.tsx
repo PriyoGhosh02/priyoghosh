@@ -75,7 +75,7 @@ export function Experience() {
       <div className="mx-auto max-w-5xl">
         <div className="mb-20">
           <Reveal>
-            <span className="text-xs uppercase tracking-[0.4em] text-white/50">
+            <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
               ( 04 ) — Experience
             </span>
           </Reveal>
@@ -85,7 +85,7 @@ export function Experience() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="mt-4 text-sm text-white/50">
+            <p className="mt-4 text-sm text-white/80">
               Hover any role for the full story.
             </p>
           </Reveal>
@@ -102,7 +102,7 @@ export function Experience() {
                       i % 2 === 0 ? "md:pr-12 md:text-right" : "md:order-2 md:pl-12"
                     }`}
                   >
-                    <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+                    <div className="font-mono text-[12px] uppercase tracking-[0.3em] text-white/80">
                       {it.year}
                     </div>
                     <button
@@ -124,7 +124,7 @@ export function Experience() {
                       i % 2 === 0 ? "md:pl-12" : "md:order-1 md:pr-12 md:text-right"
                     }`}
                   >
-                    <p className="text-sm leading-relaxed text-white/55">{it.desc}</p>
+                    <p className="text-[16px] leading-relaxed text-white/80">{it.desc}</p>
                   </div>
                   <span className="absolute left-[-5px] top-1 h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] md:left-1/2 md:-translate-x-1/2" />
                 </li>
@@ -153,14 +153,14 @@ export function Experience() {
             >
               <X className="h-4 w-4" />
             </button>
-            <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/50">
+            <div className="font-mono text-[12px] uppercase tracking-[0.3em] text-white/80">
               {open.year}
             </div>
             <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
               {open.role}
             </h3>
             <div className="mt-1 text-sm text-white/60">{open.company}</div>
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-white/50">
+            <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-white/80">
               <span className="inline-flex items-center gap-2">
                 <Calendar className="h-3.5 w-3.5" />
                 {open.year}
@@ -172,7 +172,7 @@ export function Experience() {
             </div>
             <p className="mt-6 leading-relaxed text-white/70">{open.desc}</p>
             <div className="mt-8">
-              <div className="mb-3 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-white/50">
+              <div className="mb-3 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/80">
                 <Award className="h-3.5 w-3.5" /> Highlights
               </div>
               <ul className="space-y-2 text-sm text-white/70">
@@ -188,7 +188,7 @@ export function Experience() {
               {open.stack.map((s) => (
                 <span
                   key={s}
-                  className="rounded-full border border-white/15 px-3 py-1 text-[10px] uppercase tracking-widest text-white/70"
+                  className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/70"
                 >
                   {s}
                 </span>
