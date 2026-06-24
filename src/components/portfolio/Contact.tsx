@@ -200,11 +200,11 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   {[
                     {
                       label: "GitHub",
-                      href: "https://github.com/PriyoGhosh02",
+                      href: "https://github.com/PriyoGhosh02/",
                     },
                     {
                       label: "LinkedIn",
-                      href: "https://www.linkedin.com/in/priyo02/",
+                      href: "https://www.linkedin.com/in/priyoghosh02/",
                     },
                     {
                       label: "Whatsapp",

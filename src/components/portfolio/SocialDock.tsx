@@ -24,8 +24,8 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
   const [open, setOpen] = useState(false);
 
   const items: Item[] = [
-    { label: "GitHub", icon: Github, href: "https://github.com/PriyoGhosh02", external: true },
-    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/priyo02", external: true },
+    { label: "GitHub", icon: Github, href: "https://github.com/PriyoGhosh02/", external: true },
+    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/priyoghosh02/", external: true },
     { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/priyo.ghosh.02", external: true },
     // { label: "Phone", icon: phone, href: "https://wa.me/8801743457164" },
     { label: "Email", icon: Mail, href: "mailto:priyoghosh02@gmail.com" },
