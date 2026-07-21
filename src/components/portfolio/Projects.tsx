@@ -22,7 +22,7 @@ const allProjects: Project[] = [
     desc: "Custom Shopify landing page focused on high conversions and responsive shopping experience.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://www.my-avora.com/products/avora-pelvipulse-pro",
-    preview: "/public/projects/client/AUREN™-Cutting-Mix-–-auren.jpeg",
+    preview: "/projects/client/AUREN™-Cutting-Mix-–-auren.jpeg",
   },
   {
     title: "Bayt El Hijab",
