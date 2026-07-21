@@ -11,6 +11,7 @@ type Project = {
   tags: string[];
   liveUrl: string;
   preview: string;
+  password?: string;
 };
 
 const allProjects: Project[] = [
@@ -19,7 +20,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Custom Shopify landing page focused on high conversions and responsive shopping experience.",
+    desc: "Custom Shopify landing page optimized for conversions, responsiveness, and smooth shopping.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://www.my-avora.com/products/avora-pelvipulse-pro",
     preview: "/projects/client/AUREN™-Cutting-Mix-–-auren.jpeg",
@@ -29,7 +30,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Elegant Shopify fashion store with custom collections and responsive design.",
+    desc: "Elegant Shopify fashion store featuring custom collections, refined visuals, and responsive design.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://baytelhijab.com/",
     preview: "/projects/client/BAYT-EL-HIJAB.png",
@@ -39,7 +40,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Premium skincare Shopify store with custom sections and conversion-focused layout.",
+    desc: "Premium skincare Shopify store with custom sections and a conversion-focused layout.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://belleau-lumina.com/",
     preview: "/projects/client/Belleau-lumina.png",
@@ -49,7 +50,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Custom Shopify art gallery with immersive visuals and responsive product pages.",
+    desc: "Custom Shopify art gallery blending immersive visuals with responsive product storytelling.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://btnarts.com/",
     preview: "/projects/client/Btn Arts.jpeg",
@@ -59,7 +60,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Modern beauty Shopify store featuring engaging product storytelling and clean UI.",
+    desc: "Modern beauty Shopify store featuring engaging storytelling, polished UI, and clarity.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://munidiva.de/",
     preview: "/projects/client/Schenee.png",
@@ -69,7 +70,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Luxury Shopify website showcasing handcrafted interior artwork and premium design.",
+    desc: "Luxury Shopify website presenting handcrafted interior artwork through refined, premium storytelling.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://theatelier.london/",
     preview: "/projects/client/theatelier.jpg",
@@ -79,7 +80,7 @@ const allProjects: Project[] = [
     category: "Client Project",
     type: "Shopify",
     year: "2026",
-    desc: "Large-scale Shopify accessories store with custom collections and optimized shopping flow.",
+    desc: "Large-scale Shopify accessories store with tailored collections and streamlined shopping flow.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://goedhoesje.nl/",
     preview:
@@ -91,7 +92,7 @@ const allProjects: Project[] = [
     category: "Concept Work",
     type: "Shopify",
     year: "2026",
-    desc: "Premium meat delivery Shopify concept with custom product pages and modern eCommerce design.",
+    desc: "Premium meat delivery Shopify concept with polished product pages and modern eCommerce design.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://meat-bazer.myshopify.com/",
     password: "1",
@@ -102,7 +103,7 @@ const allProjects: Project[] = [
     category: "Concept Work",
     type: "Shopify",
     year: "2026",
-    desc: "Futuristic anime-inspired Shopify store designed for collectibles, apparel, and accessories.",
+    desc: "Futuristic anime-inspired Shopify store crafted for collectibles, apparel, and accessories.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://otap-2.myshopify.com/",
     password: "1",
@@ -113,7 +114,7 @@ const allProjects: Project[] = [
     category: "Concept Work",
     type: "Shopify",
     year: "2026",
-    desc: "Festive one-product Shopify store created for a seasonal pet accessory brand.",
+    desc: "Festive one-product Shopify store designed for a seasonal pet accessory brand.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://pet-jingle-bell.myshopify.com/",
     password: "1",
@@ -135,7 +136,7 @@ const allProjects: Project[] = [
     category: "Concept Work",
     type: "Shopify",
     year: "2026",
-    desc: "Bold fitness supplement Shopify concept with conversion-focused product showcases.",
+    desc: "Bold fitness supplement Shopify concept with conversion-focused product showcases and energy.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://ultimax-nutrition-2.myshopify.com/",
     password: "1",
@@ -146,11 +147,22 @@ const allProjects: Project[] = [
     category: "Concept Work",
     type: "Shopify",
     year: "2026",
-    desc: "Minimal winter fashion Shopify concept designed for premium apparel and accessories.",
+    desc: "Minimal winter fashion Shopify concept designed for premium apparel, accessories, and elegance.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://winter-fashion-8258.myshopify.com/",
     password: "1",
     preview: "/projects/concept/winter fassion.jpeg",
+  },
+  //personal project ================
+  {
+    title: "Priyo Ghosh Portfolio",
+    category: "Concept Work",
+    type: "Custom Build",
+    year: "2026",
+    desc: "A modern developer portfolio showcasing Shopify work, skills, experience, and professional growth.",
+    tags: ["react", "nextjs", "tailwindcss", "typescript"],
+    liveUrl: "https://priyoghosh.vercel.app/",
+    preview: "/projects/concept/portfolio.jpeg",
   },
 ];
 
@@ -219,7 +231,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         <div
           ref={tiltRef}
-          className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-black transition-[transform,border-color,box-shadow] duration-500 group-hover:border-white/40 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.25)]"
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-black transition-[transform,border-color,box-shadow] duration-500 group-hover:border-white/80 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.25)]"
           style={{ transformStyle: "preserve-3d" }}
           data-cursor="hover"
         >
@@ -276,15 +288,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.desc}
             </p>
           </div>
-          <div className="hidden flex-wrap justify-end gap-1.5 md:flex">
-            {project.tags.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/80"
-              >
-                {t}
-              </span>
-            ))}
+          <div className="hidden flex-col items-end justify-end gap-1.5 md:flex">
+            <div className="flex flex-wrap justify-end gap-1.5">
+              {project.tags.map((t) => (
+                <span
+                  key={t}
+                  className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/80"
+                >
+                  {t}
+                </span>
+              ))}
+            </div>
+            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90">
+              {project.password ? `Password: ${project.password}` : "Password: N/A"}
+            </span>
           </div>
         </div>
       </div>
@@ -348,12 +365,12 @@ export function Projects() {
         <Reveal delay={0.15}>
           <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="relative w-full max-w-sm">
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/40" />
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/80" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search projects…"
-                className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-11 pr-10 text-sm text-white placeholder:text-white/40 focus:border-white/40 focus:outline-none"
+                className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-11 pr-10 text-sm text-white placeholder:text-white/80 focus:border-white/80 focus:outline-none"
                 data-cursor="hover"
               />
               {query && (
@@ -376,7 +393,7 @@ export function Projects() {
                   className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
                     type === option
                       ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
+                      : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
                   }`}
                 >
                   {option}
@@ -391,7 +408,7 @@ export function Projects() {
                   className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
                     category === option
                       ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
+                      : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
                   }`}
                 >
                   {option}
@@ -439,7 +456,7 @@ export function Projects() {
                 +{Math.min(PAGE_SIZE, filtered.length - visible)}
               </span>
             </button>
-            <span className="text-[12px] uppercase tracking-[0.3em] text-white/40">
+            <span className="text-[12px] uppercase tracking-[0.3em] text-white/80">
               Showing {shown.length} of {filtered.length}
             </span>
           </div>
