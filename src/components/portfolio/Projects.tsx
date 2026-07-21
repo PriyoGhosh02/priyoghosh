@@ -32,7 +32,7 @@ const allProjects: Project[] = [
     desc: "Elegant Shopify fashion store with custom collections and responsive design.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://baytelhijab.com/",
-    preview: "/public/projects/client/BAYT-EL-HIJAB.png",
+    preview: "/projects/client/BAYT-EL-HIJAB.png",
   },
   {
     title: "Belleau Lumina",
@@ -42,7 +42,7 @@ const allProjects: Project[] = [
     desc: "Premium skincare Shopify store with custom sections and conversion-focused layout.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://belleau-lumina.com/",
-    preview: "/public/projects/client/Belleau-lumina.png",
+    preview: "/projects/client/Belleau-lumina.png",
   },
   {
     title: "BTN Arts",
@@ -52,7 +52,7 @@ const allProjects: Project[] = [
     desc: "Custom Shopify art gallery with immersive visuals and responsive product pages.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://btnarts.com/",
-    preview: "/public/projects/client/Btn Arts.jpeg",
+    preview: "/projects/client/Btn Arts.jpeg",
   },
   {
     title: "Muni Diva",
@@ -62,7 +62,7 @@ const allProjects: Project[] = [
     desc: "Modern beauty Shopify store featuring engaging product storytelling and clean UI.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://munidiva.de/",
-    preview: "/public/projects/client/Schenee.png",
+    preview: "/projects/client/Schenee.png",
   },
   {
     title: "The Atelier London",
@@ -72,7 +72,7 @@ const allProjects: Project[] = [
     desc: "Luxury Shopify website showcasing handcrafted interior artwork and premium design.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://theatelier.london/",
-    preview: "/public/projects/client/theatelier.jpg",
+    preview: "/projects/client/theatelier.jpg",
   },
   {
     title: "Goedhoesje",
@@ -83,7 +83,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://goedhoesje.nl/",
     preview:
-      "/public/projects/client/Voordelige-Hoesjes-Screenprotectors-Topkwaliteit-bij-Goedhoesje-nl.png",
+      "/projects/client/Voordelige-Hoesjes-Screenprotectors-Topkwaliteit-bij-Goedhoesje-nl.png",
   },
   // Concept Work=========================================
   {
@@ -95,7 +95,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://meat-bazer.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/meat-bazer.png",
+    preview: "/projects/concept/meat-bazer.png",
   },
   {
     title: "OTAP",
@@ -106,7 +106,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://otap-2.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/otap-2..png",
+    preview: "/projects/concept/otap-2..png",
   },
   {
     title: "JinglePaws",
@@ -117,7 +117,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://pet-jingle-bell.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/pet-jingle-bell.png",
+    preview: "/projects/concept/pet-jingle-bell.png",
   },
   {
     title: "Tinko Toys",
@@ -128,7 +128,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://tinko-toy.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/tinko-toy..png",
+    preview: "/projects/concept/tinko-toy..png",
   },
   {
     title: "ULTIMAX Nutrition",
@@ -139,7 +139,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://ultimax-nutrition-2.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/ultimax-nutrition-2..png",
+    preview: "/projects/concept/ultimax-nutrition-2..png",
   },
   {
     title: "Warmora",
@@ -150,7 +150,7 @@ const allProjects: Project[] = [
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://winter-fashion-8258.myshopify.com/",
     password: "1",
-    preview: "/public/projects/concept/winter fassion.jpeg",
+    preview: "/projects/concept/winter fassion.jpeg",
   },
 ];
 
