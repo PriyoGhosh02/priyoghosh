@@ -1,6 +1,6 @@
+import { ArrowUpRight, ExternalLink, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Reveal } from "./Reveal";
-import { ArrowUpRight, ExternalLink, Search, X } from "lucide-react";
 
 type Project = {
   title: string;
@@ -15,250 +15,147 @@ type Project = {
 
 const allProjects: Project[] = [
   {
-    title: "The Atelier",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2025",
-    desc: "Boutique multi-page experience for a London-based atelier — refined typography and motion-led storytelling.",
-    tags: ["React", "Tailwind", "GSAP"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/theatelier.jpg",
+    title: "AVORA PelviPulse Pro",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Custom Shopify landing page focused on high conversions and responsive shopping experience.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://www.my-avora.com/products/avora-pelvipulse-pro",
+    preview: "/public/projects/client/AUREN™-Cutting-Mix-–-auren.jpeg",
   },
   {
-    title: "Sardar IT — Marketing",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2025",
-    desc: "Responsive marketing site converting Figma into clean, conversion-focused interfaces.",
-    tags: ["HTML", "CSS", "Tailwind"],
-    liveUrl: "https://theatelier.london/",
-    preview: "../projects/Btn Arts.jpeg",
+    title: "Bayt El Hijab",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Elegant Shopify fashion store with custom collections and responsive design.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://baytelhijab.com/",
+    preview: "/public/projects/client/BAYT-EL-HIJAB.png",
   },
   {
-    title: "Softvance CMS",
-    category: "SaaS Platform",
-    type: "Web",
-    year: "2025",
-    desc: "Content-managed dashboard surfaces for the Bitopia Group, focused on speed and editor ergonomics.",
-    tags: ["React", "Next.js", "Node.js"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Schenee.png",
+    title: "Belleau Lumina",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Premium skincare Shopify store with custom sections and conversion-focused layout.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://belleau-lumina.com/",
+    preview: "/public/projects/client/Belleau-lumina.png",
   },
   {
-    title: "University Management System",
-    category: "Product Design",
-    type: "Web",
-    year: "2024",
-    desc: "University admission database with students, courses, instructors and departments — built with SQL queries, triggers and constraints.",
-    tags: ["MySQL", "SQL", "Schema"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/yemo.jpeg",
+    title: "BTN Arts",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Custom Shopify art gallery with immersive visuals and responsive product pages.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://btnarts.com/",
+    preview: "/public/projects/client/Btn Arts.jpeg",
   },
   {
-    title: "Portfolio Website",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Personal portfolio designed and developed with HTML, CSS and JavaScript — responsive and interactive.",
-    tags: ["HTML", "CSS", "JS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/BAYT-EL-HIJAB.png",
+    title: "Muni Diva",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Modern beauty Shopify store featuring engaging product storytelling and clean UI.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://munidiva.de/",
+    preview: "/public/projects/client/Schenee.png",
   },
   {
-    title: "Codeforces Practice",
-    category: "Product Design",
-    type: "Web",
-    year: "2024",
-    desc: "Curated repository of competitive-programming solutions covering algorithms and data structures.",
-    tags: ["C++", "Algorithms", "DS"],
+    title: "The Atelier London",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Luxury Shopify website showcasing handcrafted interior artwork and premium design.",
+    tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://theatelier.london/",
-    preview: "/projects/WALKER-S-FINEST-BARBERSHOP-BEAUTY-SUPPLY-–-Walkers-Finest-Barbershop-Beauty-Supply.png",
+    preview: "/public/projects/client/theatelier.jpg",
   },
   {
-    title: "Shopify Customizations",
-    category: "Mobile App",
-    type: "Web",
-    year: "2024",
-    desc: "Theme customizations and storefront tweaks for international Shopify clients.",
-    tags: ["Shopify", "Liquid", "JS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Belleau-lumina.png",
+    title: "Goedhoesje",
+    category: "Client Project",
+    type: "Shopify",
+    year: "2026",
+    desc: "Large-scale Shopify accessories store with custom collections and optimized shopping flow.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://goedhoesje.nl/",
+    preview:
+      "/public/projects/client/Voordelige-Hoesjes-Screenprotectors-Topkwaliteit-bij-Goedhoesje-nl.png",
+  },
+  // Concept Work=========================================
+  {
+    title: "Meat Bazer",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Premium meat delivery Shopify concept with custom product pages and modern eCommerce design.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://meat-bazer.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/meat-bazer.png",
   },
   {
-    title: "Material UI Dashboard",
-    category: "SaaS Platform",
-    type: "Web",
-    year: "2024",
-    desc: "Internal admin dashboard built with React and Material-UI — tables, charts and role-based views.",
-    tags: ["React", "Material-UI", "MongoDB"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Nutrinook.png",
+    title: "OTAP",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Futuristic anime-inspired Shopify store designed for collectibles, apparel, and accessories.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://otap-2.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/otap-2..png",
   },
   {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/ELARA.png",
+    title: "JinglePaws",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Festive one-product Shopify store created for a seasonal pet accessory brand.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://pet-jingle-bell.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/pet-jingle-bell.png",
   },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/aromatikdripz.png",
+  {
+    title: "Tinko Toys",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Colorful toy store concept featuring playful UI, custom collections, and responsive layouts.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://tinko-toy.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/tinko-toy..png",
   },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/bella-Snoutt-Co.png",
+  {
+    title: "ULTIMAX Nutrition",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Bold fitness supplement Shopify concept with conversion-focused product showcases.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://ultimax-nutrition-2.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/ultimax-nutrition-2..png",
   },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Klumari-Premium-Anti-Aging-Skin-Care.png",
+  {
+    title: "Warmora",
+    category: "Concept Work",
+    type: "Shopify",
+    year: "2026",
+    desc: "Minimal winter fashion Shopify concept designed for premium apparel and accessories.",
+    tags: ["shopify", "liquid", "css", "javascript"],
+    liveUrl: "https://winter-fashion-8258.myshopify.com/",
+    password: "1",
+    preview: "/public/projects/concept/winter fassion.jpeg",
   },
-     {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/AUREN™-Cutting-Mix-–-auren.jpeg",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/SPINTO-FITNESS-USA.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Voordelige-Hoesjes-Screenprotectors-Topkwaliteit-bij-Goedhoesje-nl.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/robert.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/dispenser.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/sergical.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Love Of Country.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Luxury-Hair-Extension.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/Phoenix-Baby-Resale.png",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/clawed.jpeg",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/mazalcare.jpeg",
-  },
-    {
-    title: "Tailwind Landing Kit",
-    category: "Brand Identity",
-    type: "Web",
-    year: "2024",
-    desc: "Reusable landing-page sections and components built on Tailwind CSS for rapid prototyping.",
-    tags: ["Tailwind", "React", "TS"],
-    liveUrl: "https://theatelier.london/",
-    preview: "/projects/theislamicholiday.png",
-  },
-
 ];
 
-const categories = ["All", "Brand Identity", "SaaS Platform", "Product Design", "Mobile App"];
-const types = ["All", "Web", "Mobile"];
+const typeOptions = ["All", ...new Set(allProjects.map((project) => project.type))];
+const categoryOptions = ["All", ...new Set(allProjects.map((project) => project.category))];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
@@ -333,7 +230,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               alt={`${project.title} preview`}
               loading="lazy"
               className="block w-full will-change-transform"
-              style={{ transition: hovered ? "none" : "transform 0.6s cubic-bezier(0.77,0,0.175,1)" }}
+              style={{
+                transition: hovered ? "none" : "transform 0.6s cubic-bezier(0.77,0,0.175,1)",
+              }}
             />
           </div>
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-0" />
@@ -411,6 +310,7 @@ export function Projects() {
         p.title.toLowerCase().includes(q) ||
         p.desc.toLowerCase().includes(q) ||
         p.category.toLowerCase().includes(q) ||
+        p.type.toLowerCase().includes(q) ||
         p.tags.some((t) => t.toLowerCase().includes(q))
       );
     });
@@ -468,33 +368,33 @@ export function Projects() {
               )}
             </div>
             <div className="flex flex-wrap items-center gap-2">
-              {types.map((t) => (
+              {typeOptions.map((option) => (
                 <button
-                  key={t}
-                  onClick={() => setType(t)}
+                  key={option}
+                  onClick={() => setType(option)}
                   data-cursor="hover"
                   className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
-                    type === t
+                    type === option
                       ? "border-white bg-white text-black"
                       : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                   }`}
                 >
-                  {t}
+                  {option}
                 </button>
               ))}
               <span className="mx-1 h-4 w-px bg-white/15" />
-              {categories.map((c) => (
+              {categoryOptions.map((option) => (
                 <button
-                  key={c}
-                  onClick={() => setCategory(c)}
+                  key={option}
+                  onClick={() => setCategory(option)}
                   data-cursor="hover"
                   className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
-                    category === c
+                    category === option
                       ? "border-white bg-white text-black"
                       : "border-white/15 text-white/80 hover:border-white/40 hover:text-white"
                   }`}
                 >
-                  {c}
+                  {option}
                 </button>
               ))}
             </div>
