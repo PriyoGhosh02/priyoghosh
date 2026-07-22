@@ -1,6 +1,6 @@
+import { Award, Calendar, CheckCircle2, MapPin, X } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { X, MapPin, Calendar, Award } from "lucide-react";
 
 type Item = {
   year: string;
@@ -17,53 +17,57 @@ const items: Item[] = [
     year: "Dec 2025 — Present",
     role: "Web Developer",
     company: "Softvance Delta · Bitopia Group",
-    desc: "Developing responsive web pages and CMS interfaces with modern frontend frameworks.",
+    desc: "Developing modern, responsive web applications and CMS solutions using React, Next.js, TypeScript, and Tailwind CSS while collaborating with cross-functional teams on production-ready products.",
     location: "Block-F, Joypurhat Tower, Banasree Main Road, Dhaka 1219",
     highlights: [
-      "Building responsive web pages and CMS-driven interfaces",
-      "Working with frontend frameworks and UI systems",
-      "Collaborating with the Bitopia Group product teams",
+      "Built scalable CMS dashboards and responsive web applications",
+      "Developed reusable React components and optimized UI performance",
+      "Collaborated with designers and backend developers to deliver production features",
+      "Integrated REST APIs and improved user experience across multiple projects",
     ],
-    stack: ["React", "Next.js", "Tailwind", "Node.js", "MongoDB"],
+    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "Git"],
   },
   {
     year: "Aug 2025 — Nov 2025",
     role: "Web Developer",
     company: "Sardar IT",
-    desc: "Converted Figma designs into clean, user-friendly responsive interfaces.",
+    desc: "Developed responsive client websites by converting Figma designs into pixel-perfect interfaces and implementing modern frontend best practices.",
     location: "Shialbari, Rupnagar Rd, Dhaka 1216",
     highlights: [
-      "Built responsive web pages with HTML, CSS, JavaScript & Tailwind",
-      "Converted Figma designs into pixel-accurate interfaces",
-      "Worked with international clients on production deliverables",
+      "Converted Figma designs into responsive websites",
+      "Built reusable UI components using Tailwind CSS",
+      "Worked directly with international client requirements",
+      "Delivered production-ready websites within deadlines",
     ],
-    stack: ["HTML", "CSS", "JavaScript", "Tailwind"],
+    stack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Git"],
   },
   {
     year: "2022 — Present",
     role: "Competitive Programming",
     company: "Codeforces",
-    desc: "Regular practice in algorithms, data structures and contest problem solving.",
+    desc: "Strengthening problem-solving, algorithms, and data structures through consistent competitive programming practice.",
     location: "Remote · Online",
     highlights: [
-      "Solving algorithmic problems on Codeforces regularly",
-      "Practicing logical thinking and efficient coding techniques",
-      "Participating in contests to sharpen problem-solving skills",
+      "Solved 300+ algorithmic problems",
+      "Improved analytical and debugging skills",
+      "Practiced time-efficient coding strategies",
+      "Regular participant in online programming contests",
     ],
-    stack: ["C++", "C", "Java", "Algorithms"],
+    stack: ["C++", "C", "Java", "Algorithms", "Data Structures"],
   },
   {
     year: "2022 — 2026",
     role: "B.Sc. in CSE",
     company: "Green University of Bangladesh",
-    desc: "Undergraduate studies in Computer Science & Engineering, graduating in 2026.",
+    desc: "Completed Bachelor of Science in Computer Science & Engineering with a strong foundation in software engineering, databases, web development, and programming.",
     location: "Dhaka, Bangladesh",
     highlights: [
-      "Coursework in databases, programming, software engineering",
-      "Project: University Management System — full SQL schema with triggers",
-      "Active in coding practice and self-led web-development projects",
+      "Graduated in Computer Science & Engineering",
+      "Built academic and personal full-stack web applications",
+      "Completed projects involving database design, SQL triggers, and web systems",
+      "Focused on continuous learning in React, Django, and Shopify development",
     ],
-    stack: ["C", "Java", "Python", "MySQL"],
+    stack: ["Python", "Java", "MySQL", "Django", "React"],
   },
 ];
 
@@ -81,12 +85,12 @@ export function Experience() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-              A Quick History.
+              Work Experience
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
             <p className="mt-4 text-sm text-white/80">
-              Hover any role for the full story.
+              Click "See Details" to explore each role, responsibilities, and technologies used.
             </p>
           </Reveal>
         </div>
@@ -102,29 +106,31 @@ export function Experience() {
                       i % 2 === 0 ? "md:pr-12 md:text-right" : "md:order-2 md:pl-12"
                     }`}
                   >
-                    <div className="font-mono text-[12px] uppercase tracking-[0.3em] text-white/80">
+                    <span className="inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.25em] text-white">
                       {it.year}
-                    </div>
+                    </span>
                     <button
                       type="button"
                       onClick={() => setOpen(it)}
                       data-cursor="hover"
-                      className="group mt-2 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:-translate-y-0.5 active:scale-[0.98]"
+                      className="group mt-4 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:-translate-y-0.5 active:scale-[0.98]"
                     >
                       <span className="inline-flex items-center gap-3 font-display text-2xl font-semibold text-white transition-all duration-300 group-hover:text-white">
                         {it.role}
-                        <span className="text-2xl text-white/70 transition-transform duration-300 group-hover:translate-x-1">↗</span>
+                        <span className="ml-3 inline-flex items-center rounded-full border border-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white/70 transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-black">
+                          See Details
+                        </span>
                       </span>
                       <span className="block h-px w-0 bg-white transition-all duration-500 group-hover:w-full" />
                     </button>
-                    <div className="mt-1 text-sm text-white/60">{it.company}</div>
+                    <div className="mt-2 text-base font-medium text-white/90">{it.company}</div>
                   </div>
                   <div
                     className={`pl-8 md:pl-0 ${
                       i % 2 === 0 ? "md:pl-12" : "md:order-1 md:pr-12 md:text-right"
                     }`}
                   >
-                    <p className="text-[16px] leading-relaxed text-white/80">{it.desc}</p>
+                    <p className="mt-3 max-w-xl text-[17px] leading-8 text-white/85">{it.desc}</p>
                   </div>
                   <span className="absolute left-[-5px] top-1 h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] md:left-1/2 md:-translate-x-1/2" />
                 </li>
@@ -142,7 +148,7 @@ export function Experience() {
         >
           <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
           <div
-            className="relative w-full max-w-2xl overflow-hidden rounded-2xl border border-white/15 bg-black p-8 md:p-10"
+            className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-black p-8 md:p-10"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -159,7 +165,7 @@ export function Experience() {
             <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
               {open.role}
             </h3>
-            <div className="mt-1 text-sm text-white/60">{open.company}</div>
+            <div className="mt-2 text-base font-medium text-white/90">{open.company}</div>
             <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-white/80">
               <span className="inline-flex items-center gap-2">
                 <Calendar className="h-3.5 w-3.5" />
@@ -170,29 +176,39 @@ export function Experience() {
                 {open.location}
               </span>
             </div>
-            <p className="mt-6 leading-relaxed text-white/70">{open.desc}</p>
+            <div className="mt-8">
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white">
+                Overview
+              </h4>
+              <p className="leading-8 text-white/75">{open.desc}</p>
+            </div>
             <div className="mt-8">
               <div className="mb-3 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/80">
                 <Award className="h-3.5 w-3.5" /> Highlights
               </div>
-              <ul className="space-y-2 text-sm text-white/70">
+              <ul className="space-y-3 text-sm text-white/75">
                 {open.highlights.map((h) => (
-                  <li key={h} className="flex gap-3">
-                    <span className="mt-2 h-px w-4 shrink-0 bg-white/40" />
-                    {h}
+                  <li key={h} className="flex items-start gap-3">
+                    <CheckCircle2 className="mt-1 h-4 w-4 text-emerald-400 shrink-0" />
+                    <span>{h}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="mt-8 flex flex-wrap gap-2">
-              {open.stack.map((s) => (
-                <span
-                  key={s}
-                  className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/70"
-                >
-                  {s}
-                </span>
-              ))}
+            <div className="mt-8">
+              <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white">
+                Technologies Used
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                {open.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/70"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

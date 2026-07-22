@@ -1,15 +1,15 @@
-import { useState } from "react";
 import {
-  Plus,
-  Github,
-  Linkedin,
+  X as CloseIcon,
+  Download,
   Facebook,
   // phone,
   FileText,
-  Download,
+  Github,
+  Linkedin,
   Mail,
-  X as CloseIcon,
+  Plus,
 } from "lucide-react";
+import { useState } from "react";
 
 type Item = {
   label: string;
@@ -25,20 +25,31 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
 
   const items: Item[] = [
     { label: "GitHub", icon: Github, href: "https://github.com/PriyoGhosh02/", external: true },
-    { label: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/in/priyoghosh02/", external: true },
-    { label: "Facebook", icon: Facebook, href: "https://www.facebook.com/priyo.ghosh.02", external: true },
+    {
+      label: "LinkedIn",
+      icon: Linkedin,
+      href: "https://www.linkedin.com/in/priyoghosh02/",
+      external: true,
+    },
+    {
+      label: "Facebook",
+      icon: Facebook,
+      href: "https://www.facebook.com/priyo.ghosh.02",
+      external: true,
+    },
     // { label: "Phone", icon: phone, href: "https://wa.me/8801743457164" },
     { label: "Email", icon: Mail, href: "mailto:priyoghosh02@gmail.com" },
     { label: "Read CV", icon: FileText, href: "/Resume.pdf", external: true },
     { label: "Download CV", icon: Download, href: "/Resume.pdf", download: "Priyo_Ghosh_CV.pdf" },
     { label: "Contact me", icon: Mail, onClick: onContact },
+    { label: "Read Cover Letter", icon: FileText, href: "/cover_letter.pdf", external: true },
   ];
 
   // Radial layout: spread items along an arc on the LEFT side of the trigger.
   // Angles measured from 12 o'clock, going counter-clockwise into the left half.
   const radius = 150;
   const startDeg = -70; // top-left
-  const endDeg = 70;    // bottom-left
+  const endDeg = 70; // bottom-left
   const step = items.length > 1 ? (endDeg - startDeg) / (items.length - 1) : 0;
 
   return (
@@ -60,9 +71,9 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
             <div
               className="absolute inset-0 rounded-full border border-white/20"
               style={{
-                width: '56px',
-                height: '56px',
-                animation: 'moon-orbit 4s linear infinite',
+                width: "56px",
+                height: "56px",
+                animation: "moon-orbit 4s linear infinite",
               }}
             >
               <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-white/40" />

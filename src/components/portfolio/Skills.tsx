@@ -1,37 +1,43 @@
+import {
+  Boxes,
+  Code2,
+  Database,
+  Globe,
+  Layers,
+  Server,
+} from "lucide-react";
 import { Reveal } from "./Reveal";
-import { Code2, Layers, Database, Boxes, Zap, Globe } from "lucide-react";
 
 const skills = [
   {
     icon: Code2,
     title: "Frontend Development",
-    desc: "HTML, CSS, JavaScript, React, Next.js — building responsive, user-friendly interfaces.",
+    desc: "Building modern, responsive web applications using React, TypeScript, JavaScript, HTML5, CSS3, Next.js, and Vite with a focus on performance, accessibility, and clean UI.",
   },
   {
     icon: Layers,
-    title: "UI Frameworks",
-    desc: "Tailwind CSS and Material-UI for fast, consistent design systems.",
+    title: "UI & Design Systems",
+    desc: "Creating scalable interfaces with Tailwind CSS, DaisyUI, Material UI, responsive layouts, reusable components, animations, and pixel-perfect implementations from Figma.",
   },
-    {
+  {
     icon: Globe,
-    title: "Shopify & CMS",
-    desc: "Theme customization, storefront tweaks and CMS-driven page building.",
-  }, 
-   {
-    icon: Zap,
-    title: "Programming",
-    desc: "C, Java, Python and JavaScript — strong fundamentals from competitive programming.",
+    title: "Shopify Development",
+    desc: "Custom Shopify theme development using Liquid, Shopify CLI, Theme Customizer, metafields, sections, app integrations, responsive storefronts, and performance optimization.",
+  },
+  {
+    icon: Server,
+    title: "Backend Development",
+    desc: "Developing secure backend applications with Python, Django, REST APIs, authentication, database integration, and scalable business logic for full-stack solutions.",
   },
   {
     icon: Database,
-    title: "Databases",
-    desc: "MongoDB and MySQL — schema design, queries, triggers and constraints.",
+    title: "Database Management",
+    desc: "Designing and managing relational and NoSQL databases using MySQL and MongoDB with optimized queries, schema design, data modeling, and CRUD operations.",
   },
-
-{
+  {
     icon: Boxes,
-    title: "Backend & Node",
-    desc: "Node.js services, REST APIs and CMS integrations.",
+    title: "Tools & Workflow",
+    desc: "Git, GitHub, VS Code, Postman, npm, Vercel, Netlify, EmailJS, REST APIs, responsive debugging, deployment, and collaborative development using modern workflows.",
   },
 ];
 
@@ -46,14 +52,22 @@ export function Skills() {
                 ( 02 ) — Capabilities
               </span>
             </Reveal>
+
             <Reveal delay={0.1}>
               <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                What I Do.
+                Skills & Expertise.
               </h2>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="max-w-md text-white/80 text-[16px] md:text-[18px]">
-Combining modern frontend technologies, backend systems, and CMS expertise to deliver efficient, scalable, and user-centered web applications.
+
+          <Reveal
+            delay={0.2}
+            className="max-w-md text-[16px] text-white/80 md:text-[18px]"
+          >
+            I specialize in building modern web experiences—from interactive
+            frontend interfaces to scalable backend systems and customized
+            Shopify storefronts—using clean architecture and industry-standard
+            development practices.
           </Reveal>
         </div>
 
@@ -66,10 +80,9 @@ Combining modern frontend technologies, backend systems, and CMS expertise to de
               >
                 <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent" />
-                  <div
-                    className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
-                  />
+                  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent" />
                 </div>
+
                 <div className="relative">
                   <div className="mb-8 flex items-center justify-between">
                     <s.icon className="h-6 w-6 text-white transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110" />
@@ -77,9 +90,11 @@ Combining modern frontend technologies, backend systems, and CMS expertise to de
                       0{i + 1}
                     </span>
                   </div>
+
                   <h3 className="font-display text-xl font-medium text-white">
                     {s.title}
                   </h3>
+
                   <p className="mt-3 text-[16px] leading-relaxed text-white/80">
                     {s.desc}
                   </p>
