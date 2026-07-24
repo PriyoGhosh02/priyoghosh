@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink, Search, X } from "lucide-react";
+import { ArrowUpRight, Check, Copy, ExternalLink, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Reveal } from "./Reveal";
 
@@ -96,7 +96,7 @@ const allProjects: Project[] = [
     desc: "Bold fitness supplement Shopify concept with conversion-focused product showcases and energy.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://ultimax-nutrition-2.myshopify.com/",
-    password: "1",
+    password: "123",
     preview: "/projects/concept/ultimax-nutrition-2..png",
   },
   {
@@ -106,8 +106,8 @@ const allProjects: Project[] = [
     year: "2026",
     desc: "Minimal winter fashion Shopify concept designed for premium apparel, accessories, and elegance.",
     tags: ["shopify", "liquid", "css", "javascript"],
-    liveUrl: "https://winter-fashion-8258.myshopify.com/",
-    password: "1",
+    liveUrl: "https://warmora-fuzwv4d6.myshopify.com/",
+    password: "123",
     preview: "/projects/concept/winter fassion.jpeg",
   },
   {
@@ -128,8 +128,8 @@ const allProjects: Project[] = [
     year: "2026",
     desc: "Festive one-product Shopify store designed for a seasonal pet accessory brand.",
     tags: ["shopify", "liquid", "css", "javascript"],
-    liveUrl: "https://pet-jingle-bell.myshopify.com/",
-    password: "1",
+    liveUrl: "https://jingle-paws-wttbxemr.myshopify.com/",
+    password: "123",
     preview: "/projects/concept/pet-jingle-bell.png",
   },
   {
@@ -140,7 +140,7 @@ const allProjects: Project[] = [
     desc: "Premium meat delivery Shopify concept with polished product pages and modern eCommerce design.",
     tags: ["shopify", "liquid", "css", "javascript"],
     liveUrl: "https://meat-bazer.myshopify.com/",
-    password: "1",
+    password: "123",
     preview: "/projects/concept/meat-bazer.png",
   },
   {
@@ -150,8 +150,8 @@ const allProjects: Project[] = [
     year: "2026",
     desc: "Colorful toy store concept featuring playful UI, custom collections, and responsive layouts.",
     tags: ["shopify", "liquid", "css", "javascript"],
-    liveUrl: "https://tinko-toy.myshopify.com/",
-    password: "1",
+    liveUrl: "https://tink-tonk-qx2gyeda.myshopify.com/",
+    password: "123",
     preview: "/projects/concept/tinko-toy..png",
   },
   //personal Portfolio ================
@@ -172,9 +172,22 @@ const categoryOptions = ["All", ...new Set(allProjects.map((project) => project.
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
   const tiltRef = useRef<HTMLDivElement>(null);
   const scrollRef = useRef<HTMLImageElement>(null);
   const frameRef = useRef<HTMLDivElement>(null);
+
+  const handleCopyPassword = async () => {
+    if (!project.password) return;
+
+    try {
+      await navigator.clipboard.writeText(project.password);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1500);
+    } catch {
+      setCopied(false);
+    }
+  };
 
   useEffect(() => {
     const el = tiltRef.current;
@@ -300,9 +313,30 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 </span>
               ))}
             </div>
-            <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90">
-              {project.password ? `Password: ${project.password}` : "Password: N/A"}
-            </span>
+            {project.password ? (
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  void handleCopyPassword();
+                }}
+                data-cursor="hover"
+                aria-label={`Copy password for ${project.title}`}
+                title="Copy password"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90 transition-colors hover:border-white/40 hover:bg-white/10"
+              >
+                <span>Password: {project.password}</span>
+                {copied ? (
+                  <Check className="h-3.5 w-3.5 text-emerald-400" />
+                ) : (
+                  <Copy className="h-3.5 w-3.5" />
+                )}
+              </button>
+            ) : (
+              <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90">
+                Password: N/A
+              </span>
+            )}
           </div>
         </div>
       </div>
