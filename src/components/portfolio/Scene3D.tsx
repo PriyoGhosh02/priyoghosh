@@ -396,7 +396,7 @@ export function Scene3D() {
     <>
       <div
         ref={mountRef}
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 z-0 opacity-30"
         aria-hidden="true"
       />
       <div
