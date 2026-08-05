@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Reveal } from "./Reveal";
 import profileImg from "@/assets/profile_sut.webp";
 import { ArrowUpRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Reveal } from "./Reveal";
 
 /* ---------------- DATA ---------------- */
 
@@ -64,21 +64,15 @@ function TypingName() {
       timeout = setTimeout(() => {
         setDisplayed(text.slice(0, displayed.length + 1));
       }, 120);
-    }
-
-    else if (!isDeleting && displayed.length === text.length) {
+    } else if (!isDeleting && displayed.length === text.length) {
       timeout = setTimeout(() => {
         setIsDeleting(true);
       }, 1800); // pause after complete
-    }
-
-    else if (isDeleting && displayed.length > 0) {
+    } else if (isDeleting && displayed.length > 0) {
       timeout = setTimeout(() => {
         setDisplayed(text.slice(0, displayed.length - 1));
       }, 70);
-    }
-
-    else if (isDeleting && displayed.length === 0) {
+    } else if (isDeleting && displayed.length === 0) {
       setIsDeleting(false);
     }
 
@@ -98,25 +92,19 @@ function TypingName() {
 export function Hero() {
   const [tagIndex, setTagIndex] = useState(0);
 
-  const years = useCounter(3);
-  const projects = useCounter(50);
-  const satisfaction = useCounter(98);
+  const years = useCounter(1);
+  const projects = useCounter(60);
+  const satisfaction = useCounter(96);
   const response = useCounter(24);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setTagIndex((i) => (i + 1) % taglines.length),
-      2400
-    );
+    const id = setInterval(() => setTagIndex((i) => (i + 1) % taglines.length), 2400);
 
     return () => clearInterval(id);
   }, []);
 
   return (
-    <section
-      id="top"
-      className="relative min-h-screen overflow-hidden px-5 pt-28 pb-16 md:px-8"
-    >
+    <section id="top" className="relative min-h-screen overflow-hidden px-5 pt-28 pb-16 md:px-8">
       {/* Background glow */}
       <div className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-[150px]" />
 
@@ -158,10 +146,9 @@ export function Hero() {
 
             <Reveal delay={0.15}>
               <p className="mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
-                I build high-converting Shopify stores and modern web
-                experiences that help brands grow faster. Specialized in
-                scalable frontend architecture, performance optimization, and
-                premium user experiences.
+                I build high-converting Shopify stores and modern web experiences that help brands
+                grow faster. Specialized in scalable frontend architecture, performance
+                optimization, and premium user experiences.
               </p>
             </Reveal>
 
@@ -196,10 +183,7 @@ export function Hero() {
                 </span>
 
                 <span className="overflow-hidden h-5">
-                  <span
-                    key={tagIndex}
-                    className="block animate-[fade-in_0.6s_ease-out] text-white"
-                  >
+                  <span key={tagIndex} className="block animate-[fade-in_0.6s_ease-out] text-white">
                     {taglines[tagIndex]}
                   </span>
                 </span>
@@ -211,7 +195,7 @@ export function Hero() {
               <div className="mt-10 grid grid-cols-2 gap-4 md:flex md:flex-wrap">
                 <a
                   href="#work"
-                  className="group inline-flex items-center justify-center gap-3 rounded-full bg-white px-4 py-4 md:px-8 text-center text-[10px] md:text-xs font-semibold uppercase tracking-[0.25em] md:tracking-[0.3em] text-black transition hover:scale-105"
+                  className="cta-primary focus-ring group inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
                 >
                   View Work
                   <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -220,7 +204,7 @@ export function Hero() {
                 <a
                   href="/Resume.pdf"
                   download="Priyo_Ghosh_CV.pdf"
-                  className="inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-4 md:px-8 text-center text-[10px] md:text-xs uppercase tracking-[0.25em] md:tracking-[0.3em] text-white transition hover:border-white hover:bg-white hover:text-black"
+                  className="cta-secondary focus-ring inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
                 >
                   Download CV
                 </a>
@@ -244,12 +228,8 @@ export function Hero() {
                 </div>
 
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-2xl border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-md w-max">
-                  <div className="text-sm font-medium text-white">
-                    Based in Bangladesh
-                  </div>
-                  <div className="mt-1 text-xs text-white/50">
-                    Working with clients worldwide
-                  </div>
+                  <div className="text-sm font-medium text-white">Based in Bangladesh</div>
+                  <div className="mt-1 text-xs text-white/50">Working with clients worldwide</div>
                 </div>
               </div>
             </Reveal>

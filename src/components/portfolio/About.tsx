@@ -43,7 +43,7 @@ const cards: CardData[] = [
     ],
     highlights: [
       { v: "2", l: "Companies" },
-      { v: "50+", l: "Projects" },
+      { v: "60+", l: "Projects" },
       { v: "Web", l: "Focus" },
       { v: "FE", l: "Responsive Frontend" },
     ],

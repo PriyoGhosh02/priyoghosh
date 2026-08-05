@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { Scene3D } from "./components/portfolio/Scene3D";
-import { CustomCursor } from "./components/portfolio/CustomCursor";
-import { SmoothScroll } from "./components/portfolio/SmoothScroll";
-import { Nav } from "./components/portfolio/Nav";
-import { Hero } from "./components/portfolio/Hero";
 import { About } from "./components/portfolio/About";
-import { Skills } from "./components/portfolio/Skills";
-import { Projects } from "./components/portfolio/Projects";
-import { Experience } from "./components/portfolio/Experience";
-import { Contact } from "./components/portfolio/Contact";
-import { Footer } from "./components/portfolio/Footer";
-import { SocialDock } from "./components/portfolio/SocialDock";
 import { ChatWidget } from "./components/portfolio/ChatWidget";
+import { Contact } from "./components/portfolio/Contact";
 import { ContactDialog } from "./components/portfolio/ContactDialog";
+import { CustomCursor } from "./components/portfolio/CustomCursor";
+import { Experience } from "./components/portfolio/Experience";
+import { Footer } from "./components/portfolio/Footer";
+import { Hero } from "./components/portfolio/Hero";
 import { LoadingPage } from "./components/portfolio/loadingpage";
+import { Nav } from "./components/portfolio/Nav";
+import { Projects } from "./components/portfolio/Projects";
+import { Scene3D } from "./components/portfolio/Scene3D";
+import { Skills } from "./components/portfolio/Skills";
+import { SmoothScroll } from "./components/portfolio/SmoothScroll";
+import { SocialDock } from "./components/portfolio/SocialDock";
 import SEO from "./components/SEO";
 
 function App() {
@@ -38,10 +38,7 @@ function App() {
   return (
     <main className="grain relative min-h-screen overflow-hidden bg-black text-white">
       {isLoading ? (
-        <LoadingPage
-          showName={showName}
-          onComplete={handleLoadingComplete}
-        />
+        <LoadingPage showName={showName} onComplete={handleLoadingComplete} />
       ) : (
         <>
           <SEO />
@@ -62,10 +59,7 @@ function App() {
 
           <SocialDock onContact={() => setContactOpen(true)} />
           <ChatWidget />
-          <ContactDialog
-            open={contactOpen}
-            onClose={() => setContactOpen(false)}
-          />
+          <ContactDialog open={contactOpen} onClose={() => setContactOpen(false)} />
         </>
       )}
     </main>

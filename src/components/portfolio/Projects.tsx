@@ -179,6 +179,7 @@ const allProjects: Project[] = [
 
 const typeOptions = ["All", ...new Set(allProjects.map((project) => project.type))];
 const categoryOptions = ["All", ...new Set(allProjects.map((project) => project.category))];
+const tagsOptions = ["All", ...new Set(allProjects.flatMap((project) => project.tags))];
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   const [hovered, setHovered] = useState(false);
@@ -360,6 +361,7 @@ export function Projects() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("All");
   const [type, setType] = useState("All");
+  const [tag, setTag] = useState("All");
   const [visible, setVisible] = useState(PAGE_SIZE);
 
   const filtered = useMemo(() => {
@@ -367,6 +369,7 @@ export function Projects() {
     return allProjects.filter((p) => {
       if (category !== "All" && p.category !== category) return false;
       if (type !== "All" && p.type !== type) return false;
+      if (tag !== "All" && !p.tags.includes(tag)) return false;
       if (!q) return true;
       return (
         p.title.toLowerCase().includes(q) ||
@@ -376,11 +379,11 @@ export function Projects() {
         p.tags.some((t) => t.toLowerCase().includes(q))
       );
     });
-  }, [query, category, type]);
+  }, [query, category, type, tag]);
 
   useEffect(() => {
     setVisible(PAGE_SIZE);
-  }, [query, category, type]);
+  }, [query, category, type, tag]);
 
   const shown = filtered.slice(0, visible);
   const hasMore = visible < filtered.length;
@@ -408,7 +411,7 @@ export function Projects() {
 
         {/* Search + filters */}
         <Reveal delay={0.15}>
-          <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+          <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="relative w-full max-w-sm">
               <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/80" />
               <input
@@ -429,37 +432,55 @@ export function Projects() {
                 </button>
               )}
             </div>
-            <div className="flex flex-wrap items-center gap-2">
-              {typeOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => setType(option)}
-                  data-cursor="hover"
-                  className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
-                    type === option
-                      ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
-              <span className="mx-1 h-4 w-px bg-white/15" />
-              {categoryOptions.map((option) => (
-                <button
-                  key={option}
-                  onClick={() => setCategory(option)}
-                  data-cursor="hover"
-                  className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
-                    category === option
-                      ? "border-white bg-white text-black"
-                      : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
-                  }`}
-                >
-                  {option}
-                </button>
-              ))}
+            <div className="flex flex-col gap-3">
+              <div className="flex flex-wrap items-center gap-2">
+                {typeOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => setType(option)}
+                    data-cursor="hover"
+                    className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                      type === option
+                        ? "border-white bg-white text-black"
+                        : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+                <span className="mx-1 h-4 w-px bg-white/15" />
+                {categoryOptions.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => setCategory(option)}
+                    data-cursor="hover"
+                    className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                      category === option
+                        ? "border-white bg-white text-black"
+                        : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                    }`}
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
             </div>
+          </div>
+          <div className="mb-12 flex flex-wrap items-center gap-2">
+            {tagsOptions.map((option) => (
+              <button
+                key={option}
+                onClick={() => setTag(option)}
+                data-cursor="hover"
+                className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                  tag === option
+                    ? "border-white bg-white text-black"
+                    : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                }`}
+              >
+                {option}
+              </button>
+            ))}
           </div>
         </Reveal>
 
@@ -472,6 +493,7 @@ export function Projects() {
                 setQuery("");
                 setCategory("All");
                 setType("All");
+                setTag("All");
               }}
               data-cursor="hover"
               className="mt-2 rounded-full border border-white/20 px-4 py-2 text-[12px] uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"

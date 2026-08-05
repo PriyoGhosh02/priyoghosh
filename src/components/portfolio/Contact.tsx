@@ -1,7 +1,7 @@
+import emailjs from "@emailjs/browser";
+import { ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import { Reveal } from "./Reveal";
-import { ArrowUpRight } from "lucide-react";
-import emailjs from "@emailjs/browser";
 
 export function Contact({ embedded = false }: { embedded?: boolean }) {
   const [focused, setFocused] = useState<string | null>(null);
@@ -15,9 +15,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     message: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.id]: e.target.value,
@@ -29,17 +27,17 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     setSending(true);
 
     try {
-        await emailjs.send(
+      await emailjs.send(
         "service_daocdfg",
         "template_9fthzxq",
-         {
+        {
           from_name: formData.name,
           from_email: formData.email,
           subject: formData.subject,
           message: formData.message,
           to_name: "Priyo",
         },
-        "Vg8sg4oEZ1NmFBw_K"
+        "Vg8sg4oEZ1NmFBw_K",
       );
 
       setSubmitted(true);
@@ -59,26 +57,19 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     }
   };
 
-  const sectionClass = embedded
-    ? "relative px-6 py-12"
-    : "relative px-6 py-32 md:py-48";
+  const sectionClass = embedded ? "relative px-6 py-12" : "relative px-6 py-32 md:py-48";
 
   return (
     <section id={embedded ? undefined : "contact"} className={sectionClass}>
       <div className="mx-auto max-w-6xl">
-
         <Reveal>
-          <h2 className="text-5xl md:text-7xl font-semibold text-white">
-            Get In Touch
-          </h2>
+          <h2 className="text-5xl md:text-7xl font-semibold text-white">Get In Touch</h2>
         </Reveal>
 
         <div className="mt-16 grid gap-16 md:grid-cols-2">
-
           {/* LEFT SIDE - FORM */}
           <Reveal y={20}>
             <form onSubmit={handleSubmit} className="space-y-8">
-
               {[
                 { id: "name", label: "Your name", type: "text" },
                 { id: "email", label: "Email", type: "email" },
@@ -103,9 +94,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     value={formData[f.id as keyof typeof formData]}
                     onChange={handleChange}
                     onFocus={() => setFocused(f.id)}
-                    onBlur={(e) =>
-                      e.target.value === "" && setFocused(null)
-                    }
+                    onBlur={(e) => e.target.value === "" && setFocused(null)}
                     className="w-full border-b border-white/40 bg-transparent py-3 text-white outline-none"
                   />
                 </div>
@@ -130,9 +119,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   value={formData.message}
                   onChange={handleChange}
                   onFocus={() => setFocused("message")}
-                  onBlur={(e) =>
-                    e.target.value === "" && setFocused(null)
-                  }
+                  onBlur={(e) => e.target.value === "" && setFocused(null)}
                   className="w-full resize-none border-b border-white/20 bg-transparent py-3 text-white outline-none"
                 />
               </div>
@@ -140,15 +127,9 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               <button
                 type="submit"
                 disabled={sending}
-                className="group relative inline-flex items-center gap-3 rounded-full border border-white px-8 py-4 text-[14px] uppercase tracking-widest text-white"
+                className="cta-primary focus-ring group relative inline-flex items-center gap-3 text-[14px] uppercase tracking-widest"
               >
-                <span>
-                  {sending
-                    ? "Sending..."
-                    : submitted
-                    ? "Sent ✓"
-                    : "Send Message"}
-                </span>
+                <span>{sending ? "Sending..." : submitted ? "Sent ✓" : "Send Message"}</span>
                 <ArrowUpRight className="h-4 w-4" />
               </button>
             </form>
@@ -157,44 +138,30 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
           {/* RIGHT SIDE - INFO */}
           <Reveal y={20} delay={0.1}>
             <div className="space-y-10 text-white">
-
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
-                  Email
-                </p>
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Email</p>
                 <a
                   href="mailto:priyoghosh02@gmail.com"
                   className="text-xl md:text-2xl font-medium underline"
                 >
-                priyoghosh02@gmail.com                
+                  priyoghosh02@gmail.com
                 </a>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
-                  Phone
-                </p>
-                <a
-                  href="tel:+8801743457164"
-                  className="text-xl md:text-2xl font-medium underline"
-                >
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Phone</p>
+                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium underline">
                   +880 1743 457164
                 </a>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">
-                  Location
-                </p>
-                <p className="text-xl md:text-2xl font-medium">
-                  Dhaka, Bangladesh
-                </p>
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Location</p>
+                <p className="text-xl md:text-2xl font-medium">Dhaka, Bangladesh</p>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80 mb-3">
-                  Social
-                </p>
+                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80 mb-3">Social</p>
 
                 <div className="space-y-3">
                   {[
@@ -227,10 +194,8 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   ))}
                 </div>
               </div>
-
             </div>
           </Reveal>
-
         </div>
       </div>
     </section>
