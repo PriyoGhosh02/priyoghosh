@@ -6,12 +6,11 @@ export function Footer() {
         <div className="overflow-hidden">
           <div className="flex gap-8 whitespace-nowrap">
             <span>Designed &amp; built by Priyo Ghosh</span>
-            <span>·</span>
-            <span>React · Next.js · Tailwind</span>
+         
           </div>
         </div>
         <a href="#top" className="underline-grow text-white" data-cursor="hover">
-          Back to top ↑
+          Back to top <b className="text-xl">↑</b>
         </a>
       </div>
     </footer>

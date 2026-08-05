@@ -2,12 +2,13 @@ import {
   X as CloseIcon,
   Download,
   Facebook,
-  // phone,
   FileText,
   Github,
   Linkedin,
   Mail,
+  PhoneForwarded,
   Plus,
+  UserPen,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -37,12 +38,11 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
       href: "https://www.facebook.com/priyo.ghosh.02",
       external: true,
     },
-    // { label: "Phone", icon: phone, href: "https://wa.me/8801743457164" },
+    { label: "Phone", icon: PhoneForwarded, href: "https://wa.me/8801743457164" },
     { label: "Email", icon: Mail, href: "mailto:priyoghosh02@gmail.com" },
     { label: "Read CV", icon: FileText, href: "/Resume.pdf", external: true },
     { label: "Download CV", icon: Download, href: "/Resume.pdf", download: "Priyo_Ghosh_CV.pdf" },
-    { label: "Contact me", icon: Mail, onClick: onContact },
-    { label: "Read Cover Letter", icon: FileText, href: "/cover_letter.pdf", external: true },
+    { label: "Contact me", icon: UserPen, onClick: onContact },
   ];
 
   // Radial layout: spread items along an arc on the LEFT side of the trigger.
