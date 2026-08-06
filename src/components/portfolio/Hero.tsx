@@ -100,10 +100,7 @@ export function Hero() {
   const response = useCounter(24);
 
   useEffect(() => {
-    const id = setInterval(
-      () => setTagIndex((i) => (i + 1) % taglines.length),
-      2400
-    );
+    const id = setInterval(() => setTagIndex((i) => (i + 1) % taglines.length), 2400);
 
     return () => clearInterval(id);
   }, []);
@@ -122,7 +119,7 @@ export function Hero() {
           <div className="md:col-span-7">
             <Reveal>
               <div className="mb-6 inline-flex rounded-full border border-[#22252A] bg-[#121417]/80 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.35em] text-white">
-                Shopify Developer & Frontend Engineer
+                Shopify & Full-Stack Developer
               </div>
             </Reveal>
 
@@ -154,10 +151,9 @@ export function Hero() {
 
             <Reveal delay={0.15}>
               <p className="mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
-                I build high-converting Shopify stores and modern web
-                experiences that help brands grow faster. Specialized in
-                scalable frontend architecture, performance optimization, and
-                premium user experiences.
+                I build high-converting Shopify stores and modern web experiences that help brands
+                grow faster. Specialized in scalable frontend architecture, performance
+                optimization, and premium user experiences.
               </p>
             </Reveal>
 
@@ -238,9 +234,7 @@ export function Hero() {
                 </div>
 
                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-2xl border border-[#22252A] bg-[#121417]/90 px-5 py-4 backdrop-blur-md w-max shadow-xl">
-                  <div className="text-sm font-medium text-white">
-                    Based in Bangladesh
-                  </div>
+                  <div className="text-sm font-medium text-white">Based in Bangladesh</div>
                   <div className="mt-1 font-mono text-xs text-[#8E8E93]">
                     Working with clients worldwide
                   </div>

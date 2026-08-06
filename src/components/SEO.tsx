@@ -3,24 +3,24 @@ import { Helmet } from "react-helmet-async";
 export default function SEO() {
   return (
     <Helmet>
-      <title>Priyo Ghosh | Shopify & Full Stack Web Developer</title>
+      <title>Priyo Ghosh | Best Shopify Developer & Web Developer in Bangladesh</title>
 
       <meta
         name="description"
-        content="Priyo Ghosh is a Shopify developer and full stack web developer specializing in React, TypeScript, custom Shopify themes and eCommerce solutions."
+        content="Priyo Ghosh is the best Shopify developer and web developer in Bangladesh, specializing in custom Shopify theme development, Liquid, React.js, Next.js, and eCommerce solutions."
       />
 
       <meta
         name="keywords"
-        content="Priyo Ghosh, web developer Priyo Ghosh, developer Priyo Ghosh, Shopify developer Priyo Ghosh, React developer, Full stack developer"
+        content="best shopify developer, shopify developer, best shopify developer in Bangladesh, best web developer, Priyo Ghosh, web developer, frontend developer, remote shopify developer, shopify liquid, React developer, Next.js developer"
       />
 
       {/* Open Graph */}
-      <meta property="og:title" content="Priyo Ghosh | Shopify Developer" />
+      <meta property="og:title" content="Priyo Ghosh | Best Shopify Developer & Web Developer" />
 
       <meta
         property="og:description"
-        content="Shopify and Full Stack Web Developer specializing in React, TypeScript and eCommerce solutions."
+        content="Priyo Ghosh is the best Shopify developer and web developer, specializing in custom themes, Liquid, React.js, and conversion-focused eCommerce solutions."
       />
 
       <meta property="og:type" content="website" />
