@@ -1,24 +1,28 @@
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 
 // Complete, rich personal database about Priyo Ghosh
+// Updated from resumes: quantified achievements, expanded Shopify/app-integration skills,
+// corrected LinkedIn handle, and richer professional summary.
 const KNOWLEDGE_BASE = {
   personalInfo: {
     name: "Priyo Ghosh",
-    title: "Full Stack Web Developer & Shopify Expert",
-    subtitle: "React • Next.js • Shopify • Node.js Developer",
+    title: "Frontend Developer & Shopify Developer",
+    subtitle: "React.js • Next.js • Shopify • Conversion-Focused eCommerce",
     location: "Dhaka, Bangladesh",
     nationality: "Bangladeshi",
     email: "priyoghosh02@gmail.com",
     phone: "+8801743457164",
     website: "https://priyoghosh.vercel.app",
     github: "https://github.com/PriyoGhosh02",
-    linkedin: "https://www.linkedin.com/in/priyo02",
+    linkedin: "https://www.linkedin.com/in/priyoghosh02/",
     facebook: "https://www.facebook.com/priyo.ghosh.02",
     availableForWork: true,
     workType: ["Remote", "Freelance", "Full-Time", "Contract"],
-    timezone: "GMT +6",
+    timezone: "GMT +6 (also comfortable with PST-hours overlap for US clients)",
     languages: ["English", "Bangla"],
   },
+  summary:
+    "Results-driven Web Developer with 1+ years of professional experience spanning custom frontend engineering (React.js, Next.js, TypeScript) and Shopify eCommerce development (Liquid, theme customization, third-party app integration). Skilled at translating Figma designs into pixel-perfect, responsive, production-ready interfaces and conversion-focused storefronts. Delivered 60+ storefront/CMS builds, improved development efficiency by 25%, and increased user engagement by approximately 20% through performance, accessibility, and SEO improvements. Experienced collaborating with international clients across fashion, retail, jewelry, and pet product sectors using Git-based version control and staged deployment workflows.",
   education: [
     {
       institution: "Green University of Bangladesh",
@@ -46,62 +50,76 @@ const KNOWLEDGE_BASE = {
   ],
   skills: {
     frontend: [
-      "React",
+      "React.js",
       "Next.js",
       "TypeScript",
-      "JavaScript",
+      "JavaScript (ES6+)",
       "HTML5",
       "CSS3",
       "Tailwind CSS",
+      "Material UI",
       "Bootstrap",
       "SCSS",
+      "REST APIs",
+      "Responsive & Mobile-First Design",
     ],
     backend: ["Node.js", "Express.js", "REST API", "MongoDB", "MySQL", "Firebase"],
     ecommerce: [
-      "Shopify",
+      "Shopify Theme Development & Customization",
       "Shopify Liquid",
-      "Theme Development",
-      "Theme Customization",
+      "Custom Sections",
       "Shopify CLI",
+      "Shopify Admin API",
+      "GraphQL API",
       "Shopify Metafields",
-      "Shopify Sections",
       "AJAX Cart",
       "Online Store 2.0",
+      "Subscription & Checkout Optimization",
+    ],
+    appsIntegrations: ["ReCharge", "Klaviyo", "Rebuy", "AfterSell", "Okendo", "Yotpo"],
+    performanceQA: [
+      "Google Analytics",
+      "A/B Testing",
+      "Cross-Browser/Cross-Device Testing",
+      "WCAG Accessibility",
+      "Site Speed Optimization",
+      "SEO Fundamentals",
     ],
     cms: ["WordPress", "Contentful"],
     languages: ["JavaScript", "TypeScript", "Python", "Java", "C", "C++"],
-    tools: ["Git", "GitHub", "VS Code", "Figma", "Postman", "Vercel", "Netlify"],
+    tools: ["Git", "GitHub", "CI/CD Workflows", "Staged Deployments", "VS Code", "Figma", "Postman", "Vercel", "Netlify"],
   },
-  about: `I'm a full stack web developer based in Dhaka, Bangladesh, specializing in React, Next.js, Node.js, and Shopify development. I enjoy building modern, responsive, fast websites with clean UI, optimized performance, and scalable architecture. I have professional experience building CMS websites, custom Shopify sections, REST APIs, and responsive frontend applications. I'm passionate about continuous learning, UI/UX refinement, and competitive programming.`,
+  about: `I'm a full stack web developer based in Dhaka, Bangladesh, specializing in React.js, Next.js, Node.js, and Shopify development. I enjoy building modern, responsive, fast websites with clean UI, optimized performance, and scalable architecture. I have professional experience building CMS websites, custom Shopify sections, REST APIs, and responsive frontend applications. I'm passionate about continuous learning, UI/UX refinement, and competitive programming.`,
   experience: [
     {
-      role: "Web Developer",
-      company: "Softvance Delta · Bitopia Group",
+      role: "Frontend Developer",
+      company: "Softvence Delta · Bitopia Group",
       duration: "Dec 2025 - Present",
-      location: "Block-F, Joypurhat Tower, Banasree Main Road, Dhaka 1219",
+      location: "Softvence Agency, Dhaka, Bangladesh",
       description:
-        "Developing modern, responsive web applications and CMS solutions using React, Next.js, TypeScript, and Tailwind CSS while collaborating with cross-functional teams.",
+        "Developing modern, responsive web applications, Shopify custom sections, and CMS solutions using React.js, Next.js, TypeScript, Liquid, and Tailwind CSS while collaborating with cross-functional teams.",
       achievements: [
-        "Built responsive production websites and scalable CMS dashboards.",
-        "Converted Figma designs into pixel-perfect production code.",
-        "Developed reusable React components and optimized UI performance.",
-        "Worked directly with international clients to deliver production-ready features.",
-        "Built Shopify custom sections and storefront modifications.",
+        "Developed 60+ responsive web interfaces, Shopify custom sections, and CMS components ensuring cross-browser/cross-device compatibility.",
+        "Collaborated with designers to translate 15+ complex Figma wireframes into pixel-perfect, production-ready storefronts.",
+        "Built reusable UI/component systems that boosted team development efficiency by 25%, supporting faster QA and debugging.",
+        "Integrated and troubleshot third-party apps (ReCharge, Klaviyo, Rebuy, AfterSell, Okendo, Yotpo) to support conversion-focused checkout and post-purchase flows.",
+        "Optimized mobile performance and WCAG-aligned accessibility, increasing user engagement by approximately 20%.",
+        "Delivered frontend and Shopify storefront work for international clients across fashion, retail, jewelry, and pet product sectors using Git-based version control and staged deployment workflows.",
       ],
-      stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "Git"],
+      stack: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "Liquid", "Node.js", "MongoDB", "Git"],
     },
     {
       role: "Web Developer",
       company: "Sardar IT",
       duration: "Aug 2025 - Nov 2025",
-      location: "Shialbari, Rupnagar Rd, Dhaka 1216",
+      location: "Sardarit BD, Dhaka, Bangladesh",
       description:
         "Developed responsive client websites by converting Figma designs into pixel-perfect interfaces and implementing modern frontend best practices.",
       achievements: [
-        "Converted Figma designs into responsive layouts and web forms.",
+        "Delivered 30+ responsive landing pages and business sites with 95% Figma design accuracy across browsers and devices.",
+        "Improved website loading speeds and page performance, applying SEO fundamentals and frontend best practices.",
         "Built reusable UI components using Tailwind CSS and CSS3.",
-        "Worked directly with international client requirements to deliver on strict deadlines.",
-        "Integrated custom styles and Liquid sections into Shopify storefronts.",
+        "Integrated custom styles and Liquid sections into Shopify storefronts for international clients.",
       ],
       stack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Git", "Liquid"],
     },
@@ -114,12 +132,20 @@ const KNOWLEDGE_BASE = {
         "Strengthening problem-solving, algorithms, and data structures through consistent competitive programming practice.",
       achievements: [
         "Solved 300+ algorithmic problems on Codeforces.",
+        "Regularly participates in timed coding contests.",
         "Improved analytical thinking and debugging efficiency.",
-        "Practiced time-efficient coding and memory-efficient strategies.",
-        "Regular participant in online programming contests.",
+        "Practices time-efficient and memory-efficient coding strategies.",
       ],
       stack: ["C++", "C", "Java", "Algorithms", "Data Structures"],
     },
+  ],
+  achievements: [
+    "Delivered 60+ storefront/CMS builds for international clients.",
+    "Improved development efficiency by 25% through reusable component/section systems.",
+    "Increased user engagement by ~20% via performance, accessibility, and SEO improvements.",
+    "Delivered 30+ responsive landing pages with 95% Figma design accuracy.",
+    "Built a personal portfolio site scoring 90+ on Google Lighthouse performance.",
+    "Modeled a relational database for 1,000+ academic records using advanced SQL joins, triggers, and normalization.",
   ],
   projects: [
     {
@@ -250,7 +276,7 @@ const KNOWLEDGE_BASE = {
       category: "Custom Build",
       type: "Custom Build",
       year: "2026",
-      desc: "A modern developer portfolio showcasing Shopify work, skills, experience, and professional growth.",
+      desc: "A modern, mobile-first developer portfolio (90+ Google Lighthouse score) showcasing Shopify work, skills, experience, and professional growth.",
       tags: ["react", "nextjs", "tailwindcss", "typescript"],
       liveUrl: "https://priyoghosh.vercel.app/",
     },
@@ -259,23 +285,25 @@ const KNOWLEDGE_BASE = {
       category: "Database",
       type: "Database Build",
       year: "2024",
-      desc: "A database-driven project using SQL, triggers, and constraints to manage student databases, course registrations, and instructors.",
+      desc: "A database-driven project modeling 1,000+ academic records using SQL joins, triggers, and normalization to manage student data, course registrations, and instructors.",
       tags: ["sql", "mysql", "database"],
       liveUrl: "#",
     },
   ],
   services: [
-    "Full Stack Web Development (React, Next.js, Node.js)",
+    "Full Stack Web Development (React.js, Next.js, Node.js)",
     "Custom Shopify Theme Development & Customization",
     "Figma-to-React / Figma-to-Shopify Pixel-Perfect Conversion",
-    "API Integrations & Custom Web Tools",
-    "Website Performance Optimization & Speed Tuning",
+    "Third-Party App Integration (ReCharge, Klaviyo, Rebuy, AfterSell, Okendo, Yotpo)",
+    "API Integrations & Custom Web Tools (REST, GraphQL, Shopify Admin API)",
+    "Website Performance, Accessibility (WCAG) & SEO Optimization",
     "CMS Development & Management (WordPress, Contentful)",
     "Responsive Front-end Layouts & Bug Fixing",
   ],
   strengths: [
     "Clean, scalable, and maintainable codebase structure.",
-    "Pixel-perfect visual execution matching Figma designs precisely.",
+    "Pixel-perfect visual execution matching Figma designs precisely (95%+ design accuracy).",
+    "Track record of measurable impact: 25% efficiency gains, ~20% engagement lift.",
     "Strong logical problem-solving skills honed through competitive programming.",
     "Fast technology adaptation and continuous learning mindset.",
     "Clear, transparent, and direct communication with clients and teammates.",
@@ -312,6 +340,8 @@ type IntentId =
   | "availability"
   | "services"
   | "strengths"
+  | "achievements"
+  | "apps_integrations"
   | "competitive_programming"
   | "shopify"
   | "figma"
@@ -359,6 +389,7 @@ const INTENTS: IntentDef[] = [
       "your story",
       "tell me about yourself",
       "priyo ghosh",
+      "summary",
     ],
     patterns: [
       /who are you/i,
@@ -367,6 +398,7 @@ const INTENTS: IntentDef[] = [
       /your background/i,
       /who is priyo/i,
       /about you/i,
+      /professional summary/i,
     ],
   },
   {
@@ -395,6 +427,8 @@ const INTENTS: IntentDef[] = [
       "tailwind",
       "liquid",
       "css",
+      "graphql",
+      "material ui",
     ],
     patterns: [
       /(what|which).*(tech|stack|skill|language|tool)/i,
@@ -454,6 +488,7 @@ const INTENTS: IntentDef[] = [
       "employment",
       "history",
       "softvance",
+      "softvence",
       "bitopia",
       "sardar",
       "developer",
@@ -592,6 +627,51 @@ const INTENTS: IntentDef[] = [
     ],
   },
   {
+    id: "achievements",
+    keywords: [
+      "achievements",
+      "results",
+      "metrics",
+      "numbers",
+      "impact",
+      "kpi",
+      "increased",
+      "improved",
+      "60+",
+      "25%",
+      "20%",
+      "lighthouse",
+      "measurable",
+      "proof",
+      "accomplishments",
+    ],
+    patterns: [
+      /what.*(achieved|accomplish)/i,
+      /any.*(results|metrics|numbers)/i,
+      /measurable.*impact/i,
+      /prove.*(skills|value)/i,
+    ],
+  },
+  {
+    id: "apps_integrations",
+    keywords: [
+      "recharge",
+      "klaviyo",
+      "rebuy",
+      "aftersell",
+      "okendo",
+      "yotpo",
+      "third-party app",
+      "third party app",
+      "integration",
+      "integrations",
+      "subscription app",
+      "reviews app",
+      "marketing automation",
+    ],
+    patterns: [/third.?party app/i, /app integration/i, /which apps/i, /subscription.*app/i],
+  },
+  {
     id: "competitive_programming",
     keywords: [
       "codeforces",
@@ -620,14 +700,18 @@ const INTENTS: IntentDef[] = [
       "liquid",
       "theme",
       "ecommerce",
+      "e-commerce",
       "store",
       "custom sections",
       "metafields",
       "prestige",
       "ajax cart",
       "online store 2.0",
+      "admin api",
+      "graphql api",
+      "checkout",
     ],
-    patterns: [/shopify/i, /liquid/i, /theme development/i, /e-commerce/i, /shopify developer/i],
+    patterns: [/shopify/i, /liquid/i, /theme development/i, /e-?commerce/i, /shopify developer/i],
   },
   {
     id: "figma",
@@ -638,8 +722,9 @@ const INTENTS: IntentDef[] = [
       "design to react",
       "design to shopify",
       "pixel perfect",
+      "wireframe",
     ],
-    patterns: [/figma to/i, /convert figma/i, /design.*code/i],
+    patterns: [/figma to/i, /convert figma/i, /design.*code/i, /wireframe/i],
   },
   {
     id: "thanks",
@@ -686,6 +771,7 @@ const INTENTS: IntentDef[] = [
       "city",
       "timezone",
       "gmt",
+      "pst",
     ],
     patterns: [/where.*(live|from)/i, /your location/i, /what country/i, /where are you/i],
   },
@@ -750,7 +836,7 @@ function detectIntentId(text: string): IntentId {
     }
 
     // 3. Exact matches or close synonyms
-    if (text === def.id || text === def.id.replace("_", " ")) {
+    if (text === def.id || text === def.id.replace(/_/g, " ")) {
       score += 6;
     }
 
@@ -803,36 +889,30 @@ export function getPortfolioReply(message: string, history: ChatMessage[] = []):
   switch (currentIntent) {
     case "greeting": {
       const greetings = [
-        "Hi! Great to have you here. I'm Priyo. 😊 What would you like to know about my work, skills, or projects?",
-        "Hey there! 👋 I'm Priyo, a Full Stack Developer & Shopify specialist. How can I help you today?",
-        "Hello! I'm Priyo Ghosh. I build high-performance web applications and custom Shopify stores. What are you interested in exploring?",
+        "Hey! Great to have you here. I'm Priyo. 😊 What would you like to know about my work, skills, or projects?",
+        "Hey there! 👋 I'm Priyo, a Frontend and Shopify Developer. How can I help you today?",
+        "Hello! I'm Priyo Ghosh. I build high-performance web applications and conversion-focused Shopify storefronts. What are you interested in exploring?",
       ];
-      const selected = greetings[Math.floor(Math.random() * greetings.length)];
-      return selected;
+      return greetings[Math.floor(Math.random() * greetings.length)];
     }
 
     case "about": {
       return (
-        `I'm ${KNOWLEDGE_BASE.personalInfo.name}, a Full Stack Web Developer and Shopify developer from ${KNOWLEDGE_BASE.personalInfo.location}. ` +
-        `I specialize in turning design mockups (like Figma) into fast, pixel-perfect websites and high-converting storefronts.\n\n` +
-        `I'm currently studying Computer Science and Engineering while working on production client builds. ` +
-        `I love writing clean code, designing smooth interfaces, and solving tough logic problems. Would you like to check out my skills or see my projects?`
+        `I'm Priyo, a Frontend and Shopify Developer based in Dhaka. I spend my time building clean, custom React/Next.js interfaces and optimizing Shopify e-commerce stores for better conversion rates.\n\n` +
+        `Over the last year, I've delivered around 60 storefront and CMS builds. I focus on translating design wireframes into pixel-perfect code while speeding up site loads and improving user experience. ` +
+        `Would you like to check out my skills, some of my proudest achievements, or see my projects?`
       );
     }
 
     case "skills": {
-      const fe = KNOWLEDGE_BASE.skills.frontend.join(", ");
-      const be = KNOWLEDGE_BASE.skills.backend.join(", ");
-      const shopifyTools = KNOWLEDGE_BASE.skills.ecommerce.join(", ");
-      const programmingLanguages = KNOWLEDGE_BASE.skills.languages.join(", ");
-
       return (
-        `Here is a quick overview of my technical toolkit:\n\n` +
-        `• 💻 **Frontend**: ${fe}\n` +
-        `• ⚙️ **Backend & DB**: ${be}\n` +
-        `• 🛍️ **Shopify Development**: ${shopifyTools}\n` +
-        `• 📝 **Languages**: ${programmingLanguages}\n\n` +
-        `I use Git/GitHub for version control and Figma for layouts. Let me know if you want to know more about a specific stack!`
+        `My technical toolkit is focused heavily on building modern, high-performance web interfaces:\n\n` +
+        `• **Frontend**: I build custom UI systems using **React.js**, **Next.js**, and **TypeScript**, styled with **Tailwind CSS** or **Material UI**.\n` +
+        `• **Shopify eCommerce**: I write custom Liquid themes, build reusable sections, set up AJAX cart workflows, and configure Shopify Metafields/Metaobjects.\n` +
+        `• **Shopify Apps**: I integrate and troubleshoot apps like **ReCharge** (subscriptions), **Klaviyo** (marketing), **Rebuy**/**AfterSell** (upsells), and **Okendo**/**Yotpo** (reviews).\n` +
+        `• **Backend & Databases**: I write APIs with **Node.js** and **Express.js**, and work with **MongoDB** and **MySQL**.\n` +
+        `• **Performance & SEO**: I optimize site speed, ensure WCAG-aligned accessibility, and set up solid SEO foundations.\n\n` +
+        `I also use Git/GitHub with staged development workflows. Is there a particular technology or tool you're interested in?`
       );
     }
 
@@ -844,119 +924,140 @@ export function getPortfolioReply(message: string, history: ChatMessage[] = []):
         .join("\n");
 
       return (
-        `I've built 14+ projects, including live client stores and concept work. Here are a few notable client projects:\n\n` +
+        `I've delivered 60+ storefront and CMS builds, including live client stores and concept work. Here are a few notable client projects I've worked on recently:\n\n` +
         `${clientHighlights}\n\n` +
-        `I also built this portfolio website custom from scratch using React, Next.js, and TypeScript! ` +
-        `You can ask me about a specific project, or ask to 'tell me more' about my concept projects (like OTAP or Warmora).`
+        `I also built this portfolio website from scratch using React, Next.js, and TypeScript (with a 90+ Google Lighthouse score!). ` +
+        `Feel free to ask me about any of these, or say "tell me more" to check out some of my concept projects like OTAP or Warmora.`
       );
     }
 
     case "experience": {
-      const current = KNOWLEDGE_BASE.experience[0];
-      const previous = KNOWLEDGE_BASE.experience[1];
-
       return (
-        `I have professional experience as a Web Developer across two companies:\n\n` +
-        `1. **${current.role}** at **${current.company}** (${current.duration}):\n` +
-        `   Developing responsive web applications, CMS platforms, and custom Shopify storefronts. (${current.location})\n\n` +
-        `2. **${previous.role}** at **${previous.company}** (${previous.duration}):\n` +
-        `   Converted pixel-perfect layouts from Figma designs and developed storefront pages using CSS, Tailwind, and JavaScript.\n\n` +
-        `Would you like to hear about my achievements in these roles? Just ask me to elaborate or say 'tell me more'.`
+        `I've been working professionally as a frontend and web developer for over a year now:\n\n` +
+        `1. **Frontend Developer** at **Softvence Delta** (Dec 2025 - Present):\n` +
+        `   I build custom React/Next.js web applications, CMS portals, and custom Shopify storefronts. I developed reusable component libraries that boosted our team's development cycle by 25%.\n\n` +
+        `2. **Web Developer** at **Sardar IT** (Aug 2025 - Nov 2025):\n` +
+        `   I converted Figma wireframes into pixel-perfect, responsive landing pages (with 95%+ design accuracy) and integrated custom Liquid sections for Shopify storefronts.\n\n` +
+        `Would you like to hear about my achievements in these roles, or how I collaborate with international clients?`
       );
     }
 
     case "education": {
-      const degree = KNOWLEDGE_BASE.education[0];
-      const highSchool = KNOWLEDGE_BASE.education[1];
-
       return (
-        `I am pursuing my **${degree.degree}** at **${degree.institution}** (${degree.duration}). ` +
-        `It gives me a solid backing in system design, database management, and data structures.\n\n` +
-        `Prior to that, I completed my ${highSchool.degree} at ${highSchool.institution} in science. ` +
-        `I really enjoy combining rigorous computer science theory with creative web builds!`
+        `I'm currently working towards my **B.Sc. in Computer Science and Engineering** at **Green University of Bangladesh** (graduating in 2026). It has given me a great foundation in data structures, database design, and software engineering.\n\n` +
+        `Before university, I completed my high school studies in science at Kaliganj Govt. College.\n\n` +
+        `I love combining rigorous computer science theory with creative, user-friendly frontend builds!`
       );
     }
 
     case "contact": {
       return (
-        `I would love to chat! You can reach me directly through any of these channels:\n\n` +
-        `• 📧 **Email**: ${KNOWLEDGE_BASE.personalInfo.email}\n` +
-        `• 📞 **Phone/WhatsApp**: ${KNOWLEDGE_BASE.personalInfo.phone}\n` +
-        `• 💼 **LinkedIn**: [Priyo Ghosh](${KNOWLEDGE_BASE.personalInfo.linkedin})\n` +
-        `• 🐙 **GitHub**: [PriyoGhosh02](${KNOWLEDGE_BASE.personalInfo.github})\n\n` +
-        `Feel free to drop me a message, and I'll get back to you as soon as possible!`
+        `I would love to connect and chat! You can reach me directly through any of these options:\n\n` +
+        `• 📧 **Email**: [priyoghosh02@gmail.com](mailto:priyoghosh02@gmail.com)\n` +
+        `• 📞 **WhatsApp/Phone**: [+8801743457164](tel:+8801743457164)\n` +
+        `• 💼 **LinkedIn**: [linkedin.com/in/priyoghosh02](https://www.linkedin.com/in/priyoghosh02/)\n` +
+        `• 🐙 **GitHub**: [github.com/PriyoGhosh02](https://github.com/PriyoGhosh02)\n` +
+        `• 🌐 **Portfolio**: [priyoghosh.vercel.app](https://priyoghosh.vercel.app)\n\n` +
+        `Feel free to shoot me an email, a message on WhatsApp, or connect on LinkedIn. I reply pretty quickly!`
       );
     }
 
     case "availability": {
       return (
-        `Yes! I am currently **available** for remote work, freelance projects, and full-time contracts. ` +
-        `My typical timezone is ${KNOWLEDGE_BASE.personalInfo.timezone}, but I am very flexible and regularly sync with international teams. ` +
-        `If you have a project in mind, let's connect! You can ask for my email or phone number.`
+        `Yes! I am currently **available** for remote work, freelance projects, and full-time contracts.\n\n` +
+        `My local timezone is GMT+6, but I am very flexible and regularly shift my schedule to overlap with US (PST/EST) or European work hours to sync with international teams. ` +
+        `If you have a project or store in mind, let's connect!`
       );
     }
 
     case "services": {
-      const serviceList = KNOWLEDGE_BASE.services.map((s) => `• ${s}`).join("\n");
       return (
-        `Here are the services I offer to help bring projects to life:\n\n` +
-        `${serviceList}\n\n` +
-        `I place a high value on clean, responsive frontend architectures. Do you have a design in Figma or a Shopify store that needs building?`
+        `Here are the services I offer to help bring web projects to life:\n\n` +
+        `• **Full Stack Web Development**: Custom frontend applications built with React.js and Next.js.\n` +
+        `• **Shopify Development**: Custom Liquid theme coding, custom sections, AJAX drawers, and metafield configurations.\n` +
+        `• **Figma-to-Code Conversion**: Translating design wireframes into pixel-perfect, responsive layouts.\n` +
+        `• **Third-Party Shopify App Integrations**: Setting up and troubleshooting subscriptions, marketing automation, upsells, and reviews.\n` +
+        `• **Speed & SEO Optimization**: Improving page loading speeds, WCAG accessibility, and SEO structure.\n` +
+        `• **CMS Setup**: Designing and configuring WordPress or Contentful templates.\n\n` +
+        `I focus on clean code and pixel-perfect layouts. Do you have a design in Figma or a Shopify store that needs building?`
       );
     }
 
     case "strengths": {
-      const strengthsList = KNOWLEDGE_BASE.strengths.map((s) => `• ${s}`).join("\n");
       return (
-        `What makes me stand out as a developer is my blend of technical problem solving and visual execution:\n\n` +
-        `${strengthsList}\n\n` +
-        `I focus on client success, pixel-perfection, and fast loading speeds. Let me know if you'd like to see my project proofs!`
+        `What makes me stand out as a developer is my blend of logical problem solving, visual accuracy, and measurable business impact:\n\n` +
+        `• **Clean & Scalable Code**: I write structured, modular code that's easy to maintain and expand.\n` +
+        `• **Figma Precision**: I translate mockups into code with up to 95%+ design accuracy across screen sizes.\n` +
+        `• **Algorithmic Thinking**: My competitive programming background helps me write highly optimized code and avoid page latency issues.\n` +
+        `• **Client Focus**: I prioritize delivering measurable results (like speed gains and engagement improvements) and maintain clear, direct communication.\n\n` +
+        `Let me know if you'd like to see the numbers behind my work—you can just ask about my achievements!`
+      );
+    }
+
+    case "achievements": {
+      return (
+        `I'm proud of the real, measurable impact I've made in my projects so far:\n\n` +
+        `• Delivered over **60 storefront and CMS builds** for global clients.\n` +
+        `• **Improved development efficiency by 25%** at Softvence Delta by designing reusable component systems.\n` +
+        `• **Boosted user engagement by about 20%** on client stores through speed optimization, WCAG accessibility, and SEO.\n` +
+        `• Built **30+ custom landing pages** with 95%+ design accuracy.\n` +
+        `• Modeled a relational database managing over **1,000 academic records** using advanced SQL joins and triggers.\n` +
+        `• Built a custom portfolio site that scores **90+ on Google Lighthouse** performance.\n\n` +
+        `Want to know the story behind any of these achievements? I'd love to share!`
+      );
+    }
+
+    case "apps_integrations": {
+      return (
+        `I frequently integrate and troubleshoot third-party apps to add premium features to Shopify stores. Some of the apps I work with include:\n\n` +
+        `• **Subscriptions**: ReCharge\n` +
+        `• **Email & SMS Marketing**: Klaviyo\n` +
+        `• **Upsells & Cross-sells**: Rebuy and AfterSell\n` +
+        `• **Reviews & Social Proof**: Okendo and Yotpo\n\n` +
+        `I integrate these directly into themes and resolve any script or layout conflicts so your store keeps running fast. What integrations does your store need?`
       );
     }
 
     case "competitive_programming": {
       return (
-        `I am active in competitive programming on **Codeforces**, where I've solved over 300+ algorithm and math problems. ` +
-        `It's a great hobby that keeps my data structures and coding efficiency sharp.\n\n` +
-        `It also helps me write clean, performant React and Node code that scales without leaks. Ask me about my other hobbies or interests!`
+        `I'm active in competitive programming on **Codeforces**, where I've solved over 300+ algorithm challenges. It's a great way to keep my logical thinking and debugging efficiency sharp.\n\n` +
+        `In web development, this translates to writing cleaner logic for things like database queries, sorting filters, and complex state management, making sure pages load fast and scale without leaks.`
       );
     }
 
     case "shopify": {
-      const shopifySkills = KNOWLEDGE_BASE.skills.ecommerce.slice(0, 5).join(", ");
       return (
-        `Shopify is a key area of my expertise. I write custom Liquid themes, build custom sections, implement AJAX carts, and customize metafields using Online Store 2.0 standards.\n\n` +
-        `I have built multiple live stores for European and US clients (such as Muni Diva, Goedhoesje, and The Atelier London). ` +
-        `I can help customize themes (like Prestige) or build brand-new sections. What kind of storefront features do you need?`
+        `Shopify theme development is one of my core specialties. I write custom Liquid themes, build reusable sections, set up AJAX cart workflows, work with Shopify Admin and GraphQL APIs, and customize metafields using Online Store 2.0 standards.\n\n` +
+        `I've delivered 60+ storefront builds and coordinate integrations with apps like ReCharge and Klaviyo. What kind of e-commerce features are you looking to build?`
       );
     }
 
     case "figma": {
-      return `I specialize in figma-to-code conversions. Whether you need a Figma design converted into a responsive, component-driven React/Next.js app or customized Shopify Liquid sections, I ensure it's pixel-perfect, responsive on all devices, and fast-loading.`;
+      return (
+        `I specialize in figma-to-code conversions. Whether you need a design converted into a component-driven React/Next.js app or customized Shopify Liquid sections, I ensure it's pixel-perfect (with up to 95%+ accuracy), fully responsive across all device sizes, and highly optimized for page speed.`
+      );
     }
 
     case "thanks": {
       const thankReplies = [
         "You're very welcome! Let me know if there's anything else I can clarify. 😊",
-        "No problem! Glad I could help. What else would you like to know?",
+        "No problem at all! Glad I could help. What else would you like to know?",
         "Anytime! Feel free to ask more about my projects, availability, or experience.",
       ];
       return thankReplies[Math.floor(Math.random() * thankReplies.length)];
     }
 
     case "hobbies": {
-      const interestsList = KNOWLEDGE_BASE.interests.map((i) => `• ${i}`).join("\n");
       return (
-        `Besides web development, I enjoy several other tech and logic pursuits:\n\n` +
-        `${interestsList}\n\n` +
-        `I also enjoy keeping up with new AI dev tools and collaborating on open-source repositories!`
+        `Besides web development, I spend time practicing algorithms and competitive programming. I also enjoy reading about modern web architectures, exploring emerging developer tools, and experimenting with interactive frontend micro-animations.\n\n` +
+        `What about you? What kind of project brings you here today?`
       );
     }
 
     case "location": {
       return (
-        `I live and work from **${KNOWLEDGE_BASE.personalInfo.location}** (Timezone: ${KNOWLEDGE_BASE.personalInfo.timezone}). ` +
-        `I coordinate regularly with clients from Germany, the UK, the Netherlands, and North America. Distance is never an issue! Where are you contacting me from?`
+        `I'm based in **Dhaka, Bangladesh** (Timezone: GMT+6).\n\n` +
+        `I work remotely with clients worldwide—including Germany, the UK, the Netherlands, and North America—and regularly align my schedule to ensure smooth communication. Where are you contacting me from?`
       );
     }
 
@@ -964,68 +1065,50 @@ export function getPortfolioReply(message: string, history: ChatMessage[] = []):
       // Contextual follow-up response based on the previous intent
       switch (previousIntent) {
         case "projects": {
-          const conceptHighlights = KNOWLEDGE_BASE.projects
-            .filter((p) => p.category === "Concept Work" && p.type === "Shopify")
-            .slice(0, 3)
-            .map((p) => `• **${p.title}** (Concept store, Password: '${p.password}'): ${p.liveUrl}`)
-            .join("\n");
-
           return (
-            `Here are some details on my Shopify concept stores:\n\n` +
-            `${conceptHighlights}\n\n` +
-            `These stores showcase custom collection filters, landing page sections, and pet-product showcases. Let me know if you'd like to discuss Shopify theme configurations!`
+            `Sure! Here are some details on my Shopify concept projects:\n\n` +
+            `• **ULTIMAX Nutrition**: A bold, high-energy fitness supplement store concept.\n` +
+            `• **Warmora**: A clean, minimal winter fashion layout.\n` +
+            `• **OTAP**: A futuristic anime merch store concept.\n\n` +
+            `These showcase custom collection filters, landing page layouts, and pet product collections. Let me know if you'd like to talk about custom storefront features!`
           );
         }
 
         case "skills": {
-          const backendList = KNOWLEDGE_BASE.skills.backend.map((b) => `• ${b}`).join("\n");
-          const toolsList = KNOWLEDGE_BASE.skills.tools.map((t) => `• ${t}`).join("\n");
           return (
-            `Sure! Expanding on my backend and tooling skills:\n\n` +
-            `**Backend Stack**:\n${backendList}\n\n` +
-            `**Developer Tools & Workflows**:\n${toolsList}\n\n` +
-            `I structure database queries efficiently and implement REST APIs with middleware validations. Do you have a backend need for your app?`
+            `Absolutely! Expanding on my backend and tooling skills:\n\n` +
+            `• **Backend & DB**: I use **Node.js** and **Express.js** to build secure REST or GraphQL APIs, and work with **MongoDB** and **MySQL** for structured databases.\n` +
+            `• **Workflow**: I use **Git/GitHub** for version control, along with staged deployments on platforms like **Vercel** or **Netlify** to make sure updates are fully tested before going live.\n\n` +
+            `I focus on database query efficiency and clean middleware structures. Do you have a backend need for your app?`
           );
         }
 
         case "experience": {
-          const currentExp = KNOWLEDGE_BASE.experience[0];
-          const achievements = currentExp.achievements.map((a) => `• ${a}`).join("\n");
           return (
-            `Certainly! At **Softvance Delta**, some of my core achievements include:\n\n` +
-            `${achievements}\n\n` +
-            `I've worked on large international codebases and built customizable sections from design assets. Let me know if you'd like details on specific projects.`
+            `Certainly! During my time at **Softvence Delta**, I've focused on creating modular component libraries that saved our team time and boosted coding efficiency by 25%. I also integrated custom Shopify apps like ReCharge for recurring subscriptions and worked on improving site speeds for client storefronts. Let me know if you'd like details on specific projects!`
           );
         }
 
         case "education": {
-          const degree = KNOWLEDGE_BASE.education[0];
-          const courseHighlights = degree.highlights.map((h) => `• ${h}`).join("\n");
           return (
-            `More details on my B.Sc. in CSE at Green University:\n\n` +
-            `${courseHighlights}\n\n` +
-            `My academic projects include designing full relational schemas for course catalogs, implementing sorting and graph traversal algorithms, and building a responsive web system using standard database integrations.`
+            `To share a bit more, my studies at **Green University of Bangladesh** have given me a great foundation in database management. For instance, I built a relational university management database project managing over 1,000 academic records using advanced SQL joins and triggers. It's really helped me write highly optimized database queries in my professional projects!`
           );
         }
 
         case "contact": {
           return (
-            `Here are direct URLs to check out my social handles and repositories:\n\n` +
-            `• 💼 **LinkedIn Profile**: ${KNOWLEDGE_BASE.personalInfo.linkedin}\n` +
-            `• 🐙 **GitHub Repositories**: ${KNOWLEDGE_BASE.personalInfo.github}\n` +
-            `• 🌐 **Personal Website**: ${KNOWLEDGE_BASE.personalInfo.website}\n` +
-            `• 📘 **Facebook Profile**: ${KNOWLEDGE_BASE.personalInfo.facebook}\n\n` +
-            `Feel free to add me or drop a message on LinkedIn. I reply pretty quickly!`
+            `Here are the direct links to my online profiles:\n\n` +
+            `• 💼 **LinkedIn**: [linkedin.com/in/priyoghosh02](https://www.linkedin.com/in/priyoghosh02/)\n` +
+            `• 🐙 **GitHub**: [github.com/PriyoGhosh02](https://github.com/PriyoGhosh02)\n` +
+            `• 🌐 **Portfolio**: [priyoghosh.vercel.app](https://priyoghosh.vercel.app/)\n` +
+            `• 📘 **Facebook**: [facebook.com/priyo.ghosh.02](https://www.facebook.com/priyo.ghosh.02)\n\n` +
+            `Feel free to connect or check out my repositories. I look forward to hearing from you!`
           );
         }
 
         case "shopify": {
           return (
-            `To elaborate on my Shopify capabilities:\n` +
-            `• **Theme Customization**: Working with themes like Prestige, Dawn, and Impact to implement custom sections.\n` +
-            `• **Dynamic Liquid coding**: Creating conditional logic blocks, custom metafield layouts, and collection filtering systems.\n` +
-            `• **Modern features**: AJAX drawers, newsletter slide-ins, customized cart notes, and custom currency pickers.\n\n` +
-            `I keep themes fast and responsive without using heavy third-party app plugins.`
+            `To expand on my Shopify capabilities, I focus on building custom functionalities without relying on too many third-party apps, which keeps pages loading quickly. This includes coding custom newsletter slide-ins, customized cart notes, custom currency selectors, and AJAX cart drawers. I make sure everything fits the Online Store 2.0 standards.`
           );
         }
 
@@ -1036,8 +1119,20 @@ export function getPortfolioReply(message: string, history: ChatMessage[] = []):
           );
         }
 
+        case "achievements": {
+          return (
+            `Expanding on my achievements: my work on speed optimization, WCAG accessibility, and SEO at Softvence Delta drove a ~20% engagement lift for clients. I delivered 30+ responsive pages at Sardar IT with high fidelity, and my personal projects (like this site) are optimized to hit 90+ Lighthouse performance scores.`
+          );
+        }
+
+        case "apps_integrations": {
+          return (
+            `For app integrations, I typically hook apps into Shopify's checkout and post-purchase loops. For example, setting up ReCharge for dynamic customer subscriptions, Klaviyo for email marketing triggers, and Rebuy/AfterSell for post-purchase upsells. I make sure scripts are deferred and loaded efficiently to protect page load speeds.`
+          );
+        }
+
         default: {
-          return "I can elaborate further on my skills, details of my 14 projects, work achievements, or academic studies. Just ask about the topic you're interested in, and I'll share more! 😊";
+          return "I can elaborate further on my web development skills, details of my projects, work achievements, or academic studies. Just ask about the topic you're interested in, and I'll share more! 😊";
         }
       }
     }
@@ -1045,9 +1140,9 @@ export function getPortfolioReply(message: string, history: ChatMessage[] = []):
     case "fallback":
     default: {
       const fallbacks = [
-        "Hmm, I didn't quite catch that. 😅 But I'd love to help! Ask me about my skills, 14 projects (like Muni Diva or OTAP), work history, or how to get in touch.",
-        "I'm not sure I fully understand that question. Could you rephrase it? Or ask me about my Shopify, React, work experience, or contact channels!",
-        "Oops, that's a bit outside my knowledge base. 💻 If you ask about my web development skills, my projects, or how to hire me, I'll have a clear answer for you!",
+        "Hmm, I didn't quite catch that. 😅 But I'd love to help! Ask me about my skills, projects (like Muni Diva or OTAP), work history, achievements, or how to get in touch.",
+        "I'm not sure I fully understand that question. Could you rephrase it? Or ask me about my Shopify apps/integrations, React, work experience, or contact channels!",
+        "Oops, that's a bit outside my knowledge base. 💻 If you ask about my web development skills, my projects, achievements, or how to hire me, I'll have a clear answer for you!",
       ];
       return fallbacks[Math.floor(Math.random() * fallbacks.length)];
     }

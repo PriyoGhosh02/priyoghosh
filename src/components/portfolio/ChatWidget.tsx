@@ -1,5 +1,5 @@
+import { Loader2, MessageCircle, Send, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { MessageCircle, Send, X, Loader2 } from "lucide-react";
 import { getPortfolioReply, type ChatMessage } from "../../lib/chatAssistant";
 
 type Msg = ChatMessage;
@@ -42,10 +42,7 @@ export function ChatWidget() {
     }, 80);
 
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        chatContainerRef.current &&
-        !chatContainerRef.current.contains(event.target as Node)
-      ) {
+      if (chatContainerRef.current && !chatContainerRef.current.contains(event.target as Node)) {
         setOpen(false);
       }
     };
@@ -165,16 +162,17 @@ export function ChatWidget() {
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
         {!open && (
-          <span className="absolute right-0 top-0 h-3 w-3 rounded-full border-2 border-white bg-white" />
+          <span className="absolute right-0 top-0 h-3 w-3 rounded-full border-2 border-[#FF3B00] bg-[#FF3B00]" />
         )}
       </button>
 
       <div
         ref={chatContainerRef}
-        className={`fixed bottom-24 right-4 z-[60] w-[calc(100vw-2rem)] max-w-sm origin-bottom-right overflow-hidden rounded-2xl border border-white/15 bg-black/90 backdrop-blur-xl transition-all duration-300 md:right-8 ${open
-          ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
-          : "pointer-events-none translate-y-2 scale-95 opacity-0"
-          }`}
+        className={`fixed bottom-24 right-4 z-[60] w-[calc(100vw-2rem)] max-w-sm origin-bottom-right overflow-hidden rounded-2xl border border-white/15 bg-black/90 backdrop-blur-xl transition-all duration-300 md:right-8 ${
+          open
+            ? "pointer-events-auto translate-y-0 scale-100 opacity-100"
+            : "pointer-events-none translate-y-2 scale-95 opacity-0"
+        }`}
       >
         <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
           <div className="flex items-center gap-2">
@@ -186,9 +184,7 @@ export function ChatWidget() {
               Ask me anything
             </span>
           </div>
-          <span className="text-[10px] uppercase tracking-[0.25em] text-white/40">
-            AI · live
-          </span>
+          <span className="text-[10px] uppercase tracking-[0.25em] text-white/40">AI · live</span>
         </div>
         <div
           ref={scrollRef}
@@ -200,10 +196,11 @@ export function ChatWidget() {
           {messages.map((m, i) => (
             <div
               key={i}
-              className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${m.role === "user"
-                ? "ml-auto bg-white text-black"
-                : "border border-white/10 bg-white/5 text-white/90"
-                }`}
+              className={`max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed ${
+                m.role === "user"
+                  ? "ml-auto bg-white text-black"
+                  : "border border-white/10 bg-white/5 text-white/90"
+              }`}
             >
               {m.content}
             </div>

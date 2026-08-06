@@ -56,7 +56,7 @@ const items: Item[] = [
     stack: ["C++", "C", "Java", "Algorithms", "Data Structures"],
   },
   {
-    year: "2022 - 2026",
+    year: "Jan 2022 - Feb 2026",
     role: "B.Sc. in CSE",
     company: "Green University of Bangladesh",
     desc: "Completed Bachelor of Science in Computer Science & Engineering with a strong foundation in software engineering, databases, web development, and programming.",
