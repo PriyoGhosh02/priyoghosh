@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export function SmoothScroll() {
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     // 1. Initialize Lenis Smooth Scroll engine for 1:1 responsive smooth scrubbing
     const lenis = new Lenis({
       duration: 1.2,
@@ -28,19 +30,29 @@ export function SmoothScroll() {
 
     // 2. EXACT GSAP + SCROLLTRIGGER SCALED SCRUB LOOP (Webflow sticky-sections-gsap logic)
     const stackCtx = gsap.context(() => {
-      const cards = document.querySelectorAll<HTMLElement>(".sticky-card");
+      if (prefersReducedMotion) return;
 
-      cards.forEach((card, i) => {
-        if (i === cards.length - 1) return; // Skip last card
+      // Define card scaling animations explicitly to ensure correct triggers and order
+      const scalingConfigs = [
+        { cardId: "top", triggerId: "about" },
+        { cardId: "about", triggerId: "skills" },
+        { cardId: "skills", triggerId: "showcase-video" },
+        { cardId: "work", triggerId: "experience" },
+        { cardId: "experience", triggerId: "contact" },
+      ];
 
-        const nextCard = cards[i + 1];
+      scalingConfigs.forEach(({ cardId, triggerId }) => {
+        const card = document.getElementById(cardId);
+        const trigger = document.getElementById(triggerId);
+
+        if (!card || !trigger) return;
 
         gsap.to(card, {
           scale: 0.88,
           borderRadius: "24px",
           ease: "none",
           scrollTrigger: {
-            trigger: nextCard,
+            trigger: trigger,
             start: "top bottom", // Starts IMMEDIATELY when the next card enters viewport bottom
             end: "top top",       // Ends EXACTLY when the next card locks at the top of the viewport
             scrub: true,          // Direct 1:1 scrollbar sync, zero threshold delays
@@ -49,6 +61,19 @@ export function SmoothScroll() {
         });
       });
     });
+
+    // Refresh ScrollTrigger after initial layout render and window resize
+    const handleRefresh = () => {
+      ScrollTrigger.refresh();
+    };
+
+    window.addEventListener("resize", handleRefresh);
+    window.addEventListener("load", handleRefresh);
+
+    // Initial refresh after short timeout to account for dynamic image mounts
+    const refreshTimer = window.setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 200);
 
     // Anchor smooth scroll handling
     const handleAnchorClick = (event: MouseEvent) => {
@@ -66,6 +91,9 @@ export function SmoothScroll() {
     document.addEventListener("click", handleAnchorClick);
 
     return () => {
+      window.clearTimeout(refreshTimer);
+      window.removeEventListener("resize", handleRefresh);
+      window.removeEventListener("load", handleRefresh);
       document.removeEventListener("click", handleAnchorClick);
       gsap.ticker.remove(updateGsapTicker);
       stackCtx.revert();
@@ -76,3 +104,4 @@ export function SmoothScroll() {
 
   return null;
 }
+

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { About } from "./components/portfolio/About";
 import { ChatWidget } from "./components/portfolio/ChatWidget";
+import { CinematicVideo } from "./components/portfolio/CinematicVideo";
 import { Contact } from "./components/portfolio/Contact";
 import { ContactDialog } from "./components/portfolio/ContactDialog";
 import { CustomCursor } from "./components/portfolio/CustomCursor";
@@ -49,6 +50,7 @@ function App() {
             <Hero />
             <About />
             <Skills />
+            <CinematicVideo />
             <Projects />
             <Experience />
             <Contact />

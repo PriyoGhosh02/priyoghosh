@@ -389,7 +389,7 @@ export function Projects() {
   const hasMore = visible < filtered.length;
 
   return (
-    <section id="work" className="sticky-card sticky-card-4 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
+    <section id="work" className="sticky-card z-30 sticky-card-5 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -439,11 +439,10 @@ export function Projects() {
                     key={option}
                     onClick={() => setType(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                      type === option
-                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
-                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
-                    }`}
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${type === option
+                      ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                      : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
+                      }`}
                   >
                     {option}
                   </button>
@@ -454,11 +453,10 @@ export function Projects() {
                     key={option}
                     onClick={() => setCategory(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                      category === option
-                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
-                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
-                    }`}
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${category === option
+                      ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                      : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
+                      }`}
                   >
                     {option}
                   </button>
@@ -472,11 +470,10 @@ export function Projects() {
                 key={option}
                 onClick={() => setTag(option)}
                 data-cursor="hover"
-                className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                  tag === option
-                    ? "border-[#FF3B00] bg-[#FF3B00] text-white shadow-sm"
-                    : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#FF3B00] hover:text-[#FF3B00]"
-                }`}
+                className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${tag === option
+                  ? "border-[#FF3B00] bg-[#FF3B00] text-white shadow-sm"
+                  : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#FF3B00] hover:text-[#FF3B00]"
+                  }`}
               >
                 {option}
               </button>

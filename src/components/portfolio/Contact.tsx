@@ -57,7 +57,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     }
   };
 
-  const sectionClass = embedded ? "relative bg-[#0A0B0D] text-white px-6 py-12" : "sticky-card sticky-card-6 min-h-screen bg-[#0A0B0D] text-white px-6 py-32 md:py-48";
+  const sectionClass = embedded ? "relative bg-[#0A0B0D] text-white px-6 py-12" : "sticky-card sticky-card-7 min-h-screen bg-[#0A0B0D] text-white px-6 py-32 md:py-48";
 
   return (
     <section id={embedded ? undefined : "contact"} className={sectionClass}>

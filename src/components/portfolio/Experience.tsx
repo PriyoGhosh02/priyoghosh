@@ -75,7 +75,7 @@ export function Experience() {
   const [open, setOpen] = useState<Item | null>(null);
 
   return (
-    <section id="experience" className="sticky-card sticky-card-5 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
+    <section id="experience" className="sticky-card sticky-card-6 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-5xl">
         <div className="mb-20">
           <Reveal>
