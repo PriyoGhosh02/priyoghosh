@@ -14,7 +14,7 @@ type Item = {
 
 const items: Item[] = [
   {
-    year: "Dec 2025 — Present",
+    year: "Dec 2025 - Present",
     role: "Web Developer",
     company: "Softvance Delta · Bitopia Group",
     desc: "Developing modern, responsive web applications and CMS solutions using React, Next.js, TypeScript, and Tailwind CSS while collaborating with cross-functional teams on production-ready products.",
@@ -28,7 +28,7 @@ const items: Item[] = [
     stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "Git"],
   },
   {
-    year: "Aug 2025 — Nov 2025",
+    year: "Aug 2025 - Nov 2025",
     role: "Web Developer",
     company: "Sardar IT",
     desc: "Developed responsive client websites by converting Figma designs into pixel-perfect interfaces and implementing modern frontend best practices.",
@@ -42,7 +42,7 @@ const items: Item[] = [
     stack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Git"],
   },
   {
-    year: "2022 — Present",
+    year: "2022 - Present",
     role: "Competitive Programming",
     company: "Codeforces",
     desc: "Strengthening problem-solving, algorithms, and data structures through consistent competitive programming practice.",
@@ -56,7 +56,7 @@ const items: Item[] = [
     stack: ["C++", "C", "Java", "Algorithms", "Data Structures"],
   },
   {
-    year: "2022 — 2026",
+    year: "2022 - 2026",
     role: "B.Sc. in CSE",
     company: "Green University of Bangladesh",
     desc: "Completed Bachelor of Science in Computer Science & Engineering with a strong foundation in software engineering, databases, web development, and programming.",
@@ -75,28 +75,28 @@ export function Experience() {
   const [open, setOpen] = useState<Item | null>(null);
 
   return (
-    <section id="experience" className="relative px-6 py-32 md:py-48">
+    <section id="experience" className="sticky-card sticky-card-5 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-5xl">
         <div className="mb-20">
           <Reveal>
-            <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
-              ( 04 ) — Experience
+            <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
+              ( 04 ) - Experience
             </span>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+            <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
               Work Experience
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="mt-4 text-sm text-white/80">
+            <p className="mt-4 font-mono text-sm text-[#111111]/90 font-medium">
               Click "See Details" to explore each role, responsibilities, and technologies used.
             </p>
           </Reveal>
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 top-0 h-full w-px bg-gradient-to-b from-transparent via-white/20 to-transparent md:left-1/2" />
+          <div className="absolute left-0 top-0 h-full w-px bg-[#D0D4D6] md:left-1/2" />
           <ul className="space-y-16">
             {items.map((it, i) => (
               <Reveal key={it.year} y={30} delay={i * 0.05}>
@@ -106,33 +106,33 @@ export function Experience() {
                       i % 2 === 0 ? "md:pr-12 md:text-right" : "md:order-2 md:pl-12"
                     }`}
                   >
-                    <span className="inline-flex rounded-full border border-white/20 bg-white/5 px-3 py-1 font-mono text-xs uppercase tracking-[0.25em] text-white">
+                    <span className="inline-flex rounded-full border border-[#D0D4D6] bg-white px-3.5 py-1 font-mono text-xs uppercase tracking-[0.25em] text-[#111111] shadow-sm">
                       {it.year}
                     </span>
                     <button
                       type="button"
                       onClick={() => setOpen(it)}
                       data-cursor="hover"
-                      className="group mt-4 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/40 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:-translate-y-0.5 active:scale-[0.98]"
+                      className="group mt-4 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none active:-translate-y-0.5 active:scale-[0.98]"
                     >
-                      <span className="inline-flex items-center gap-3 font-display text-2xl font-semibold text-white transition-all duration-300 group-hover:text-white">
+                      <span className="inline-flex items-center gap-3 font-display text-2xl font-bold text-[#111111] transition-all duration-300 group-hover:text-[#FF3B00]">
                         {it.role}
-                        <span className="ml-3 inline-flex items-center rounded-full border border-white/20 px-3 py-1 text-xs font-medium uppercase tracking-wider text-white/70 transition-all duration-300 group-hover:border-white group-hover:bg-white group-hover:text-black">
+                        <span className="ml-3 inline-flex items-center rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-[#111111] transition-all duration-300 group-hover:border-[#FF3B00] group-hover:bg-[#FF3B00] group-hover:text-white shadow-sm">
                           See Details
                         </span>
                       </span>
-                      <span className="block h-px w-0 bg-white transition-all duration-500 group-hover:w-full" />
+                      <span className="block h-0.5 w-0 bg-[#FF3B00] transition-all duration-500 group-hover:w-full" />
                     </button>
-                    <div className="mt-2 text-base font-medium text-white/90">{it.company}</div>
+                    <div className="mt-2 font-mono text-base font-semibold text-[#111111]">{it.company}</div>
                   </div>
                   <div
                     className={`pl-8 md:pl-0 ${
                       i % 2 === 0 ? "md:pl-12" : "md:order-1 md:pr-12 md:text-right"
                     }`}
                   >
-                    <p className="mt-3 max-w-xl text-[17px] leading-8 text-white/85">{it.desc}</p>
+                    <p className="mt-3 max-w-xl text-[17px] leading-8 text-[#111111]/85">{it.desc}</p>
                   </div>
-                  <span className="absolute left-[-5px] top-1 h-2.5 w-2.5 rounded-full bg-white shadow-[0_0_20px_rgba(255,255,255,0.6)] md:left-1/2 md:-translate-x-1/2" />
+                  <span className="absolute left-[-6px] top-1.5 h-3.5 w-3.5 rounded-full bg-[#FF3B00] shadow-[0_0_12px_rgba(255,59,0,0.6)] md:left-1/2 md:-translate-x-1/2" />
                 </li>
               </Reveal>
             ))}
@@ -146,64 +146,64 @@ export function Experience() {
           className="fixed inset-0 z-[80] flex items-center justify-center px-4 py-10"
           onClick={() => setOpen(null)}
         >
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
+          <div className="absolute inset-0 bg-[#0A0B0D]/85 backdrop-blur-md" />
           <div
-            className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-black p-8 md:p-10"
+            className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-[#22252A] bg-[#121417] p-8 md:p-10 shadow-2xl text-white"
             onClick={(e) => e.stopPropagation()}
           >
             <button
               onClick={() => setOpen(null)}
               data-cursor="hover"
               aria-label="Close"
-              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-black"
+              className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] text-white transition-colors hover:bg-[#FF3B00] hover:border-[#FF3B00]"
             >
               <X className="h-4 w-4" />
             </button>
-            <div className="font-mono text-[12px] uppercase tracking-[0.3em] text-white/80">
+            <div className="font-mono text-[12px] uppercase tracking-[0.3em] text-[#FF3B00]">
               {open.year}
             </div>
-            <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
+            <h3 className="mt-3 font-display text-3xl font-bold tracking-tight text-white md:text-4xl">
               {open.role}
             </h3>
-            <div className="mt-2 text-base font-medium text-white/90">{open.company}</div>
-            <div className="mt-6 flex flex-wrap items-center gap-4 text-[11px] uppercase tracking-[0.2em] text-white/80">
+            <div className="mt-2 font-mono text-base text-[#8E8E93]">{open.company}</div>
+            <div className="mt-6 flex flex-wrap items-center gap-4 font-mono text-[11px] uppercase tracking-[0.2em] text-[#8E8E93]">
               <span className="inline-flex items-center gap-2">
-                <Calendar className="h-3.5 w-3.5" />
+                <Calendar className="h-3.5 w-3.5 text-[#FF3B00]" />
                 {open.year}
               </span>
               <span className="inline-flex items-center gap-2">
-                <MapPin className="h-3.5 w-3.5" />
+                <MapPin className="h-3.5 w-3.5 text-[#FF3B00]" />
                 {open.location}
               </span>
             </div>
             <div className="mt-8">
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white">
+              <h4 className="mb-3 font-mono text-sm font-semibold uppercase tracking-[0.25em] text-white">
                 Overview
               </h4>
-              <p className="leading-8 text-white/75">{open.desc}</p>
+              <p className="leading-8 text-white/80">{open.desc}</p>
             </div>
             <div className="mt-8">
-              <div className="mb-3 inline-flex items-center gap-2 text-[12px] uppercase tracking-[0.3em] text-white/80">
-                <Award className="h-3.5 w-3.5" /> Highlights
+              <div className="mb-3 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.3em] text-[#8E8E93]">
+                <Award className="h-3.5 w-3.5 text-[#FF3B00]" /> Highlights
               </div>
-              <ul className="space-y-3 text-sm text-white/75">
+              <ul className="space-y-3 text-sm text-white/80">
                 {open.highlights.map((h) => (
                   <li key={h} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-1 h-4 w-4 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="mt-1 h-4 w-4 text-[#FF3B00] shrink-0" />
                     <span>{h}</span>
                   </li>
                 ))}
               </ul>
             </div>
             <div className="mt-8">
-              <h4 className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-white">
+              <h4 className="mb-3 font-mono text-sm font-semibold uppercase tracking-[0.25em] text-white">
                 Technologies Used
               </h4>
               <div className="flex flex-wrap gap-2">
                 {open.stack.map((s) => (
                   <span
                     key={s}
-                    className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/70"
+                    className="rounded-full border border-[#22252A] bg-[#0A0B0D] px-3 py-1 font-mono text-[12px] uppercase tracking-widest text-[#8E8E93]"
                   >
                     {s}
                   </span>

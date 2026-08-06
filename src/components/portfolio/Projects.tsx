@@ -256,7 +256,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         <div
           ref={tiltRef}
-          className="relative aspect-[4/3] w-full overflow-hidden rounded-sm border border-white/10 bg-black transition-[transform,border-color,box-shadow] duration-500 group-hover:border-white/80 group-hover:shadow-[0_0_60px_-10px_rgba(255,255,255,0.25)]"
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#D0D4D6] bg-white shadow-sm transition-all duration-500 group-hover:border-[#FF3B00] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
           style={{ transformStyle: "preserve-3d" }}
           data-cursor="hover"
         >
@@ -268,13 +268,13 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               loading="lazy"
               className="block w-full will-change-transform"
               style={{
-                transition: hovered ? "none" : "transform 0.6s cubic-bezier(0.77,0,0.175,1)",
+                transition: hovered ? "none" : "transform 0.6s cubic-bezier(0.16,1,0.3,1)",
               }}
             />
           </div>
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-0" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111111]/40 via-transparent to-transparent opacity-100 transition-opacity duration-500 group-hover:opacity-0" />
 
-          {/* Live link button — top right */}
+          {/* Live link button - top right */}
           <a
             href={project.liveUrl}
             target="_blank"
@@ -283,20 +283,20 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             data-cursor="hover"
             aria-label={`Open ${project.title} live site`}
             title="Open live site"
-            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-white/95 px-3.5 py-2 text-[12px] font-medium uppercase tracking-[0.2em] text-black opacity-0 shadow-[0_8px_30px_-8px_rgba(255,255,255,0.4)] backdrop-blur transition-all duration-500 hover:bg-white group-hover:opacity-100"
+            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-[#FF3B00] px-3.5 py-2 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-white opacity-0 shadow-lg backdrop-blur transition-all duration-300 hover:bg-[#111111] group-hover:opacity-100"
           >
             Live
             <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
           </a>
 
-          <div className="absolute left-4 top-4 z-10 rounded-full bg-black/70 px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.3em] text-white/80 backdrop-blur">
+          <div className="absolute left-4 top-4 z-10 rounded-full bg-[#121417]/85 px-2.5 py-1 font-mono text-[12px] uppercase tracking-[0.3em] text-white backdrop-blur">
             № {String(index + 1).padStart(2, "0")}
           </div>
         </div>
 
         <div className="mt-6 flex items-start justify-between gap-6">
           <div>
-            <div className="text-[14px] uppercase tracking-[0.3em] text-white/80">
+            <div className="font-mono text-[14px] uppercase tracking-[0.3em] text-[#8E8E93]">
               {project.category} · {project.year}
             </div>
             <a
@@ -304,12 +304,12 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="hover"
-              className="mt-2 inline-flex items-center gap-2 font-display text-2xl font-semibold tracking-tight text-white transition-colors hover:text-white/70 md:text-3xl"
+              className="mt-2 inline-flex items-center gap-2 font-display text-2xl font-bold tracking-tight text-[#111111] transition-colors hover:text-[#FF3B00] md:text-3xl"
             >
               {project.title}
-              <ArrowUpRight className="h-5 w-5 opacity-60" />
+              <ArrowUpRight className="h-5 w-5 opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 group-hover:text-[#FF3B00]" />
             </a>
-            <p className="mt-2 max-w-md text-[16px] leading-relaxed text-white/80">
+            <p className="mt-2 max-w-md text-[16px] leading-relaxed text-[#111111]/80">
               {project.desc}
             </p>
           </div>
@@ -318,7 +318,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.tags.map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-white/15 px-3 py-1 text-[12px] uppercase tracking-widest text-white/80"
+                  className="rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] uppercase tracking-widest text-[#8E8E93]"
                 >
                   {t}
                 </span>
@@ -334,17 +334,17 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 data-cursor="hover"
                 aria-label={`Copy password for ${project.title}`}
                 title="Copy password"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90 transition-colors hover:border-white/40 hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-[#FF3B00] hover:text-[#FF3B00]"
               >
                 <span>Password: {project.password}</span>
                 {copied ? (
-                  <Check className="h-3.5 w-3.5 text-emerald-400" />
+                  <Check className="h-3.5 w-3.5 text-[#FF3B00]" />
                 ) : (
                   <Copy className="h-3.5 w-3.5" />
                 )}
               </button>
             ) : (
-              <span className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-[12px] font-medium uppercase tracking-[0.2em] text-white/90">
+              <span className="rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111]">
                 Password: N/A
               </span>
             )}
@@ -389,22 +389,22 @@ export function Projects() {
   const hasMore = visible < filtered.length;
 
   return (
-    <section id="work" className="relative px-6 py-32 md:py-48">
+    <section id="work" className="sticky-card sticky-card-4 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <Reveal>
-              <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
-                ( 03 ) — Selected Work
+              <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
+                ( 03 ) - Selected Work
               </span>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
+              <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
                 Recent Projects.
               </h2>
             </Reveal>
           </div>
-          <Reveal delay={0.2} className="max-w-md text-[16px] text-white/80 md:text-[18px]">
+          <Reveal delay={0.2} className="max-w-md text-[16px] text-[#111111]/85 md:text-[18px]">
             Hover any project to scroll through a live preview of its homepage.
           </Reveal>
         </div>
@@ -413,12 +413,12 @@ export function Projects() {
         <Reveal delay={0.15}>
           <div className="mb-8 flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div className="relative w-full max-w-sm">
-              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/80" />
+              <Search className="pointer-events-none absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 text-[#8E8E93]" />
               <input
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search projects…"
-                className="w-full rounded-full border border-white/15 bg-white/5 py-2.5 pl-11 pr-10 text-sm text-white placeholder:text-white/80 focus:border-white/80 focus:outline-none"
+                className="w-full rounded-full border border-[#D0D4D6] bg-white py-2.5 pl-11 pr-10 text-sm text-[#111111] placeholder:text-[#8E8E93] shadow-sm focus:border-[#FF3B00] focus:outline-none"
                 data-cursor="hover"
               />
               {query && (
@@ -426,7 +426,7 @@ export function Projects() {
                   onClick={() => setQuery("")}
                   data-cursor="hover"
                   aria-label="Clear"
-                  className="absolute right-3 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-white/80 hover:bg-white/10"
+                  className="absolute right-3 top-1/2 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full text-[#8E8E93] hover:bg-[#E5E7E8]"
                 >
                   <X className="h-3.5 w-3.5" />
                 </button>
@@ -439,25 +439,25 @@ export function Projects() {
                     key={option}
                     onClick={() => setType(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
                       type === option
-                        ? "border-white bg-white text-black"
-                        : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
                     }`}
                   >
                     {option}
                   </button>
                 ))}
-                <span className="mx-1 h-4 w-px bg-white/15" />
+                <span className="mx-1 h-4 w-px bg-[#D0D4D6]" />
                 {categoryOptions.map((option) => (
                   <button
                     key={option}
                     onClick={() => setCategory(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
                       category === option
-                        ? "border-white bg-white text-black"
-                        : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
                     }`}
                   >
                     {option}
@@ -472,10 +472,10 @@ export function Projects() {
                 key={option}
                 onClick={() => setTag(option)}
                 data-cursor="hover"
-                className={`rounded-full border px-3 py-1.5 text-[12px] uppercase tracking-[0.2em] transition-all ${
+                className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
                   tag === option
-                    ? "border-white bg-white text-black"
-                    : "border-white/15 text-white/80 hover:border-white/80 hover:text-white"
+                    ? "border-[#FF3B00] bg-[#FF3B00] text-white shadow-sm"
+                    : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#FF3B00] hover:text-[#FF3B00]"
                 }`}
               >
                 {option}
@@ -486,8 +486,8 @@ export function Projects() {
 
         {shown.length === 0 ? (
           <div className="flex flex-col items-center justify-center gap-3 py-24 text-center">
-            <div className="text-2xl text-white/30">∅</div>
-            <p className="text-sm text-white/80">No projects match that search.</p>
+            <div className="text-2xl text-[#8E8E93]">∅</div>
+            <p className="text-sm text-[#111111]/80">No projects match that search.</p>
             <button
               onClick={() => {
                 setQuery("");
@@ -496,7 +496,7 @@ export function Projects() {
                 setTag("All");
               }}
               data-cursor="hover"
-              className="mt-2 rounded-full border border-white/20 px-4 py-2 text-[12px] uppercase tracking-[0.2em] text-white hover:bg-white hover:text-black"
+              className="mt-2 rounded-full border border-[#D0D4D6] bg-white px-4 py-2 font-mono text-[12px] uppercase tracking-[0.2em] text-[#111111] hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
             >
               Reset filters
             </button>
@@ -516,14 +516,14 @@ export function Projects() {
             <button
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
               data-cursor="hover"
-              className="group inline-flex items-center gap-3 rounded-full border border-white/30 px-7 py-3 text-xs uppercase tracking-[0.3em] text-white transition-colors hover:border-white hover:bg-white hover:text-black"
+              className="group inline-flex items-center gap-3 rounded-full border border-[#D0D4D6] bg-white px-7 py-3 font-mono text-xs uppercase tracking-[0.3em] text-[#111111] transition-all hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white shadow-sm"
             >
               See more
-              <span className="font-mono text-[12px] opacity-60 group-hover:opacity-100">
+              <span className="font-mono text-[12px] opacity-70 group-hover:opacity-100">
                 +{Math.min(PAGE_SIZE, filtered.length - visible)}
               </span>
             </button>
-            <span className="text-[12px] uppercase tracking-[0.3em] text-white/80">
+            <span className="font-mono text-[12px] uppercase tracking-[0.3em] text-[#8E8E93]">
               Showing {shown.length} of {filtered.length}
             </span>
           </div>

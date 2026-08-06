@@ -111,16 +111,16 @@ export function Hero() {
   }, []);
 
   return (
-    <section id="top" className="relative min-h-screen overflow-hidden px-5 pt-28 pb-16 md:px-8">
-      {/* Background glow */}
-      <div className="absolute left-1/2 top-1/2 h-[550px] w-[550px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/5 blur-[150px]" />
+    <section id="top" className="sticky-card sticky-card-1 min-h-screen bg-[#0A0B0D] px-5 pt-32 pb-16 md:px-8">
+      {/* Ambient radial glow */}
+      <div className="absolute left-1/2 top-1/3 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,59,0,0.07)_0%,transparent_70%)] blur-[120px] pointer-events-none" />
 
       <div className="relative mx-auto w-full max-w-7xl">
         <div className="grid gap-10 md:grid-cols-12 md:items-center">
           {/* LEFT CONTENT */}
           <div className="md:col-span-7">
             <Reveal>
-              <div className="mb-6 inline-flex rounded-full border border-white/10 px-4 py-2 text-[12px] uppercase tracking-[0.35em] text-white/60">
+              <div className="mb-6 inline-flex rounded-full border border-[#22252A] bg-[#121417]/80 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.35em] text-white">
                 Shopify Developer & Frontend Engineer
               </div>
             </Reveal>
@@ -129,8 +129,8 @@ export function Hero() {
             <div className="block md:hidden my-6">
               <Reveal y={20}>
                 <div className="relative mx-auto w-56">
-                  <div className="absolute -inset-4 rounded-full border border-white/10" />
-                  <div className="relative aspect-square overflow-hidden rounded-full border border-white/20 shadow-[0_0_80px_-10px_rgba(255,255,255,0.2)]">
+                  <div className="absolute -inset-4 rounded-full border border-[#22252A]" />
+                  <div className="relative aspect-square overflow-hidden rounded-full border border-[#22252A] shadow-[0_0_80px_rgba(0,0,0,0.5)]">
                     <img
                       src={profileImg}
                       alt="Priyo"
@@ -173,7 +173,7 @@ export function Hero() {
                       {item.value}
                     </div>
 
-                    <div className="mt-2 text-[12px] uppercase tracking-[0.25em] text-white/45">
+                    <div className="mt-2 font-mono text-[12px] uppercase tracking-[0.25em] text-[#8E8E93]">
                       {item.label}
                     </div>
                   </div>
@@ -183,21 +183,21 @@ export function Hero() {
 
             {/* Rotating Taglines */}
             <Reveal delay={0.3}>
-              <div className="mt-8 flex items-center gap-3 text-sm uppercase tracking-[0.25em] text-white/65">
+              <div className="mt-8 flex items-center gap-3 font-mono text-sm uppercase tracking-[0.25em] text-[#8E8E93]">
                 <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-green-400" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF3B00] opacity-75" />
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-[#FF3B00]" />
                 </span>
 
                 <span className="overflow-hidden h-5">
-                  <span key={tagIndex} className="block animate-[fade-in_0.6s_ease-out] text-white">
+                  <span key={tagIndex} className="block animate-[fade-in_0.6s_ease-out] text-white font-mono">
                     {taglines[tagIndex]}
                   </span>
                 </span>
               </div>
             </Reveal>
 
-            {/* CTA - Fixed: Force two columns (1 row) on mobile screens */}
+            {/* CTA */}
             <Reveal delay={0.4}>
               <div className="mt-10 grid grid-cols-2 gap-4 md:flex md:flex-wrap">
                 <a
@@ -219,14 +219,14 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* DESKTOP ONLY: Original Right Column Content */}
+          {/* DESKTOP ONLY: Right Column Profile */}
           <div className="hidden md:block md:col-span-5">
             <Reveal y={30}>
               <div className="relative mx-auto w-full max-w-[420px]">
-                <div className="absolute -inset-6 rounded-full border border-white/10" />
-                <div className="absolute -inset-12 rounded-full border border-white/5" />
+                <div className="absolute -inset-6 rounded-full border border-[#22252A]" />
+                <div className="absolute -inset-12 rounded-full border border-[#22252A]/50" />
 
-                <div className="relative aspect-square overflow-hidden rounded-full border border-white/20 shadow-[0_0_120px_-10px_rgba(255,255,255,0.28)]">
+                <div className="relative aspect-square overflow-hidden rounded-full border border-[#22252A] shadow-[0_0_100px_rgba(0,0,0,0.8)]">
                   <img
                     src={profileImg}
                     alt="Priyo"
@@ -234,9 +234,9 @@ export function Hero() {
                   />
                 </div>
 
-                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-2xl border border-white/10 bg-black/80 px-5 py-4 backdrop-blur-md w-max">
+                <div className="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-2xl border border-[#22252A] bg-[#121417]/90 px-5 py-4 backdrop-blur-md w-max shadow-xl">
                   <div className="text-sm font-medium text-white">Based in Bangladesh</div>
-                  <div className="mt-1 text-xs text-white/50">Working with clients worldwide</div>
+                  <div className="mt-1 font-mono text-xs text-[#8E8E93]">Working with clients worldwide</div>
                 </div>
               </div>
             </Reveal>
@@ -245,12 +245,12 @@ export function Hero() {
 
         {/* Skills Marquee */}
         <Reveal delay={0.5} className="mt-20">
-          <div className="relative overflow-hidden border-y border-white/10 py-4">
-            <div className="marquee flex gap-12 whitespace-nowrap text-[12px] uppercase tracking-[0.4em] text-white/55">
+          <div className="relative overflow-hidden border-y border-[#22252A] py-4">
+            <div className="marquee flex gap-12 whitespace-nowrap font-mono text-[12px] uppercase tracking-[0.4em] text-[#8E8E93]">
               {[...skills, ...skills, ...skills].map((s, i) => (
                 <span key={i} className="flex items-center gap-12">
-                  <span className="text-white/85">{s}</span>
-                  <span className="h-1 w-1 rounded-full bg-white/30" />
+                  <span className="text-white">{s}</span>
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#FF3B00]" />
                 </span>
               ))}
             </div>

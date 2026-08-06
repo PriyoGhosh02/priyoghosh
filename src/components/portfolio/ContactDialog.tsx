@@ -27,16 +27,16 @@ export function ContactDialog({
       className="fixed inset-0 z-[80] flex items-start justify-center overflow-y-auto overscroll-contain px-3 py-6 sm:px-4 sm:py-10"
       onClick={onClose}
     >
-      <div className="absolute inset-0 bg-black/85 backdrop-blur-md" />
+      <div className="absolute inset-0 bg-[#0A0B0D]/85 backdrop-blur-md" />
       <div
-        className="relative my-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-black"
+        className="relative my-auto w-full max-w-3xl overflow-hidden rounded-2xl border border-[#22252A] bg-[#121417] text-white shadow-2xl"
         onClick={(e) => e.stopPropagation()}
         onTouchStart={(e) => e.stopPropagation()}
         onTouchMove={(e) => e.stopPropagation()}
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-black"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] text-white transition-colors hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white"
           data-cursor="hover"
           aria-label="Close"
         >

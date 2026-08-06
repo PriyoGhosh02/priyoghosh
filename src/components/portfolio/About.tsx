@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Reveal, SplitReveal } from "./Reveal";
-import { ChevronLeft, ChevronRight, GraduationCap, Briefcase } from "lucide-react";
 import profileImg from "@/assets/profile_3_Rbg.webp";
+import { Briefcase, ChevronLeft, ChevronRight, GraduationCap } from "lucide-react";
+import { useState } from "react";
+import { Reveal } from "./Reveal";
 // import profileImg from "@/assets/profile_sut.webp";
 
 type CardData = {
@@ -17,12 +17,12 @@ type CardData = {
 const cards: CardData[] = [
   {
     type: "academic",
-    badge: "01 — Academic",
+    badge: "01 - Academic",
     title: "A computer-science foundation, in progress.",
     subtitle: "B.Sc. CSE · Green University of Bangladesh",
     body: [
       "Pursuing a B.Sc. in Computer Science and Engineering at Green University of Bangladesh, graduating in 2026.",
-      "Earlier completed HSC (Science) at Kaliganj Govt. College and SSC (Science) at Dr. Mujib-Ruby Model High School — solid grounding in math, problem solving and CS fundamentals.",
+      "Earlier completed HSC (Science) at Kaliganj Govt. College and SSC (Science) at Dr. Mujib-Ruby Model High School - solid grounding in math, problem solving and CS fundamentals.",
     ],
     highlights: [
       { v: "B.Sc.", l: "CSE" },
@@ -34,7 +34,7 @@ const cards: CardData[] = [
   },
   {
     type: "industrial",
-    badge: "02 — Industrial",
+    badge: "02 - Industrial",
     title: "Responsive designs for real Projects.",
     subtitle: "Softvance · Sardar IT",
     body: [
@@ -60,18 +60,17 @@ export function About() {
   };
 
   return (
-    <section id="about" className="relative px-6 py-32 md:py-48">
+    <section id="about" className="sticky-card sticky-card-2 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-7xl">
         <Reveal>
-          <span className="text-[14px] uppercase tracking-[0.4em] text-white/80">
-            ( 01 ) — About
+          <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
+            ( 01 ) - About
           </span>
         </Reveal>
         <Reveal delay={0.1}>
-      
-                        <h2 className="shimmer-text mt-6 font-display text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                Get To Know Me.
-              </h2>
+          <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
+            Get To Know Me.
+          </h2>
         </Reveal>
 
         <div className="mt-16 grid gap-12 md:grid-cols-12 md:items-center">
@@ -79,7 +78,7 @@ export function About() {
           <div className="md:col-span-4">
             <div
               key={`img-${idx}`}
-              className="relative aspect-[4/5] w-full animate-[fade-in_0.6s_ease-out] overflow-hidden rounded-sm border border-white/10"
+              className="relative aspect-[4/5] w-full animate-[fade-in_0.6s_ease-out] overflow-hidden rounded-xl border border-[#D0D4D6] bg-white shadow-md"
             >
               <img
                 src={card.image}
@@ -89,12 +88,12 @@ export function About() {
                 height={500}
                 className="h-full w-full object-cover grayscale"
               />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
-              <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-white/20 bg-black/70 px-3 py-1.5 text-[10px] uppercase tracking-[0.25em] text-white backdrop-blur">
+              <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-white/20 bg-[#0A0B0D]/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-white backdrop-blur">
                 {card.type === "academic" ? (
-                  <GraduationCap className="h-3.5 w-3.5" />
+                  <GraduationCap className="h-3.5 w-3.5 text-[#FF3B00]" />
                 ) : (
-                  <Briefcase className="h-3.5 w-3.5" />
+                  <Briefcase className="h-3.5 w-3.5 text-[#FF3B00]" />
                 )}
                 {card.type}
               </div>
@@ -102,9 +101,9 @@ export function About() {
           </div>
 
           {/* Right: content */}
-          <div id="about_content" className="md:col-span-8 md:p-6 md:pl-12">
+          <div id="about_content" className="md:col-span-8 rounded-2xl border border-[#D0D4D6] bg-white p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md">
             <div className="flex items-center justify-between gap-4">
-              <span className="text-[14px] uppercase tracking-[0.3em] text-white/80">
+              <span className="font-mono text-[14px] font-semibold uppercase tracking-[0.3em] text-[#FF3B00]">
                 {card.badge}
               </span>
               <div className="flex items-center gap-2">
@@ -112,7 +111,7 @@ export function About() {
                   onClick={() => swap(-1)}
                   data-cursor="hover"
                   aria-label="Previous"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-black"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
                 >
                   <ChevronLeft className="h-4 w-4" />
                 </button>
@@ -120,7 +119,7 @@ export function About() {
                   onClick={() => swap(1)}
                   data-cursor="hover"
                   aria-label="Next"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white transition-colors hover:bg-white hover:text-black"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -128,13 +127,13 @@ export function About() {
             </div>
 
             <div key={`txt-${idx}`} className="animate-[fade-in_0.5s_ease-out]">
-              <h3 className="mt-6 font-display text-3xl font-semibold tracking-tight text-white md:text-4xl">
+              <h3 className="mt-6 font-display text-3xl font-bold tracking-tight text-[#111111] md:text-4xl">
                 {card.title}
               </h3>
-              <p className="mt-3 text-sm uppercase tracking-[0.2em] text-white/80">
+              <p className="mt-3 font-mono text-sm uppercase tracking-[0.2em] text-[#111111] font-medium">
                 {card.subtitle}
               </p>
-              <div className="mt-8 max-w-xl space-y-4 text-white/80 text-[16px] md:text-[18px]">
+              <div className="mt-8 max-w-xl space-y-4 text-[#111111]/85 text-[16px] md:text-[18px]">
                 {card.body.map((p, i) => (
                   <p key={i} className="leading-relaxed">
                     {p}
@@ -143,11 +142,11 @@ export function About() {
               </div>
               <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
                 {card.highlights.map((h) => (
-                  <div key={h.l} className="border-l border-white/15 pl-4">
-                    <div className="font-display text-2xl font-semibold text-white md:text-3xl">
+                  <div key={h.l} className="border-l-2 border-[#D0D4D6] pl-4">
+                    <div className="font-display text-2xl font-bold text-[#111111] md:text-3xl">
                       {h.v}
                     </div>
-                    <div className="mt-1 text-[12px] uppercase tracking-[0.3em] text-white/80">
+                    <div className="mt-1 font-mono text-[12px] uppercase tracking-[0.3em] text-[#111111] font-semibold">
                       {h.l}
                     </div>
                   </div>
@@ -163,8 +162,8 @@ export function About() {
                   onClick={() => setIdx(i)}
                   data-cursor="hover"
                   aria-label={c.type}
-                  className={`h-1 rounded-full transition-all duration-500 ${
-                    i === idx ? "w-12 bg-white" : "w-6 bg-white/20"
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    i === idx ? "w-12 bg-[#FF3B00]" : "w-6 bg-[#D0D4D6]"
                   }`}
                 />
               ))}

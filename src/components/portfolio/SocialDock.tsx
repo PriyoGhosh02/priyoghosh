@@ -59,9 +59,8 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
         aria-hidden={!open}
         tabIndex={-1}
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-[54] bg-black/30 backdrop-blur-[2px] transition-opacity duration-300 ${
-          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-        }`}
+        className={`fixed inset-0 z-[54] bg-black/30 backdrop-blur-[2px] transition-opacity duration-300 ${open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+          }`}
       />
 
       <div className="fixed right-5 top-1/2 z-[55] -translate-y-1/2 md:right-8">
@@ -99,19 +98,18 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
                 onClick={
                   it.onClick
                     ? () => {
-                        it.onClick!();
-                        setOpen(false);
-                      }
+                      it.onClick!();
+                      setOpen(false);
+                    }
                     : () => setOpen(false)
                 }
                 data-cursor="hover"
                 aria-label={it.label}
                 title={it.label}
-                className={`group absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-white/20 bg-black/80 text-white backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] hover:border-white hover:bg-white hover:text-black ${
-                  open
-                    ? "pointer-events-auto scale-100 opacity-100"
-                    : "pointer-events-none scale-50 opacity-0"
-                }`}
+                className={`group absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#22252A] bg-[#121417]/90 text-white backdrop-blur-md transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white ${open
+                  ? "pointer-events-auto scale-100 opacity-100"
+                  : "pointer-events-none scale-50 opacity-0"
+                  }`}
                 style={{
                   transform: open
                     ? `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1)`
@@ -120,7 +118,7 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
                 }}
               >
                 <Icon className="h-4 w-4" />
-                <span className="pointer-events-none absolute right-[calc(100%+10px)] whitespace-nowrap rounded-full border border-white/15 bg-black/90 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="pointer-events-none absolute right-[calc(100%+10px)] whitespace-nowrap rounded-full border border-[#22252A] bg-[#121417] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-white opacity-0 transition-opacity group-hover:opacity-100 shadow-md">
                   {it.label}
                 </span>
               </Tag>
@@ -132,22 +130,19 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
             data-cursor="hover"
             aria-label={open ? "Close tools" : "Open tools"}
             aria-expanded={open}
-            className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border shadow-[0_0_30px_rgba(255,255,255,0.18)] transition-all duration-500 ${
-              open
-                ? "border-white bg-white text-black rotate-90"
-                : "border-white/30 bg-black text-white hover:border-white"
-            }`}
+            className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 ${open
+              ? "border-[#FF3B00] bg-[#FF3B00] text-white rotate-90"
+              : "border-[#22252A] bg-[#121417] text-white hover:border-[#FF3B00] hover:text-[#FF3B00]"
+              }`}
           >
             <span className="relative block h-5 w-5">
               <Plus
-                className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${
-                  open ? "rotate-45 opacity-0 scale-75" : "rotate-0 opacity-100 scale-100"
-                }`}
+                className={`absolute inset-0 h-5 w-5 transition-all duration-300 ${open ? "rotate-45 opacity-0 scale-75" : "rotate-0 opacity-100 scale-100"
+                  }`}
               />
               <CloseIcon
-                className={`absolute inset-0 h-5 w-5 text-black transition-all duration-300 ${
-                  open ? "rotate-0 opacity-100 scale-100" : "-rotate-45 opacity-0 scale-75"
-                }`}
+                className={`absolute inset-0 h-5 w-5 text-black transition-all duration-300 ${open ? "rotate-0 opacity-100 scale-100" : "-rotate-45 opacity-0 scale-75"
+                  }`}
               />
             </span>
           </button>

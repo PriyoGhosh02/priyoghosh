@@ -10,7 +10,6 @@ import { Hero } from "./components/portfolio/Hero";
 import { LoadingPage } from "./components/portfolio/loadingpage";
 import { Nav } from "./components/portfolio/Nav";
 import { Projects } from "./components/portfolio/Projects";
-import { Scene3D } from "./components/portfolio/Scene3D";
 import { Skills } from "./components/portfolio/Skills";
 import { SmoothScroll } from "./components/portfolio/SmoothScroll";
 import { SocialDock } from "./components/portfolio/SocialDock";
@@ -36,7 +35,7 @@ function App() {
   };
 
   return (
-    <main className="grain relative min-h-screen overflow-hidden bg-black text-white">
+    <main className="grain relative min-h-screen overflow-hidden bg-[#0A0B0D] text-white">
       {isLoading ? (
         <LoadingPage showName={showName} onComplete={handleLoadingComplete} />
       ) : (
@@ -44,7 +43,6 @@ function App() {
           <SEO />
           <SmoothScroll />
           <CustomCursor />
-          <Scene3D />
 
           <div className="relative z-10">
             <Nav />

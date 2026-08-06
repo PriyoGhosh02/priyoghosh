@@ -57,13 +57,13 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     }
   };
 
-  const sectionClass = embedded ? "relative px-6 py-12" : "relative px-6 py-32 md:py-48";
+  const sectionClass = embedded ? "relative bg-[#0A0B0D] text-white px-6 py-12" : "sticky-card sticky-card-6 min-h-screen bg-[#0A0B0D] text-white px-6 py-32 md:py-48";
 
   return (
     <section id={embedded ? undefined : "contact"} className={sectionClass}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <h2 className="text-5xl md:text-7xl font-semibold text-white">Get In Touch</h2>
+          <h2 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-white">Get In Touch</h2>
         </Reveal>
 
         <div className="mt-16 grid gap-16 md:grid-cols-2">
@@ -80,8 +80,8 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     htmlFor={f.id}
                     className={`absolute transition-all duration-300 ${
                       focused === f.id
-                        ? "-top-4 text-[14px] text-white"
-                        : "top-3 text-[16px] text-white/80"
+                        ? "-top-4 font-mono text-[14px] text-[#FF3B00]"
+                        : "top-3 font-mono text-[16px] text-white/80"
                     }`}
                   >
                     {f.label}
@@ -95,7 +95,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     onChange={handleChange}
                     onFocus={() => setFocused(f.id)}
                     onBlur={(e) => e.target.value === "" && setFocused(null)}
-                    className="w-full border-b border-white/40 bg-transparent py-3 text-white outline-none"
+                    className="w-full border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-[#FF3B00] transition-colors"
                   />
                 </div>
               ))}
@@ -105,8 +105,8 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   htmlFor="message"
                   className={`absolute transition-all duration-300 ${
                     focused === "message"
-                      ? "-top-4 text-[14px] text-white"
-                      : "top-3 text-[16px] text-white/80"
+                      ? "-top-4 font-mono text-[14px] text-[#FF3B00]"
+                      : "top-3 font-mono text-[16px] text-white/80"
                   }`}
                 >
                   Message
@@ -120,14 +120,14 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   onChange={handleChange}
                   onFocus={() => setFocused("message")}
                   onBlur={(e) => e.target.value === "" && setFocused(null)}
-                  className="w-full resize-none border-b border-white/20 bg-transparent py-3 text-white outline-none"
+                  className="w-full resize-none border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-[#FF3B00] transition-colors"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={sending}
-                className="cta-primary focus-ring group relative inline-flex items-center gap-3 text-[14px] uppercase tracking-widest"
+                className="cta-primary focus-ring group relative inline-flex items-center gap-3 font-mono text-[14px] uppercase tracking-widest"
               >
                 <span>{sending ? "Sending..." : submitted ? "Sent ✓" : "Send Message"}</span>
                 <ArrowUpRight className="h-4 w-4" />
@@ -139,31 +139,31 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
           <Reveal y={20} delay={0.1}>
             <div className="space-y-10 text-white">
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Email</p>
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Email</p>
                 <a
                   href="mailto:priyoghosh02@gmail.com"
-                  className="text-xl md:text-2xl font-medium underline"
+                  className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-[#FF3B00] underline decoration-[#22252A] underline-offset-4 hover:decoration-[#FF3B00]"
                 >
                   priyoghosh02@gmail.com
                 </a>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Phone</p>
-                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium underline">
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Phone</p>
+                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-[#FF3B00] underline decoration-[#22252A] underline-offset-4 hover:decoration-[#FF3B00]">
                   +880 1743 457164
                 </a>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80">Location</p>
-                <p className="text-xl md:text-2xl font-medium">Dhaka, Bangladesh</p>
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Location</p>
+                <p className="text-xl md:text-2xl font-medium text-white">Dhaka, Bangladesh</p>
               </div>
 
               <div>
-                <p className="text-[14px] uppercase tracking-[0.3em] text-white/80 mb-3">Social</p>
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white mb-4">Social</p>
 
-                <div className="space-y-3">
+                <div className="flex flex-wrap gap-3">
                   {[
                     {
                       label: "GitHub",
@@ -186,10 +186,11 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                       key={s.label}
                       href={s.href}
                       target="_blank"
-                      className="flex justify-between border-b border-white/10 py-2 hover:border-white"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 rounded-full border border-[#22252A] bg-[#121417] px-4 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white"
                     >
                       <span>{s.label}</span>
-                      <ArrowUpRight className="h-4 w-4" />
+                      <ArrowUpRight className="h-3.5 w-3.5" />
                     </a>
                   ))}
                 </div>

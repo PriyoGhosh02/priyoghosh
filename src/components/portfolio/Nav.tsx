@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MoreVertical, X } from "lucide-react";
+import { CodeXml, MoreVertical, X } from "lucide-react";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -34,32 +34,32 @@ export function Nav() {
   return (
     <>
     <header
-      className={`fixed left-0 right-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
-        scrolled ? "top-4" : "top-0"
+      className={`fixed left-0 right-0 z-[100] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+        scrolled ? "top-3 md:top-4" : "top-3 md:top-5"
       }`}
     >
       <div
-        className={`mx-auto flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`mx-auto flex max-w-7xl items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           scrolled
-            ? "w-[min(94%,920px)] gap-3 rounded-full border border-white/15 bg-black/60 px-4 py-2.5 shadow-[0_8px_40px_-10px_rgba(255,255,255,0.15)] backdrop-blur-2xl md:gap-6 md:px-6"
-            : "max-w-7xl gap-4 px-4 py-5 md:gap-10 md:px-6 md:py-6"
+            ? "w-[min(92%,1280px)] gap-3 rounded-full border border-[#22252A] bg-[#0A0B0D]/85 px-5 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl md:gap-6 md:px-7"
+            : "w-[min(95%,1280px)] gap-4 rounded-full border border-[#22252A] bg-[#0A0B0D]/75 px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:gap-10 md:px-8"
         }`}
       >
         <a
           href="#top"
-          className="font-display text-sm font-semibold tracking-tight text-white md:text-base"
+          className="flex items-center font-display text-sm font-semibold tracking-tight text-white transition-colors hover:text-[#FF3B00] md:text-base"
           data-cursor="hover"
         >
-          <span>⌬</span>
-          <span className="ml-1.5 hidden sm:inline">PRIYO GHOSH</span>
-          <span className="ml-1.5 inline sm:hidden">PRIYO GHOSH</span>
+          <CodeXml className="h-5 w-5 text-[#FF3B00] mr-1.5" />
+          <span className="hidden sm:inline">PRIYO GHOSH</span>
+          <span className="inline sm:hidden">PRIYO GHOSH</span>
         </a>
         <nav className="hidden items-center md:flex md:gap-8">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="underline-grow whitespace-nowrap text-[14px] uppercase tracking-[0.18em] text-white/80 transition-colors hover:text-white md:tracking-[0.2em]"
+              className="font-mono text-[13px] uppercase tracking-[0.2em] text-white transition-colors hover:text-[#FF3B00]"
               data-cursor="hover"
             >
               {l.label}
@@ -68,7 +68,7 @@ export function Nav() {
         </nav>
         <a
           href="#contact"
-          className={`hidden rounded-full border border-white/30 text-[14px] uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-black md:inline-block ${
+          className={`hidden rounded-full bg-white font-medium text-[13px] uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-[#FF3B00] hover:text-white shadow-md md:inline-block ${
             scrolled ? "px-4 py-1.5" : "px-5 py-2"
           }`}
           data-cursor="hover"
@@ -79,7 +79,7 @@ export function Nav() {
           type="button"
           aria-label="Open menu"
           onClick={() => setMobileOpen(true)}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-all hover:border-white hover:bg-white hover:text-black md:hidden"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] bg-[#121417] text-white transition-all hover:border-[#FF3B00] hover:text-[#FF3B00] md:hidden"
           data-cursor="hover"
         >
           <MoreVertical className="h-4 w-4" />
@@ -93,26 +93,26 @@ export function Nav() {
       aria-hidden={!mobileOpen}
     >
       <div
-        className={`absolute inset-0 bg-black/70 backdrop-blur-sm transition-opacity duration-500 ${
+        className={`absolute inset-0 bg-[#0A0B0D]/80 backdrop-blur-md transition-opacity duration-500 ${
           mobileOpen ? "opacity-100" : "opacity-0"
         }`}
         onClick={() => setMobileOpen(false)}
       />
       <aside
-        className={`absolute right-0 top-0 h-full w-[78%] max-w-[320px] border-l border-white/10 bg-black px-6 pb-10 pt-6 shadow-[0_0_60px_-10px_rgba(255,255,255,0.15)] transition-transform duration-500 ease-[cubic-bezier(0.77,0,0.175,1)] ${
+        className={`absolute right-0 top-0 h-full w-[78%] max-w-[320px] border-l border-[#22252A] bg-[#0A0B0D] px-6 pb-10 pt-6 shadow-[0_0_60px_rgba(0,0,0,0.8)] transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           mobileOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex items-center justify-between">
-          <span className="font-display text-sm font-semibold tracking-tight text-white">
-            <span>⌬</span>
-            <span className="ml-1.5">PRIYO·GHOSH</span>
+          <span className="flex items-center font-display text-sm font-semibold tracking-tight text-white">
+            <CodeXml className="h-5 w-5 text-[#FF3B00] mr-1.5" />
+            <span>PRIYO·GHOSH</span>
           </span>
           <button
             type="button"
             aria-label="Close menu"
             onClick={() => setMobileOpen(false)}
-            className="flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition-all hover:border-white hover:bg-white hover:text-black"
+            className="flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] text-white transition-all hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white"
           >
             <X className="h-4 w-4" />
           </button>
@@ -123,7 +123,7 @@ export function Nav() {
               key={l.href}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="group flex items-center justify-between border-b border-white/10 py-4 text-white transition-colors hover:text-white/70"
+              className="group flex items-center justify-between border-b border-[#22252A] py-4 font-mono text-lg text-white transition-colors hover:text-[#FF3B00]"
               style={{
                 transitionDelay: mobileOpen ? `${i * 60 + 120}ms` : "0ms",
                 opacity: mobileOpen ? 1 : 0,
@@ -133,7 +133,7 @@ export function Nav() {
               }}
             >
               <span className="font-display text-2xl tracking-tight">{l.label}</span>
-              <span className="text-[10px] uppercase tracking-[0.2em] text-white/40">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/90">
                 0{i + 1}
               </span>
             </a>
@@ -142,7 +142,7 @@ export function Nav() {
         <a
           href="#contact"
           onClick={() => setMobileOpen(false)}
-          className="mt-10 inline-flex w-full items-center justify-center rounded-full border border-white/30 px-5 py-3 text-[11px] uppercase tracking-[0.2em] text-white transition-all hover:border-white hover:bg-white hover:text-black"
+          className="mt-10 inline-flex w-full items-center justify-center rounded-full bg-white px-5 py-3 font-mono text-[11px] uppercase tracking-[0.2em] text-black transition-all hover:bg-[#FF3B00] hover:text-white"
         >
           Let&apos;s talk
         </a>
