@@ -71,7 +71,7 @@ export function Nav({ onContactClick }: NavProps) {
             data-cursor="hover"
           >
             {/* <CodeXml className="h-5 w-5 text-brand mr-1.5" /> */}
-            <img src="../../../public/favicon_trns.png" alt="" height="20" width="20" />
+            <img src="/favicon_trns.png" alt="" height="20" width="20" />
             <span className="hidden sm:inline">PRIYO GHOSH</span>
             <span className="inline sm:hidden">PRIYO GHOSH</span>
           </a>
