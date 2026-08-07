@@ -53,7 +53,7 @@
   /* Subtle gray borders */
 
   /* Typography */
-  --text-dark: #111111;
+  --text-dark: #262626;
   /* Ink black for light background text */
   --text-light: #FFFFFF;
   /* Crisp white for dark background text */
@@ -911,11 +911,6 @@ Background: #E5E7E8
   .cta-primary,
   .cta-secondary {
     padding: 0.8rem 1.5rem;
-  }
-
-  p {
-    text-align: justify;
-    hyphens: auto;
   }
 }
 

@@ -133,7 +133,7 @@ export function About() {
               <p className="mt-3 font-mono text-sm uppercase tracking-[0.2em] text-[#111111] font-medium">
                 {card.subtitle}
               </p>
-              <div className="mt-8 max-w-xl space-y-4 text-[#111111]/85 text-[16px] md:text-[18px]">
+              <div className="text-justify [hyphens:auto] mt-8 max-w-xl space-y-4 text-[#111111]/85 text-[16px] md:text-[18px]">
                 {card.body.map((p, i) => (
                   <p key={i} className="leading-relaxed">
                     {p}
@@ -162,9 +162,8 @@ export function About() {
                   onClick={() => setIdx(i)}
                   data-cursor="hover"
                   aria-label={c.type}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === idx ? "w-12 bg-brand" : "w-6 bg-[#D0D4D6]"
-                  }`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${i === idx ? "w-12 bg-brand" : "w-6 bg-[#D0D4D6]"
+                    }`}
                 />
               ))}
             </div>

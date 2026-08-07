@@ -129,7 +129,7 @@ export function Experience() {
                     className={`pl-8 md:pl-0 ${i % 2 === 0 ? "md:pl-12" : "md:order-1 md:pr-12 md:text-right"
                       }`}
                   >
-                    <p className="mt-3 max-w-xl text-[17px] leading-8 text-[#111111]/85">{it.desc}</p>
+                    <p className="text-justify [hyphens:auto] mt-3 max-w-xl text-[17px] leading-8 text-[#111111]/85">{it.desc}</p>
                   </div>
                   <span className="absolute left-[-6px] top-1.5 h-3.5 w-3.5 rounded-full bg-brand shadow-[0_0_12px_var(--brand-color)] md:left-1/2 md:-translate-x-1/2" />
                 </li>
@@ -185,7 +185,7 @@ export function Experience() {
                 <h4 className="mb-3 font-mono text-sm font-semibold uppercase tracking-[0.25em] text-white">
                   Overview
                 </h4>
-                <p className="leading-8 text-white/80">{open.desc}</p>
+                <p className="text-justify [hyphens:auto] leading-8 text-white/80">{open.desc}</p>
               </div>
               <div className="mt-8">
                 <div className="mb-3 inline-flex items-center gap-2 font-mono text-[12px] uppercase tracking-[0.3em] text-[#8E8E93]">

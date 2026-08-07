@@ -62,7 +62,7 @@ export function Skills() {
 
           <Reveal
             delay={0.2}
-            className="max-w-md text-[16px] text-[#111111]/85 md:text-[18px]"
+            className="text-justify [hyphens:auto] max-w-md text-[16px] text-[#111111]/85 md:text-[18px]"
           >
             I specialize in building modern web experiences-from interactive
             frontend interfaces to scalable backend systems and customized
@@ -90,7 +90,7 @@ export function Skills() {
                     {s.title}
                   </h3>
 
-                  <p className="mt-3 text-[16px] leading-relaxed text-[#111111]/80">
+                  <p className="text-justify [hyphens:auto] mt-3 text-[16px] leading-relaxed text-[#111111]/80">
                     {s.desc}
                   </p>
                 </div>

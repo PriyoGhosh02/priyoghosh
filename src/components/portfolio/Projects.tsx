@@ -309,7 +309,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               {project.title}
               <ArrowUpRight className="h-5 w-5 opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 group-hover:text-brand" />
             </a>
-            <p className="mt-2 max-w-md text-[16px] leading-relaxed text-[#111111]/80">
+            <p className="text-justify [hyphens:auto] mt-2 max-w-md text-[16px] leading-relaxed text-[#111111]/80">
               {project.desc}
             </p>
           </div>

@@ -118,7 +118,7 @@ export function Hero() {
           {/* LEFT CONTENT */}
           <div className="md:col-span-7">
             <Reveal>
-              <div className="mb-6 inline-flex rounded-full border border-[#22252A] bg-[#121417]/80 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.35em] text-white">
+              <div className="text-center md:text-left mb-6 inline-flex rounded-full border border-[#22252A] bg-[#121417]/80 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.35em] text-white">
                 Shopify & Full-Stack Developer
               </div>
             </Reveal>
@@ -150,7 +150,7 @@ export function Hero() {
             </Reveal>
 
             <Reveal delay={0.15}>
-              <p className="mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
+              <p className="text-justify [hyphens:auto] mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
                 I build high-converting Shopify stores and modern web experiences that help brands
                 grow faster. Specialized in scalable frontend architecture, performance
                 optimization, and premium user experiences.
