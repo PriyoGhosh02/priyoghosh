@@ -57,13 +57,17 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
     }
   };
 
-  const sectionClass = embedded ? "relative bg-[#0A0B0D] text-white px-6 py-12" : "sticky-card sticky-card-7 min-h-screen bg-[#0A0B0D] text-white px-6 py-32 md:py-48";
+  const sectionClass = embedded
+    ? "relative bg-[#0A0B0D] text-white px-6 py-12"
+    : "sticky-card sticky-card-7 min-h-screen bg-[#0A0B0D] text-white px-6 py-32 md:py-48";
 
   return (
     <section id={embedded ? undefined : "contact"} className={sectionClass}>
       <div className="mx-auto max-w-6xl">
         <Reveal>
-          <h2 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-white">Get In Touch</h2>
+          <h2 className="font-display text-5xl md:text-7xl font-bold tracking-tight text-white">
+            Get In Touch
+          </h2>
         </Reveal>
 
         <div className="mt-16 grid gap-16 md:grid-cols-2">
@@ -78,10 +82,11 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                 <div key={f.id} className="relative">
                   <label
                     htmlFor={f.id}
-                    className={`absolute transition-all duration-300 ${focused === f.id
-                      ? "-top-4 font-mono text-[14px] text-brand"
-                      : "top-3 font-mono text-[16px] text-white/80"
-                      }`}
+                    className={`absolute transition-all duration-300 ${
+                      focused === f.id
+                        ? "-top-4 font-mono text-[14px] text-brand"
+                        : "top-3 font-mono text-[16px] text-white/80"
+                    }`}
                   >
                     {f.label}
                   </label>
@@ -102,10 +107,11 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               <div className="relative">
                 <label
                   htmlFor="message"
-                  className={`absolute transition-all duration-300 ${focused === "message"
-                    ? "-top-4 font-mono text-[14px] text-brand"
-                    : "top-3 font-mono text-[16px] text-white/80"
-                    }`}
+                  className={`absolute transition-all duration-300 ${
+                    focused === "message"
+                      ? "-top-4 font-mono text-[14px] text-brand"
+                      : "top-3 font-mono text-[16px] text-white/80"
+                  }`}
                 >
                   Message
                 </label>
@@ -148,18 +154,25 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
 
               <div>
                 <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Phone</p>
-                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-brand underline decoration-[#22252A] underline-offset-4 hover:decoration-brand">
+                <a
+                  href="tel:+8801743457164"
+                  className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-brand underline decoration-[#22252A] underline-offset-4 hover:decoration-brand"
+                >
                   +880 1743 457164
                 </a>
               </div>
 
               <div>
-                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Location</p>
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">
+                  Location
+                </p>
                 <p className="text-xl md:text-2xl font-medium text-white">Dhaka, Bangladesh</p>
               </div>
 
               <div>
-                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white mb-4">Social</p>
+                <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white mb-4">
+                  Social
+                </p>
 
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                   {[

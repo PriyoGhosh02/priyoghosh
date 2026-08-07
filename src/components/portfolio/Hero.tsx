@@ -153,7 +153,9 @@ export function Hero() {
 
             <Reveal delay={0.15}>
               <p className="text-justify [hyphens:auto] mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
-                I build modern web applications and custom Shopify experiences using React, Next.js, and Node.js. I enjoy creating fast, responsive, and user-friendly websites with clean code, strong performance, and thoughtful user experiences.
+                I build modern web applications and custom Shopify experiences using React, Next.js,
+                and Node.js. I enjoy creating fast, responsive, and user-friendly websites with
+                clean code, strong performance, and thoughtful user experiences.
               </p>
             </Reveal>
 
@@ -202,7 +204,7 @@ export function Hero() {
             <div className="mt-10 grid grid-cols-2 gap-4 md:flex md:flex-wrap">
               <a
                 href="#work"
-                className="cta-primary focus-ring group inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
+                className="whitespace-nowrap cta-primary focus-ring group inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
               >
                 View Work
                 <ArrowUpRight className="h-4 w-4 shrink-0 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
@@ -211,7 +213,7 @@ export function Hero() {
               <a
                 href="/Resume.pdf"
                 download="Priyo_Ghosh_CV.pdf"
-                className="cta-secondary focus-ring inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
+                className="whitespace-nowrap cta-secondary focus-ring inline-flex items-center justify-center gap-3 text-center text-[10px] md:text-xs"
               >
                 Download CV
               </a>

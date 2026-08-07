@@ -1,4 +1,4 @@
-import { CodeXml, MoreVertical, Sun, Moon, X } from "lucide-react";
+import { CodeXml, Moon, MoreVertical, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -54,21 +54,24 @@ export function Nav({ onContactClick }: NavProps) {
   return (
     <>
       <header
-        className={`fixed left-0 right-0 z-[100] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled ? "top-3 md:top-4" : "top-3 md:top-5"
-          }`}
+        className={`fixed left-0 right-0 z-[100] transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          scrolled ? "top-3 md:top-4" : "top-3 md:top-5"
+        }`}
       >
         <div
-          className={`mx-auto flex max-w-7xl items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${scrolled
-            ? "w-[min(92%,1280px)] gap-3 rounded-full border border-[#22252A] bg-[#0A0B0D]/85 px-5 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl md:gap-6 md:px-7"
-            : "w-[min(95%,1280px)] gap-4 rounded-full border border-[#22252A] bg-[#0A0B0D]/75 px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:gap-10 md:px-8"
-            }`}
+          className={`mx-auto flex max-w-7xl items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            scrolled
+              ? "w-[min(92%,1280px)] gap-3 rounded-full border border-[#22252A] bg-[#0A0B0D]/85 px-5 py-2.5 shadow-[0_12px_40px_rgba(0,0,0,0.6)] backdrop-blur-xl md:gap-6 md:px-7"
+              : "w-[min(95%,1280px)] gap-4 rounded-full border border-[#22252A] bg-[#0A0B0D]/75 px-5 py-3 shadow-[0_8px_32px_rgba(0,0,0,0.4)] backdrop-blur-xl md:gap-10 md:px-8"
+          }`}
         >
           <a
             href="#top"
-            className="flex items-center font-display text-sm font-semibold tracking-tight text-white transition-colors hover:text-brand md:text-base"
+            className="flex gap-1 items-center font-display text-sm font-semibold tracking-tight text-white transition-colors hover:text-brand md:text-base"
             data-cursor="hover"
           >
-            <CodeXml className="h-5 w-5 text-brand mr-1.5" />
+            {/* <CodeXml className="h-5 w-5 text-brand mr-1.5" /> */}
+            <img src="../../../public/favicon_trns.png" alt="" height="20" width="20" />
             <span className="hidden sm:inline">PRIYO GHOSH</span>
             <span className="inline sm:hidden">PRIYO GHOSH</span>
           </a>
@@ -97,8 +100,9 @@ export function Nav({ onContactClick }: NavProps) {
             <button
               onClick={onContactClick}
               type="button"
-              className={`rounded-full bg-white font-medium text-[13px] uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-brand hover:text-white shadow-md ${scrolled ? "px-4 py-1.5" : "px-5 py-2"
-                }`}
+              className={`rounded-full bg-white font-medium text-[13px] uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-brand hover:text-white shadow-md ${
+                scrolled ? "px-4 py-1.5" : "px-5 py-2"
+              }`}
               data-cursor="hover"
             >
               Let&apos;s talk
@@ -133,15 +137,17 @@ export function Nav({ onContactClick }: NavProps) {
         aria-hidden={!mobileOpen}
       >
         <div
-          className={`absolute inset-0 bg-[#0A0B0D]/80 backdrop-blur-md transition-opacity duration-500 ${mobileOpen ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 bg-[#0A0B0D]/80 backdrop-blur-md transition-opacity duration-500 ${
+            mobileOpen ? "opacity-100" : "opacity-0"
+          }`}
           onClick={() => setMobileOpen(false)}
         />
         <aside
-          className={`absolute right-0 top-0 h-full w-[78%] max-w-[320px] border-l border-[#22252A] bg-[#0A0B0D] px-6 pb-10 pt-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${mobileOpen
-            ? "translate-x-0 shadow-[0_0_60px_rgba(0,0,0,0.8)]"
-            : "translate-x-[110%] shadow-none"
-            }`}
+          className={`absolute right-0 top-0 h-full w-[78%] max-w-[320px] border-l border-[#22252A] bg-[#0A0B0D] px-6 pb-10 pt-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            mobileOpen
+              ? "translate-x-0 shadow-[0_0_60px_rgba(0,0,0,0.8)]"
+              : "translate-x-[110%] shadow-none"
+          }`}
         >
           <div className="flex items-center justify-between">
             <span className="flex items-center font-display text-sm font-semibold tracking-tight text-white">
@@ -189,6 +195,43 @@ export function Nav({ onContactClick }: NavProps) {
           >
             Let&apos;s talk
           </button>
+
+          <div className="mt-8 text-sm text-white">
+            <div className="mb-4">
+              <a
+                href="mailto:priyoghosh02@gmail.com"
+                className="block mt-2 break-all text-base font-medium text-white transition-colors hover:text-brand"
+              >
+                priyoghosh02@gmail.com
+              </a>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <a
+                href="https://github.com/PriyoGhosh02/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[#22252A] bg-[#121417] px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white transition-all hover:border-brand hover:bg-brand hover:text-white"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/priyoghosh02/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[#22252A] bg-[#121417] px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white transition-all hover:border-brand hover:bg-brand hover:text-white"
+              >
+                LinkedIn
+              </a>
+              <a
+                href="https://wa.me/8801743457164"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-full border border-[#22252A] bg-[#121417] px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-white transition-all hover:border-brand hover:bg-brand hover:text-white"
+              >
+                WhatsApp
+              </a>
+            </div>
+          </div>
         </aside>
       </div>
     </>

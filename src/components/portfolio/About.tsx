@@ -27,7 +27,7 @@ const cards: CardData[] = [
     highlights: [
       { v: "B.Sc.", l: "CSE" },
       { v: "2026", l: "Graduation" },
-      { v: "Codeforces", l: "Problem Solving" },
+      { v: "CP", l: "Codeforces Problem Solving" },
       { v: "Projects", l: "Hands-on Learning" },
     ],
     image: profileImg,
@@ -60,7 +60,10 @@ export function About() {
   };
 
   return (
-    <section id="about" className="sticky-card sticky-card-2 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
+    <section
+      id="about"
+      className="sticky-card sticky-card-2 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500"
+    >
       <div className="mx-auto max-w-7xl">
         <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
@@ -76,7 +79,8 @@ export function About() {
             </Reveal>
           </div>
           <Reveal delay={0.2} className="max-w-md text-[16px] text-[#111111]/85 md:text-[18px]">
-            I enjoy solving real problems through code and building websites that are fast, easy to use, and designed to create a better experience for both businesses and users.
+            I enjoy solving real problems through code and building websites that are fast, easy to
+            use, and designed to create a better experience for both businesses and users.
           </Reveal>
         </div>
 
@@ -108,7 +112,10 @@ export function About() {
           </div>
 
           {/* Right: content */}
-          <div id="about_content" className="md:col-span-8 rounded-2xl border border-[#D0D4D6] bg-white p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md">
+          <div
+            id="about_content"
+            className="md:col-span-8 rounded-2xl border border-[#D0D4D6] bg-white p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md"
+          >
             <div className="flex items-center justify-between gap-4">
               <span className="font-mono text-[14px] font-semibold uppercase tracking-[0.3em] text-brand">
                 {card.badge}
@@ -169,8 +176,9 @@ export function About() {
                   onClick={() => setIdx(i)}
                   data-cursor="hover"
                   aria-label={c.type}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${i === idx ? "w-12 bg-brand" : "w-6 bg-[#D0D4D6]"
-                    }`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    i === idx ? "w-12 bg-brand" : "w-6 bg-[#D0D4D6]"
+                  }`}
                 />
               ))}
             </div>
