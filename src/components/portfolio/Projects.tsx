@@ -256,7 +256,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       >
         <div
           ref={tiltRef}
-          className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#D0D4D6] bg-white shadow-sm transition-all duration-500 group-hover:border-[#FF3B00] group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-xl border border-[#D0D4D6] bg-white shadow-sm transition-all duration-500 group-hover:border-brand group-hover:shadow-[0_20px_50px_rgba(0,0,0,0.12)]"
           style={{ transformStyle: "preserve-3d" }}
           data-cursor="hover"
         >
@@ -283,7 +283,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             data-cursor="hover"
             aria-label={`Open ${project.title} live site`}
             title="Open live site"
-            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-[#FF3B00] px-3.5 py-2 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-white opacity-0 shadow-lg backdrop-blur transition-all duration-300 hover:bg-[#111111] group-hover:opacity-100"
+            className="group/btn absolute right-4 top-4 z-10 inline-flex items-center gap-2 rounded-full bg-brand px-3.5 py-2 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-white opacity-0 shadow-lg backdrop-blur transition-all duration-300 hover:bg-[#111111] group-hover:opacity-100"
           >
             Live
             <ExternalLink className="h-3.5 w-3.5 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5" />
@@ -304,10 +304,10 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               target="_blank"
               rel="noopener noreferrer"
               data-cursor="hover"
-              className="mt-2 inline-flex items-center gap-2 font-display text-2xl font-bold tracking-tight text-[#111111] transition-colors hover:text-[#FF3B00] md:text-3xl"
+              className="mt-2 inline-flex items-center gap-2 font-display text-2xl font-bold tracking-tight text-[#111111] transition-colors hover:text-brand md:text-3xl"
             >
               {project.title}
-              <ArrowUpRight className="h-5 w-5 opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 group-hover:text-[#FF3B00]" />
+              <ArrowUpRight className="h-5 w-5 opacity-60 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:opacity-100 group-hover:text-brand" />
             </a>
             <p className="mt-2 max-w-md text-[16px] leading-relaxed text-[#111111]/80">
               {project.desc}
@@ -334,11 +334,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 data-cursor="hover"
                 aria-label={`Copy password for ${project.title}`}
                 title="Copy password"
-                className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-[#FF3B00] hover:text-[#FF3B00]"
+                className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-brand hover:text-brand"
               >
                 <span>Password: {project.password}</span>
                 {copied ? (
-                  <Check className="h-3.5 w-3.5 text-[#FF3B00]" />
+                  <Check className="h-3.5 w-3.5 text-brand" />
                 ) : (
                   <Copy className="h-3.5 w-3.5" />
                 )}
@@ -418,7 +418,7 @@ export function Projects() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search projects…"
-                className="w-full rounded-full border border-[#D0D4D6] bg-white py-2.5 pl-11 pr-10 text-sm text-[#111111] placeholder:text-[#8E8E93] shadow-sm focus:border-[#FF3B00] focus:outline-none"
+                className="w-full rounded-full border border-[#D0D4D6] bg-white py-2.5 pl-11 pr-10 text-sm text-[#111111] placeholder:text-[#8E8E93] shadow-sm focus:border-brand focus:outline-none"
                 data-cursor="hover"
               />
               {query && (
@@ -471,8 +471,8 @@ export function Projects() {
                 onClick={() => setTag(option)}
                 data-cursor="hover"
                 className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${tag === option
-                  ? "border-[#FF3B00] bg-[#FF3B00] text-white shadow-sm"
-                  : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#FF3B00] hover:text-[#FF3B00]"
+                  ? "border-brand bg-brand text-white shadow-sm"
+                  : "border-[#D0D4D6] bg-white text-[#111111] hover:border-brand hover:text-brand"
                   }`}
               >
                 {option}
@@ -493,7 +493,7 @@ export function Projects() {
                 setTag("All");
               }}
               data-cursor="hover"
-              className="mt-2 rounded-full border border-[#D0D4D6] bg-white px-4 py-2 font-mono text-[12px] uppercase tracking-[0.2em] text-[#111111] hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
+              className="mt-2 rounded-full border border-[#D0D4D6] bg-white px-4 py-2 font-mono text-[12px] uppercase tracking-[0.2em] text-[#111111] hover:bg-brand hover:border-brand hover:text-white"
             >
               Reset filters
             </button>
@@ -513,7 +513,7 @@ export function Projects() {
             <button
               onClick={() => setVisible((v) => v + PAGE_SIZE)}
               data-cursor="hover"
-              className="group inline-flex items-center gap-3 rounded-full border border-[#D0D4D6] bg-white px-7 py-3 font-mono text-xs uppercase tracking-[0.3em] text-[#111111] transition-all hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white shadow-sm"
+              className="group inline-flex items-center gap-3 rounded-full border border-[#D0D4D6] bg-white px-7 py-3 font-mono text-xs uppercase tracking-[0.3em] text-[#111111] transition-all hover:border-brand hover:bg-brand hover:text-white shadow-sm"
             >
               See more
               <span className="font-mono text-[12px] opacity-70 group-hover:opacity-100">

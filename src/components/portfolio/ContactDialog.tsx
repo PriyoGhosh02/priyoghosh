@@ -36,7 +36,7 @@ export function ContactDialog({
       >
         <button
           onClick={onClose}
-          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] text-white transition-colors hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white"
+          className="absolute right-4 top-4 z-10 flex h-9 w-9 items-center justify-center rounded-full border border-[#22252A] text-white transition-colors hover:border-brand hover:bg-brand hover:text-white"
           data-cursor="hover"
           aria-label="Close"
         >

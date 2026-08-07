@@ -106,7 +106,7 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
                 data-cursor="hover"
                 aria-label={it.label}
                 title={it.label}
-                className={`group absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#22252A] bg-[#121417]/90 text-white backdrop-blur-md transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white ${open
+                className={`group absolute left-1/2 top-1/2 flex h-11 w-11 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border border-[#22252A] bg-[#121417]/90 text-white backdrop-blur-md transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-brand hover:bg-brand hover:text-white ${open
                   ? "pointer-events-auto scale-100 opacity-100"
                   : "pointer-events-none scale-50 opacity-0"
                   }`}
@@ -131,8 +131,8 @@ export function SocialDock({ onContact }: { onContact: () => void }) {
             aria-label={open ? "Close tools" : "Open tools"}
             aria-expanded={open}
             className={`relative z-10 flex h-14 w-14 items-center justify-center rounded-full border shadow-[0_8px_30px_rgba(0,0,0,0.5)] transition-all duration-300 ${open
-              ? "border-[#FF3B00] bg-[#FF3B00] text-white rotate-90"
-              : "border-[#22252A] bg-[#121417] text-white hover:border-[#FF3B00] hover:text-[#FF3B00]"
+              ? "border-brand bg-brand text-white rotate-90"
+              : "border-[#22252A] bg-[#121417] text-white hover:border-brand hover:text-brand"
               }`}
           >
             <span className="relative block h-5 w-5">

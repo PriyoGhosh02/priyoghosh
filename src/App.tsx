@@ -46,7 +46,7 @@ function App() {
           <CustomCursor />
 
           <div className="relative z-10">
-            <Nav />
+            <Nav onContactClick={() => setContactOpen(true)} />
             <Hero />
             <About />
             <Skills />

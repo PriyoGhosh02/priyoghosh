@@ -75,12 +75,12 @@ export function Skills() {
           {skills.map((s, i) => (
             <Reveal key={s.title} delay={i * 0.05} y={20}>
               <div
-                className="group relative h-full rounded-2xl border border-[#D0D4D6] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#FF3B00] hover:shadow-md"
+                className="group relative h-full rounded-2xl border border-[#D0D4D6] bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-brand hover:shadow-md"
                 data-cursor="hover"
               >
                 <div className="relative">
                   <div className="mb-8 flex items-center justify-between">
-                    <s.icon className="h-6 w-6 text-[#111111] transition-all duration-300 group-hover:scale-110 group-hover:text-[#FF3B00]" />
+                    <s.icon className="h-6 w-6 text-[#111111] transition-all duration-300 group-hover:scale-110 group-hover:text-brand" />
                     <span className="font-mono text-xs font-semibold text-[#111111]">
                       0{i + 1}
                     </span>

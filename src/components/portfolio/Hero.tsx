@@ -140,7 +140,7 @@ export function Hero() {
             </div>
 
             <Reveal delay={0.1}>
-              <h1 className="font-display text-[clamp(2.5rem,8vw,6.8rem)] font-bold leading-[0.95] tracking-[-0.05em] text-white">
+              <h1 className="font-display text-[clamp(2.5rem,8vw,6.8rem)] font-bold leading-[0.95] tracking-[-0.05em] text-white text-center md:text-left">
                 Hello, I’m
                 <br />
                 <span>
@@ -159,7 +159,7 @@ export function Hero() {
 
             {/* Stats */}
             <Reveal delay={0.2}>
-              <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4">
+              <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-4 items-center">
                 {[
                   { value: `${years}+`, label: "Years Experience" },
                   { value: `${projects}+`, label: "Projects Completed" },
@@ -183,8 +183,8 @@ export function Hero() {
             <Reveal delay={0.25}>
               <div className="mt-8 flex items-center gap-3 font-mono text-sm uppercase tracking-[0.25em] text-[#8E8E93]">
                 <span className="relative flex h-3 w-3">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#FF3B00] opacity-75" />
-                  <span className="relative inline-flex h-3 w-3 rounded-full bg-[#FF3B00]" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand opacity-75" />
+                  <span className="relative inline-flex h-3 w-3 rounded-full bg-brand" />
                 </span>
 
                 <span className="overflow-hidden h-5">
@@ -250,7 +250,7 @@ export function Hero() {
             {[...skills, ...skills, ...skills].map((s, i) => (
               <span key={i} className="flex items-center gap-12">
                 <span className="text-white">{s}</span>
-                <span className="h-1.5 w-1.5 rounded-full bg-[#FF3B00]" />
+                <span className="h-1.5 w-1.5 rounded-full bg-brand" />
               </span>
             ))}
           </div>

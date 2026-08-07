@@ -65,11 +65,11 @@ export function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-2 w-2 rounded-full bg-[#FF3B00] shadow-[0_0_10px_#FF3B00]"
+        className="pointer-events-none fixed left-0 top-0 z-[200] h-2 w-2 rounded-full bg-brand shadow-[0_0_10px_var(--brand-color)]"
       />
       <div
         ref={ringRef}
-        className="pointer-events-none fixed left-0 top-0 z-[200] h-8 w-8 rounded-full border border-[#FF3B00]/70 transition-[border-color] duration-300"
+        className="pointer-events-none fixed left-0 top-0 z-[200] h-8 w-8 rounded-full border border-brand/70 transition-[border-color] duration-300"
       />
     </>
   );

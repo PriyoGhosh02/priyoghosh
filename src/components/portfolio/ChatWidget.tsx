@@ -162,7 +162,7 @@ export function ChatWidget() {
       >
         {open ? <X className="h-5 w-5" /> : <MessageCircle className="h-5 w-5" />}
         {!open && (
-          <span className="absolute right-0 top-0 h-3 w-3 rounded-full border-2 border-[#FF3B00] bg-[#FF3B00]" />
+          <span className="absolute right-0 top-0 h-3 w-3 rounded-full border-2 border-brand bg-brand" />
         )}
       </button>
 

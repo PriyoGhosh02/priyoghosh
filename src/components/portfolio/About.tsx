@@ -91,9 +91,9 @@ export function About() {
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111111]/80 via-transparent to-transparent" />
               <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-white/20 bg-[#0A0B0D]/80 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.25em] text-white backdrop-blur">
                 {card.type === "academic" ? (
-                  <GraduationCap className="h-3.5 w-3.5 text-[#FF3B00]" />
+                  <GraduationCap className="h-3.5 w-3.5 text-brand" />
                 ) : (
-                  <Briefcase className="h-3.5 w-3.5 text-[#FF3B00]" />
+                  <Briefcase className="h-3.5 w-3.5 text-brand" />
                 )}
                 {card.type}
               </div>
@@ -103,7 +103,7 @@ export function About() {
           {/* Right: content */}
           <div id="about_content" className="md:col-span-8 rounded-2xl border border-[#D0D4D6] bg-white p-8 md:p-12 shadow-sm transition-all duration-300 hover:shadow-md">
             <div className="flex items-center justify-between gap-4">
-              <span className="font-mono text-[14px] font-semibold uppercase tracking-[0.3em] text-[#FF3B00]">
+              <span className="font-mono text-[14px] font-semibold uppercase tracking-[0.3em] text-brand">
                 {card.badge}
               </span>
               <div className="flex items-center gap-2">
@@ -111,7 +111,7 @@ export function About() {
                   onClick={() => swap(-1)}
                   data-cursor="hover"
                   aria-label="Previous"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-brand hover:border-brand hover:text-white"
                 >
                   <ChevronLeft className="h-4 w-4" />
                 </button>
@@ -119,7 +119,7 @@ export function About() {
                   onClick={() => swap(1)}
                   data-cursor="hover"
                   aria-label="Next"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-[#FF3B00] hover:border-[#FF3B00] hover:text-white"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#D0D4D6] text-[#111111] transition-all duration-300 hover:bg-brand hover:border-brand hover:text-white"
                 >
                   <ChevronRight className="h-4 w-4" />
                 </button>
@@ -163,7 +163,7 @@ export function About() {
                   data-cursor="hover"
                   aria-label={c.type}
                   className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === idx ? "w-12 bg-[#FF3B00]" : "w-6 bg-[#D0D4D6]"
+                    i === idx ? "w-12 bg-brand" : "w-6 bg-[#D0D4D6]"
                   }`}
                 />
               ))}

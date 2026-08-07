@@ -69,7 +69,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
         <div className="mt-16 grid gap-16 md:grid-cols-2">
           {/* LEFT SIDE - FORM */}
           <Reveal y={20}>
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-8 text-center md:text-left">
               {[
                 { id: "name", label: "Your name", type: "text" },
                 { id: "email", label: "Email", type: "email" },
@@ -78,11 +78,10 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                 <div key={f.id} className="relative">
                   <label
                     htmlFor={f.id}
-                    className={`absolute transition-all duration-300 ${
-                      focused === f.id
-                        ? "-top-4 font-mono text-[14px] text-[#FF3B00]"
-                        : "top-3 font-mono text-[16px] text-white/80"
-                    }`}
+                    className={`absolute transition-all duration-300 ${focused === f.id
+                      ? "-top-4 font-mono text-[14px] text-brand"
+                      : "top-3 font-mono text-[16px] text-white/80"
+                      }`}
                   >
                     {f.label}
                   </label>
@@ -95,7 +94,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                     onChange={handleChange}
                     onFocus={() => setFocused(f.id)}
                     onBlur={(e) => e.target.value === "" && setFocused(null)}
-                    className="w-full border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-[#FF3B00] transition-colors"
+                    className="w-full border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-brand transition-colors"
                   />
                 </div>
               ))}
@@ -103,11 +102,10 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               <div className="relative">
                 <label
                   htmlFor="message"
-                  className={`absolute transition-all duration-300 ${
-                    focused === "message"
-                      ? "-top-4 font-mono text-[14px] text-[#FF3B00]"
-                      : "top-3 font-mono text-[16px] text-white/80"
-                  }`}
+                  className={`absolute transition-all duration-300 ${focused === "message"
+                    ? "-top-4 font-mono text-[14px] text-brand"
+                    : "top-3 font-mono text-[16px] text-white/80"
+                    }`}
                 >
                   Message
                 </label>
@@ -120,7 +118,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                   onChange={handleChange}
                   onFocus={() => setFocused("message")}
                   onBlur={(e) => e.target.value === "" && setFocused(null)}
-                  className="w-full resize-none border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-[#FF3B00] transition-colors"
+                  className="w-full resize-none border-b border-[#22252A] bg-transparent py-3 text-white outline-none focus:border-brand transition-colors"
                 />
               </div>
 
@@ -137,12 +135,12 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
 
           {/* RIGHT SIDE - INFO */}
           <Reveal y={20} delay={0.1}>
-            <div className="space-y-10 text-white">
+            <div className="space-y-10 text-white text-center md:text-left">
               <div>
                 <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Email</p>
                 <a
                   href="mailto:priyoghosh02@gmail.com"
-                  className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-[#FF3B00] underline decoration-[#22252A] underline-offset-4 hover:decoration-[#FF3B00]"
+                  className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-brand underline decoration-[#22252A] underline-offset-4 hover:decoration-brand"
                 >
                   priyoghosh02@gmail.com
                 </a>
@@ -150,7 +148,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
 
               <div>
                 <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white">Phone</p>
-                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-[#FF3B00] underline decoration-[#22252A] underline-offset-4 hover:decoration-[#FF3B00]">
+                <a href="tel:+8801743457164" className="text-xl md:text-2xl font-medium text-white transition-colors hover:text-brand underline decoration-[#22252A] underline-offset-4 hover:decoration-brand">
                   +880 1743 457164
                 </a>
               </div>
@@ -163,7 +161,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
               <div>
                 <p className="font-mono text-[14px] uppercase tracking-[0.3em] text-white mb-4">Social</p>
 
-                <div className="flex flex-wrap gap-3">
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start">
                   {[
                     {
                       label: "GitHub",
@@ -187,7 +185,7 @@ export function Contact({ embedded = false }: { embedded?: boolean }) {
                       href={s.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-full border border-[#22252A] bg-[#121417] px-4 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-[#FF3B00] hover:bg-[#FF3B00] hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-full border border-[#22252A] bg-[#121417] px-4 py-2.5 font-mono text-xs uppercase tracking-[0.15em] text-white transition-all duration-300 hover:border-brand hover:bg-brand hover:text-white"
                     >
                       <span>{s.label}</span>
                       <ArrowUpRight className="h-3.5 w-3.5" />
