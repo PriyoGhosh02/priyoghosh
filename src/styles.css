@@ -918,3 +918,103 @@ Background: #E5E7E8
   background: oklch(1 0 0 / 0.2);
   color: oklch(1 0 0);
 }
+
+/* Dark Theme Overrides for Light Components (About, Skills, Projects, Experience) */
+.dark-theme {
+  --bg-light: #0A0B0D;
+  --card-light: #121417;
+  --border-light: #22252A;
+  --text-dark: #FFFFFF;
+}
+
+.dark-theme .textured {
+  background: #0A0B0D !important;
+}
+
+.dark-theme .textured::before {
+  mix-blend-mode: overlay !important;
+  opacity: 0.04 !important;
+}
+
+.dark-theme #about,
+.dark-theme #skills,
+.dark-theme #work,
+.dark-theme #experience {
+  background-color: #0A0B0D !important;
+  color: #ffffff !important;
+}
+
+.dark-theme #about h2,
+.dark-theme #about h3,
+.dark-theme #skills h2,
+.dark-theme #skills h3,
+.dark-theme #work h2,
+.dark-theme #work h3,
+.dark-theme #experience h2,
+.dark-theme #experience h3 {
+  color: #ffffff !important;
+}
+
+/* Card backgrounds and text colors inside these sections */
+.dark-theme #about .bg-white,
+.dark-theme #skills .bg-white,
+.dark-theme #work .bg-white,
+.dark-theme #experience .bg-white {
+  background-color: #121417 !important;
+  color: #ffffff !important;
+}
+
+/* Inputs on projects search */
+.dark-theme #work input {
+  background-color: #121417 !important;
+  color: #ffffff !important;
+}
+
+/* Text overrides */
+.dark-theme #about .text-\[\#111111\],
+.dark-theme #skills .text-\[\#111111\],
+.dark-theme #work .text-\[\#111111\],
+.dark-theme #experience .text-\[\#111111\],
+.dark-theme #about .text-\[\#262626\],
+.dark-theme #skills .text-\[\#262626\],
+.dark-theme #work .text-\[\#262626\],
+.dark-theme #experience .text-\[\#262626\] {
+  color: #ffffff !important;
+}
+
+.dark-theme #about .text-\[\#111111\]\/80,
+.dark-theme #about .text-\[\#111111\]\/85,
+.dark-theme #skills .text-\[\#111111\]\/80,
+.dark-theme #skills .text-\[\#111111\]\/85,
+.dark-theme #work .text-\[\#111111\]\/80,
+.dark-theme #work .text-\[\#111111\]\/85,
+.dark-theme #experience .text-\[\#111111\]\/80,
+.dark-theme #experience .text-\[\#111111\]\/85,
+.dark-theme #about .text-\[\#262626\]\/80,
+.dark-theme #about .text-\[\#262626\]\/85,
+.dark-theme #skills .text-\[\#262626\]\/80,
+.dark-theme #skills .text-\[\#262626\]\/85,
+.dark-theme #work .text-\[\#262626\]\/80,
+.dark-theme #work .text-\[\#262626\]\/85,
+.dark-theme #experience .text-\[\#262626\]\/80,
+.dark-theme #experience .text-\[\#262626\]\/85 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Border overrides */
+.dark-theme #about .border-\[\#D0D4D6\],
+.dark-theme #skills .border-\[\#D0D4D6\],
+.dark-theme #work .border-\[\#D0D4D6\],
+.dark-theme #experience .border-\[\#D0D4D6\] {
+  border-color: #22252A !important;
+}
+
+.dark-theme #about .border-l-2.border-\[\#D0D4D6\] {
+  border-color: #22252A !important;
+}
+
+/* Experience timeline line */
+.dark-theme #experience .bg-\[\#D0D4D6\],
+.dark-theme #experience .absolute.left-0.top-0.h-full.w-px {
+  background-color: #22252A !important;
+}

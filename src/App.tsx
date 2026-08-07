@@ -37,30 +37,28 @@ function App() {
 
   return (
     <main className="grain relative min-h-screen overflow-hidden bg-[#0A0B0D] text-white">
-      {isLoading ? (
+      <SEO />
+      <SmoothScroll />
+      <CustomCursor />
+
+      <div className="relative z-10">
+        <Nav onContactClick={() => setContactOpen(true)} />
+        <Hero />
+        <About />
+        <Skills />
+        <CinematicVideo />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
+
+      <SocialDock onContact={() => setContactOpen(true)} />
+      <ChatWidget />
+      <ContactDialog open={contactOpen} onClose={() => setContactOpen(false)} />
+
+      {isLoading && (
         <LoadingPage showName={showName} onComplete={handleLoadingComplete} />
-      ) : (
-        <>
-          <SEO />
-          <SmoothScroll />
-          <CustomCursor />
-
-          <div className="relative z-10">
-            <Nav onContactClick={() => setContactOpen(true)} />
-            <Hero />
-            <About />
-            <Skills />
-            <CinematicVideo />
-            <Projects />
-            <Experience />
-            <Contact />
-            <Footer />
-          </div>
-
-          <SocialDock onContact={() => setContactOpen(true)} />
-          <ChatWidget />
-          <ContactDialog open={contactOpen} onClose={() => setContactOpen(false)} />
-        </>
       )}
     </main>
   );

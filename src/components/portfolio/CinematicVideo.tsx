@@ -233,12 +233,12 @@ export function CinematicVideo() {
         <div className="pointer-events-none absolute bottom-4 left-4 right-4 z-10 flex flex-col justify-between gap-2 md:bottom-12 md:left-12 md:right-12 md:flex-row md:items-end md:gap-4">
           <div className="max-w-xl">
             <h3 className="mt-2 font-display text-lg sm:text-2xl font-bold tracking-tight text-white md:text-4xl">
-              Transforming Visions Into Scalable Interfaces
+              Learning Through Practice and Real Projects
             </h3>
           </div>
 
           <div className="font-mono text-[10px] md:text-xs uppercase tracking-[0.25em] text-white/70">
-            Scroll to explore work ↓
+            Scroll to Explore Work ↓
           </div>
         </div>
       </div>

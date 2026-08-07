@@ -119,7 +119,7 @@ export function Hero() {
           <div className="md:col-span-7">
             <Reveal>
               <div className="text-center md:text-left mb-6 inline-flex rounded-full border border-[#22252A] bg-[#121417]/80 px-4 py-2 font-mono text-[12px] uppercase tracking-[0.35em] text-white">
-                Shopify & Full-Stack Developer
+                Full-Stack Developer & Shopify Specialist
               </div>
             </Reveal>
 
@@ -133,6 +133,8 @@ export function Hero() {
                       src={profileImg}
                       alt="Priyo"
                       className="h-full w-full object-cover grayscale"
+                      loading="eager"
+                      {...({ fetchPriority: "high" } as any)}
                     />
                   </div>
                 </div>
@@ -151,9 +153,7 @@ export function Hero() {
 
             <Reveal delay={0.15}>
               <p className="text-justify [hyphens:auto] mt-6 max-w-2xl text-[16px] leading-[1.9] text-white/80">
-                I build high-converting Shopify stores and modern web experiences that help brands
-                grow faster. Specialized in scalable frontend architecture, performance
-                optimization, and premium user experiences.
+                I build modern web applications and custom Shopify experiences using React, Next.js, and Node.js. I enjoy creating fast, responsive, and user-friendly websites with clean code, strong performance, and thoughtful user experiences.
               </p>
             </Reveal>
 
@@ -164,7 +164,7 @@ export function Hero() {
                   { value: `${years}+`, label: "Years Experience" },
                   { value: `${projects}+`, label: "Projects Completed" },
                   { value: `${satisfaction}%`, label: "Client Satisfaction" },
-                  { value: `${response}h`, label: "Avg Response" },
+                  { value: `${response}h`, label: "Worldwide Clients" },
                 ].map((item) => (
                   <div key={item.label}>
                     <div className="text-4xl font-semibold text-white md:text-5xl">
@@ -230,6 +230,8 @@ export function Hero() {
                     src={profileImg}
                     alt="Priyo"
                     className="h-full w-full object-cover grayscale"
+                    loading="eager"
+                    {...({ fetchPriority: "high" } as any)}
                   />
                 </div>
 

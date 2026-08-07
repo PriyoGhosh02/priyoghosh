@@ -12,32 +12,32 @@ const skills = [
   {
     icon: Code2,
     title: "Frontend Development",
-    desc: "Building modern, responsive web applications using React, TypeScript, JavaScript, HTML5, CSS3, Next.js, and Vite with a focus on performance, accessibility, and clean UI.",
-  },
-  {
-    icon: Layers,
-    title: "UI & Design Systems",
-    desc: "Creating scalable interfaces with Tailwind CSS, DaisyUI, Material UI, responsive layouts, reusable components, animations, and pixel-perfect implementations from Figma.",
+    desc: "Build responsive and interactive web applications using React, Next.js, TypeScript, JavaScript, HTML5, and CSS3. I focus on clean interfaces, accessibility, performance, and creating seamless user experiences across all devices.",
   },
   {
     icon: Globe,
     title: "Shopify Development",
-    desc: "Custom Shopify theme development using Liquid, Shopify CLI, Theme Customizer, metafields, sections, app integrations, responsive storefronts, and performance optimization.",
+    desc: "Develop custom Shopify themes and storefront experiences using Liquid, Shopify CLI, metafields, custom sections, and app integrations. I build flexible, responsive, and easy-to-manage e-commerce solutions.",
   },
   {
     icon: Server,
     title: "Backend Development",
-    desc: "Developing secure backend applications with Python, Django, REST APIs, authentication, database integration, and scalable business logic for full-stack solutions.",
+    desc: "Build backend applications and REST APIs using Node.js and Express.js, connecting databases and business logic to create reliable full-stack solutions. I continue expanding my skills in Python to strengthen my backend expertise.",
   },
   {
     icon: Database,
     title: "Database Management",
-    desc: "Designing and managing relational and NoSQL databases using MySQL and MongoDB with optimized queries, schema design, data modeling, and CRUD operations.",
+    desc: "Design and manage MySQL and MongoDB databases with efficient data modeling, optimized queries, schema design, and reliable CRUD operations to support scalable web applications.",
+  },
+  {
+    icon: Layers,
+    title: "UI & Design Systems",
+    desc: "Create reusable UI components, responsive layouts, and scalable design systems from Figma using Tailwind CSS, Material UI, and modern frontend practices to keep interfaces consistent and maintainable.",
   },
   {
     icon: Boxes,
     title: "Tools & Workflow",
-    desc: "Git, GitHub, VS Code, Postman, npm, Vercel, Netlify, EmailJS, REST APIs, responsive debugging, deployment, and collaborative development using modern workflows.",
+    desc: "Use Git, GitHub, VS Code, Postman, npm, Vercel, REST APIs, and collaborative development workflows for version control, deployment, debugging, API integration, and efficient project delivery.",
   },
 ];
 
@@ -64,10 +64,7 @@ export function Skills() {
             delay={0.2}
             className="text-justify [hyphens:auto] max-w-md text-[16px] text-[#111111]/85 md:text-[18px]"
           >
-            I specialize in building modern web experiences-from interactive
-            frontend interfaces to scalable backend systems and customized
-            Shopify storefronts-using clean architecture and industry-standard
-            development practices.
+            I build responsive web applications, custom Shopify stores, and full-stack solutions with a focus on clean code, performance, and user experience. My goal is to create reliable products that are easy to use, maintain, and scale.
           </Reveal>
         </div>
 

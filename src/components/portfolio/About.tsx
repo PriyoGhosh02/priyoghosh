@@ -18,34 +18,34 @@ const cards: CardData[] = [
   {
     type: "academic",
     badge: "01 - Academic",
-    title: "A computer-science foundation, in progress.",
+    title: "Building a Strong Foundation in Computer Science.",
     subtitle: "B.Sc. CSE · Green University of Bangladesh",
     body: [
       "Pursuing a B.Sc. in Computer Science and Engineering at Green University of Bangladesh, graduating in 2026.",
-      "Earlier completed HSC (Science) at Kaliganj Govt. College and SSC (Science) at Dr. Mujib-Ruby Model High School - solid grounding in math, problem solving and CS fundamentals.",
+      "My academic journey has helped me build a strong understanding of programming, data structures, databases, software engineering, and problem-solving. Along the way, I've enjoyed applying what I learn to real-world projects and continuously improving my development skills..",
     ],
     highlights: [
       { v: "B.Sc.", l: "CSE" },
       { v: "2026", l: "Graduation" },
-      { v: "GUB", l: "University" },
-      { v: "CP", l: "Codeforces" },
+      { v: "Codeforces", l: "Problem Solving" },
+      { v: "Projects", l: "Hands-on Learning" },
     ],
     image: profileImg,
   },
   {
     type: "industrial",
     badge: "02 - Industrial",
-    title: "Responsive designs for real Projects.",
-    subtitle: "Softvance · Sardar IT",
+    title: "Building Real-World Web Applications.",
+    subtitle: "Frontend Developer - Softvence Delta | Formerly Sardar IT",
     body: [
-      "Currently working as a Frontend Web Developer at Softvance Delta (Bitopia Group), Dhaka, building responsive, high-performance web interfaces and working with modern CMS platforms to deliver scalable solutions.",
-      "Previously at Sardar IT, where I transformed Figma designs into clean, production-ready interfaces using Tailwind CSS, HTML, CSS, Liquid, and JavaScript, and developed engaging E-commerce pages with CMS integration.",
+      "I'm currently working as a Frontend Developer at Softvence Delta (Bitopia Group), where I build responsive web applications, develop reusable UI components, and work with modern CMS platforms to deliver scalable digital solutions.",
+      "Before joining Softvence Delta, I worked at Sardar IT, where I transformed Figma designs into responsive, production-ready websites and gained hands-on experience building business websites and e-commerce solutions using HTML, CSS, JavaScript, Tailwind CSS, Shopify Liquid, and CMS platforms.",
     ],
     highlights: [
       { v: "2", l: "Companies" },
       { v: "60+", l: "Projects" },
-      { v: "Web", l: "Focus" },
-      { v: "FE", l: "Responsive Frontend" },
+      { v: "React", l: "Next.js" },
+      { v: "Shopify", l: "Development" },
     ],
     image: profileImg,
   },
@@ -62,16 +62,23 @@ export function About() {
   return (
     <section id="about" className="sticky-card sticky-card-2 content-section textured min-h-screen bg-[#E5E7E8] text-[#111111] px-6 py-32 md:py-44 transition-colors duration-500">
       <div className="mx-auto max-w-7xl">
-        <Reveal>
-          <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
-            ( 01 ) - About
-          </span>
-        </Reveal>
-        <Reveal delay={0.1}>
-          <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
-            Get To Know Me.
-          </h2>
-        </Reveal>
+        <div className="mb-16 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <Reveal>
+              <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
+                ( 01 ) - About
+              </span>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
+                Get To Know Me.
+              </h2>
+            </Reveal>
+          </div>
+          <Reveal delay={0.2} className="max-w-md text-[16px] text-[#111111]/85 md:text-[18px]">
+            I enjoy solving real problems through code and building websites that are fast, easy to use, and designed to create a better experience for both businesses and users.
+          </Reveal>
+        </div>
 
         <div className="mt-16 grid gap-12 md:grid-cols-12 md:items-center">
           {/* Left: image */}

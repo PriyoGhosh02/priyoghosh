@@ -15,62 +15,111 @@ type Item = {
 
 const items: Item[] = [
   {
-    year: "Dec 2025 - Present",
-    role: "Web Developer",
-    company: "Softvance Delta · Bitopia Group",
-    desc: "Developing modern, responsive web applications and CMS solutions using React, Next.js, TypeScript, and Tailwind CSS while collaborating with cross-functional teams on production-ready products.",
-    location: "Block-F, Joypurhat Tower, Banasree Main Road, Dhaka 1219",
-    highlights: [
-      "Built scalable CMS dashboards and responsive web applications",
-      "Developed reusable React components and optimized UI performance",
-      "Collaborated with designers and backend developers to deliver production features",
-      "Integrated REST APIs and improved user experience across multiple projects",
-    ],
-    stack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "MongoDB", "Git"],
-  },
-  {
-    year: "Aug 2025 - Nov 2025",
-    role: "Web Developer",
-    company: "Sardar IT",
-    desc: "Developed responsive client websites by converting Figma designs into pixel-perfect interfaces and implementing modern frontend best practices.",
-    location: "Shialbari, Rupnagar Rd, Dhaka 1216",
-    highlights: [
-      "Converted Figma designs into responsive websites",
-      "Built reusable UI components using Tailwind CSS",
-      "Worked directly with international client requirements",
-      "Delivered production-ready websites within deadlines",
-    ],
-    stack: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Git"],
-  },
-  {
-    year: "2022 - Present",
-    role: "Competitive Programming",
-    company: "Codeforces",
-    desc: "Strengthening problem-solving, algorithms, and data structures through consistent competitive programming practice.",
-    location: "Remote · Online",
-    highlights: [
-      "Solved 300+ algorithmic problems",
-      "Improved analytical and debugging skills",
-      "Practiced time-efficient coding strategies",
-      "Regular participant in online programming contests",
-    ],
-    stack: ["C++", "C", "Java", "Algorithms", "Data Structures"],
-  },
-  {
-    year: "Jan 2022 - Feb 2026",
-    role: "B.Sc. in CSE",
+    year: "2022 – 2026",
+    role: "B.Sc. in Computer Science & Engineering",
     company: "Green University of Bangladesh",
-    desc: "Completed Bachelor of Science in Computer Science & Engineering with a strong foundation in software engineering, databases, web development, and programming.",
+    desc: "Built a strong foundation in software engineering, web development, databases, and programming while applying classroom knowledge to academic and personal projects. This journey strengthened my problem-solving mindset and passion for building modern web applications.",
     location: "Dhaka, Bangladesh",
     highlights: [
-      "Graduated in Computer Science & Engineering",
-      "Built academic and personal full-stack web applications",
-      "Completed projects involving database design, SQL triggers, and web systems",
-      "Focused on continuous learning in React, Django, and Shopify development",
+      "Built academic and personal web applications",
+      "Worked on software engineering and database projects",
+      "Strengthened programming and analytical thinking",
+      "Continuously explored modern web technologies"
     ],
-    stack: ["Python", "Java", "MySQL", "Django", "React"],
+    stack: [
+      "JavaScript",
+      "Python",
+      "Java",
+      "MySQL",
+      "React",
+      "Node.js"
+    ],
+  },
+
+  {
+    year: "2022 – Present",
+    role: "Competitive Programming",
+    company: "Codeforces",
+    desc: "Regularly practice algorithms and data structures through competitive programming to improve logical thinking, debugging skills, and problem-solving abilities that support real-world software development.",
+    location: "Remote",
+    highlights: [
+      "Solved 300+ programming problems",
+      "Improved algorithmic thinking and debugging skills",
+      "Practiced time-efficient coding strategies",
+      "Participated in online programming contests"
+    ],
+    stack: [
+      "Algorithms",
+      "Data Structures",
+      "C",
+      "Java",
+      "Problem Solving"
+    ],
+  },
+
+  {
+    year: "Aug 2025 – Nov 2025",
+    role: "Web Developer",
+    company: "Sardar IT",
+    desc: "Started my professional career by building responsive business websites and Shopify storefronts. Worked with Figma designs, transformed them into production-ready interfaces, and gained valuable experience delivering client-focused web solutions.",
+    location: "Dhaka, Bangladesh",
+    highlights: [
+      "Built 30+ responsive business websites",
+      "Converted Figma designs into pixel-perfect interfaces",
+      "Worked on business and e-commerce projects",
+      "Collaborated with client requirements and project deadlines"
+    ],
+    stack: [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "Tailwind CSS",
+      "Shopify Liquid",
+      "Git"
+    ],
+  },
+
+  {
+    year: "Dec 2025 – Present",
+    role: "Frontend Developer",
+    company: "Softvence Delta · Bitopia Group",
+    desc: "Currently developing responsive web applications, CMS solutions, and reusable frontend components using modern technologies. Collaborate with designers, backend developers, and project teams to build scalable, production-ready digital products.",
+    location: "Dhaka, Bangladesh",
+    highlights: [
+      "Developed 60+ responsive web interfaces and CMS components",
+      "Built reusable React components for scalable applications",
+      "Integrated REST APIs into production-ready projects",
+      "Improved frontend performance and user experience",
+      "Collaborated with cross-functional development teams"
+    ],
+    stack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "JavaScript",
+      "Tailwind CSS",
+      "Node.js",
+      "REST API",
+      "Git"
+    ],
   },
 ];
+
+const truncateWords = (text: string, limit = 15) => {
+  const words = text.trim().split(/\s+/);
+
+  if (words.length <= limit) {
+    return {
+      text,
+      truncated: false,
+    };
+  }
+
+  return {
+    text: words.slice(0, limit).join(" "),
+    truncated: true,
+  };
+};
 
 export function Experience() {
   const [open, setOpen] = useState<Item | null>(null);
@@ -81,12 +130,12 @@ export function Experience() {
         <div className="mb-20">
           <Reveal>
             <span className="font-mono text-[14px] uppercase tracking-[0.4em] text-[#111111] font-semibold">
-              ( 04 ) - Experience
+              ( 04 ) - Career
             </span>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="mt-6 font-display text-4xl font-bold tracking-tight text-[#111111] md:text-6xl">
-              Work Experience
+              Professional Journey
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
@@ -99,42 +148,75 @@ export function Experience() {
         <div className="relative">
           <div className="absolute left-0 top-0 h-full w-px bg-[#D0D4D6] md:left-1/2" />
           <ul className="space-y-16">
-            {items.map((it, i) => (
-              <Reveal key={it.year} y={30} delay={i * 0.05}>
-                <li className="relative grid grid-cols-1 gap-6 md:grid-cols-2">
-                  <div
-                    className={`relative pl-8 md:pl-0 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:order-2 md:pl-12"
-                      }`}
-                  >
-                    <span className="inline-flex rounded-full border border-[#D0D4D6] bg-white px-3.5 py-1 font-mono text-xs uppercase tracking-[0.25em] text-[#111111] shadow-sm">
-                      {it.year}
-                    </span>
-                    <button
-                      type="button"
-                      onClick={() => setOpen(it)}
-                      data-cursor="hover"
-                      className="group mt-4 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none active:-translate-y-0.5 active:scale-[0.98]"
+            {items.map((it, i) => {
+              const preview = truncateWords(it.desc, 15);
+
+              return (
+                <Reveal key={it.year} y={30} delay={i * 0.05}>
+                  <li className="relative grid grid-cols-1 gap-6 md:grid-cols-2">
+                    {/* LEFT */}
+                    <div
+                      className={`relative pl-8 md:pl-0 ${i % 2 === 0
+                        ? "md:pr-12 md:text-right"
+                        : "md:order-2 md:pl-12"
+                        }`}
                     >
-                      <span className="inline-flex items-center gap-3 font-display text-2xl font-bold text-[#111111] transition-all duration-300 group-hover:text-brand">
-                        {it.role}
-                        <span className="whitespace-nowrap ml-3 inline-flex items-center rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-[#111111] transition-all duration-300 group-hover:border-brand group-hover:bg-brand group-hover:text-white shadow-sm">
-                          See Details
-                        </span>
+                      <span className="inline-flex rounded-full border border-[#D0D4D6] bg-white px-3.5 py-1 font-mono text-xs uppercase tracking-[0.25em] text-[#111111] shadow-sm">
+                        {it.year}
                       </span>
-                      <span className="block h-0.5 w-0 bg-brand transition-all duration-500 group-hover:w-full" />
-                    </button>
-                    <div className="mt-2 font-mono text-base font-semibold text-[#111111]">{it.company}</div>
-                  </div>
-                  <div
-                    className={`pl-8 md:pl-0 ${i % 2 === 0 ? "md:pl-12" : "md:order-1 md:pr-12 md:text-right"
-                      }`}
-                  >
-                    <p className="text-justify [hyphens:auto] mt-3 max-w-xl text-[17px] leading-8 text-[#111111]/85">{it.desc}</p>
-                  </div>
-                  <span className="absolute left-[-6px] top-1.5 h-3.5 w-3.5 rounded-full bg-brand shadow-[0_0_12px_var(--brand-color)] md:left-1/2 md:-translate-x-1/2" />
-                </li>
-              </Reveal>
-            ))}
+
+                      <button
+                        type="button"
+                        onClick={() => setOpen(it)}
+                        data-cursor="hover"
+                        className="group mt-4 cursor-pointer text-left md:text-inherit transition-all duration-300 focus:outline-none active:-translate-y-0.5 active:scale-[0.98]"
+                      >
+                        <span className="inline-flex items-center gap-3 font-display text-2xl font-bold text-[#111111] transition-all duration-300 group-hover:text-brand">
+                          {it.role}
+
+                          <span className="ml-3 inline-flex whitespace-nowrap rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-xs font-medium uppercase tracking-wider text-[#111111] shadow-sm transition-all duration-300 group-hover:border-brand group-hover:bg-brand group-hover:text-white">
+                            Explore
+                          </span>
+                        </span>
+
+                        <span className="block h-0.5 w-0 bg-brand transition-all duration-500 group-hover:w-full" />
+                      </button>
+
+                      <div className="mt-2 font-mono text-base font-semibold text-[#111111]">
+                        {it.company}
+                      </div>
+                    </div>
+
+                    {/* RIGHT */}
+                    <div
+                      className={`pl-8 md:pl-0 ${i % 2 === 0
+                        ? "md:pl-12"
+                        : "md:order-1 md:pr-12 md:text-right"
+                        }`}
+                    >
+                      <p className="text-justify [hyphens:auto] mt-3 max-w-xl text-[17px] leading-8 text-[#111111]/85">
+                        {preview.text}
+
+                        {preview.truncated && (
+                          <>
+                            ...{" "}
+                            <button
+                              type="button"
+                              onClick={() => setOpen(it)}
+                              className="inline-flex items-center font-medium text-brand transition-colors duration-300 hover:underline"
+                            >
+                              Continue →
+                            </button>
+                          </>
+                        )}
+                      </p>
+                    </div>
+
+                    <span className="absolute left-[-6px] top-1.5 h-3.5 w-3.5 rounded-full bg-brand shadow-[0_0_12px_var(--brand-color)] md:left-1/2 md:-translate-x-1/2" />
+                  </li>
+                </Reveal>
+              );
+            })}
           </ul>
         </div>
       </div>

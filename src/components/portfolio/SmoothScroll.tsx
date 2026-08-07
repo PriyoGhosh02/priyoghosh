@@ -16,6 +16,7 @@ export function SmoothScroll() {
       lerp: 0.09,
       wheelMultiplier: 1.0,
       touchMultiplier: 1.0,
+      syncTouch: false,
     });
 
     // Synchronize Lenis scroll position with GSAP ScrollTrigger

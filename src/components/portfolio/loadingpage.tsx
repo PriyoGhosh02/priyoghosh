@@ -12,6 +12,7 @@ export function LoadingPage({
   onComplete,
 }: LoadingPageProps) {
   const [progress, setProgress] = useState(0);
+  const [isExiting, setIsExiting] = useState(false);
 
   useEffect(() => {
     const duration = 1500;
@@ -30,8 +31,11 @@ export function LoadingPage({
         requestAnimationFrame(animate);
       } else {
         setTimeout(() => {
-          onComplete?.();
-        }, 500);
+          setIsExiting(true);
+          setTimeout(() => {
+            onComplete?.();
+          }, 800); // Wait for transition-all duration-800 to finish
+        }, 300);
       }
     }
 
@@ -39,7 +43,10 @@ export function LoadingPage({
   }, [onComplete]);
 
   return (
-    <div className="fixed inset-0 z-[999] overflow-hidden bg-black text-white">
+    <div
+      className={`fixed inset-0 z-[999] overflow-hidden bg-black text-white transition-all duration-800 ease-in-out ${isExiting ? "opacity-0 scale-105 pointer-events-none" : "opacity-100 scale-100"
+        }`}
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-[#080808] to-black" />
       <div className="cyber-grid absolute inset-0" />
@@ -70,15 +77,15 @@ export function LoadingPage({
             </div>
 
             {/* Center Logo */}
-<div className="absolute inset-0 flex items-center justify-center">
-  <div className="h-40 w-40 overflow-hidden rounded-full border border-white/20 bg-white/5 backdrop-blur-md">
-    <img
-      src={loadingImg}
-      alt="Priyo"
-      className="h-full w-full object-cover"
-    />
-  </div>
-</div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="h-40 w-40 overflow-hidden rounded-full border border-white/20 bg-white/5 backdrop-blur-md">
+                <img
+                  src={loadingImg}
+                  alt="Priyo"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Name */}
@@ -90,11 +97,10 @@ export function LoadingPage({
           </h1>
 
           <p
-            className={`mt-4 text-sm uppercase tracking-[0.4em] text-white/50 transition-all duration-700 ${
-              showName
-                ? "translate-y-0 opacity-100"
-                : "translate-y-5 opacity-0"
-            }`}
+            className={`mt-4 text-sm uppercase tracking-[0.4em] text-white/50 transition-all duration-700 ${showName
+              ? "translate-y-0 opacity-100"
+              : "translate-y-5 opacity-0"
+              }`}
           >
             {"</ Full Stack Developer >"}
           </p>
