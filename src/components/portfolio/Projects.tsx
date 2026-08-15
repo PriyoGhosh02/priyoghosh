@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, Copy, ExternalLink, Search, X } from "lucide-react";
+import { ArrowUpRight, Check, Copy, ExternalLink, Github, Search, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Reveal } from "./Reveal";
 
@@ -11,6 +11,8 @@ type Project = {
   tags: string[];
   liveUrl: string;
   preview: string;
+  gitRepo?: string;
+  gitrepo?: string;
   password?: string;
 };
 
@@ -164,6 +166,8 @@ const allProjects: Project[] = [
     password: "123",
     preview: "/projects/concept/tinko-toy.webp",
   },
+
+
   // Personal Portfolio =========================================
   {
     title: "Priyo Ghosh Portfolio",
@@ -173,7 +177,30 @@ const allProjects: Project[] = [
     desc: "Modern developer portfolio built with Next.js and Tailwind CSS to showcase custom Shopify builds and frontend expertise.",
     tags: ["react", "nextjs", "tailwindcss", "typescript"],
     liveUrl: "https://priyoghosh.vercel.app/",
+    gitrepo: "https://github.com/PriyoGhosh02/priyoghosh",
     preview: "/projects/concept/portfolio.webp",
+  },
+  {
+    title: "TimeCrafts",
+    category: "Concept Work",
+    type: "Custom Build",
+    year: "2026",
+    desc: "Premium watch and accessories eCommerce website featuring luxury visuals, responsive design, smooth animations, and seamless shopping experiences.",
+    tags: ["react", "graphql", "tailwindcss", "typescript", "hydrogen", "shopify"],
+    liveUrl: "https://timecraftswatches.vercel.app/",
+    gitrepo: "https://github.com/PriyoGhosh02/Hydrojen-and-Graphql",
+    preview: "/projects/concept/timecrafts.webp",
+  },
+  {
+    title: "Mess Manager",
+    category: "Concept Work",
+    type: "Custom Build",
+    year: "2026",
+    desc: "Student hostel management platform designed to manage daily meals, meal schedules, student records, and hostel operations through a simple and responsive interface.",
+    tags: ["react", "tailwindcss", "nextjs", "typescript", "firebase"],
+    liveUrl: "https://student-hostel-meal-managenment-system.vercel.app/",
+    gitrepo: "https://github.com/PriyoGhosh02/StudenHostel_Meal_Managenment.git",
+    preview: "/projects/concept/mess.webp",
   },
 ];
 
@@ -312,6 +339,47 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <p className="text-justify [hyphens:auto] mt-2 max-w-md text-[16px] leading-relaxed text-[#111111]/80">
               {project.desc}
             </p>
+
+            {/* Mobile actions */}
+            {(project.gitRepo || project.gitrepo || project.password) && (
+              <div className="mt-4 flex flex-wrap items-center gap-2 md:hidden">
+                {(project.gitRepo || project.gitrepo) && (
+                  <a
+                    href={project.gitRepo || project.gitrepo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    data-cursor="hover"
+                    aria-label={`Open ${project.title} GitHub repository`}
+                    title="Open GitHub repository"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-brand hover:text-brand"
+                  >
+                    <Github className="h-3.5 w-3.5" />
+                    <span>Git Repository</span>
+                  </a>
+                )}
+                {project.password && (
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      void handleCopyPassword();
+                    }}
+                    data-cursor="hover"
+                    aria-label={`Copy password for ${project.title}`}
+                    title="Copy password"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-brand hover:text-brand"
+                  >
+                    <span>Password: {project.password}</span>
+                    {copied ? (
+                      <Check className="h-3.5 w-3.5 text-brand" />
+                    ) : (
+                      <Copy className="h-3.5 w-3.5" />
+                    )}
+                  </button>
+                )}
+              </div>
+            )}
           </div>
           <div className="hidden flex-col items-end justify-end gap-1.5 md:flex">
             <div className="flex flex-wrap justify-end gap-1.5">
@@ -347,6 +415,21 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <span className="rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111]">
                 Password: N/A
               </span>
+            )}
+            {(project.gitRepo || project.gitrepo) && (
+              <a
+                href={project.gitRepo || project.gitrepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                data-cursor="hover"
+                aria-label={`Open ${project.title} GitHub repository`}
+                title="Open GitHub repository"
+                className="inline-flex items-center gap-2 rounded-full border border-[#D0D4D6] bg-white px-3 py-1 font-mono text-[12px] font-medium uppercase tracking-[0.2em] text-[#111111] transition-all hover:border-brand hover:text-brand"
+              >
+                <Github className="h-3.5 w-3.5" />
+                <span>Git Repository</span>
+              </a>
             )}
           </div>
         </div>
@@ -442,11 +525,10 @@ export function Projects() {
                     key={option}
                     onClick={() => setType(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                      type === option
-                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
-                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
-                    }`}
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${type === option
+                      ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                      : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
+                      }`}
                   >
                     {option}
                   </button>
@@ -457,11 +539,10 @@ export function Projects() {
                     key={option}
                     onClick={() => setCategory(option)}
                     data-cursor="hover"
-                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                      category === option
-                        ? "border-[#121417] bg-[#121417] text-white shadow-sm"
-                        : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
-                    }`}
+                    className={`rounded-full border px-3.5 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${category === option
+                      ? "border-[#121417] bg-[#121417] text-white shadow-sm"
+                      : "border-[#D0D4D6] bg-white text-[#111111] hover:border-[#121417]"
+                      }`}
                   >
                     {option}
                   </button>
@@ -475,11 +556,10 @@ export function Projects() {
                 key={option}
                 onClick={() => setTag(option)}
                 data-cursor="hover"
-                className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${
-                  tag === option
-                    ? "border-brand bg-brand text-white shadow-sm"
-                    : "border-[#D0D4D6] bg-white text-[#111111] hover:border-brand hover:text-brand"
-                }`}
+                className={`rounded-full border px-3 py-1.5 font-mono text-[12px] uppercase tracking-[0.2em] transition-all ${tag === option
+                  ? "border-brand bg-brand text-white shadow-sm"
+                  : "border-[#D0D4D6] bg-white text-[#111111] hover:border-brand hover:text-brand"
+                  }`}
               >
                 {option}
               </button>
